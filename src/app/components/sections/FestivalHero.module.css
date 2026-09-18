@@ -1,0 +1,253 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 1.4rem 0 3.75rem;
+  background: var(--color-paper);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(20, 18, 15, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 18, 15, 0.08) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+}
+
+.topline {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.topline p {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(0.68rem, 2vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.topline p:last-child {
+  text-align: right;
+}
+
+.titleBlock {
+  position: relative;
+  z-index: 1;
+  padding: clamp(2rem, 6vw, 4.25rem) 0 1.4rem;
+}
+
+.the {
+  display: block;
+  margin-bottom: -0.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.titleBlock h1 {
+  display: grid;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 17vw, 11.5rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.68;
+  text-transform: uppercase;
+}
+
+.titleBlock h1 span:nth-child(2) {
+  margin-left: clamp(0rem, 8vw, 7rem);
+}
+
+.titleBlock h1 span:nth-child(3) {
+  margin-left: clamp(0rem, 2vw, 2rem);
+}
+
+.year {
+  display: inline-block;
+  margin-top: 1.2rem;
+  background: var(--color-coral);
+  padding: 0.14em 0.28em 0.08em;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  transform: rotate(-2deg);
+}
+
+.rule {
+  position: relative;
+  z-index: 1;
+  height: clamp(0.55rem, 1vw, 0.9rem);
+  background: var(--color-ink);
+}
+
+.detailsGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2rem;
+  padding: 1.4rem 0 2.25rem;
+}
+
+.dateBlock {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: max-content;
+  align-items: center;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 7rem);
+  font-weight: 800;
+  line-height: 0.8;
+}
+
+.dateConnector {
+  margin-inline: 0.2em;
+  color: var(--color-coral);
+  font-size: 0.55em;
+}
+
+.dateBlock small {
+  grid-column: 1 / -1;
+  margin-top: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.statement {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+}
+
+.statement > p {
+  max-width: 31rem;
+  color: var(--color-ink);
+  font-size: clamp(1.12rem, 2.2vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.3rem;
+}
+
+.primaryAction {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+}
+
+.textAction {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.15rem;
+  font-weight: 800;
+}
+
+.location {
+  display: grid;
+  align-content: start;
+  gap: 0.25rem;
+  border-top: 1px solid var(--color-line-strong);
+  padding-top: 1rem;
+}
+
+.locationLabel {
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.location strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.5vw, 2.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.location p {
+  color: var(--color-ink-muted);
+}
+
+.posterStrip {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 2px solid var(--color-ink);
+  background: var(--color-ink);
+  gap: 2px;
+}
+
+.posterStrip span {
+  display: grid;
+  min-height: 5rem;
+  place-items: center;
+  background: var(--color-sand);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.posterStrip span:nth-child(2) {
+  background: var(--color-coral);
+}
+
+.posterStrip span:nth-child(3) {
+  /* VOICE carries the green accent in the 2027 concept. */
+  background: var(--color-green);
+  color: var(--color-paper);
+}
+
+.posterStrip span:nth-child(4) {
+  /* PLACE stays quieter so the street/precinct imagery can do the work later. */
+  background: var(--color-paper);
+}
+
+@media (min-width: 58rem) {
+  .hero {
+    padding-bottom: 5.5rem;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 0.72fr 1.1fr 0.8fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .location {
+    border-top: 0;
+    border-left: 1px solid var(--color-line-strong);
+    padding: 0 0 0 1.5rem;
+  }
+
+  .posterStrip {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

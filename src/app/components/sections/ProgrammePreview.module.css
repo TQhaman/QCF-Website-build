@@ -1,0 +1,262 @@
+.section {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.header {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--color-coral);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.headerGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header h2 {
+  max-width: 10ch;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.headerGrid > p {
+  max-width: 34rem;
+  color: rgba(247, 239, 222, 0.72);
+  line-height: 1.65;
+}
+
+/* DAYS */
+
+.schedule {
+  display: grid;
+  gap: 1px;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+  background: rgba(247, 239, 222, 0.22);
+  border: 1px solid rgba(247, 239, 222, 0.22);
+}
+
+.day {
+  background: var(--color-ink);
+}
+
+.dayTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(247, 239, 222, 0.22);
+}
+
+.dayNumber,
+.shortDate {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dayNumber {
+  color: var(--color-coral);
+}
+
+.dayBody {
+  display: grid;
+  gap: 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.dayLabel {
+  margin-bottom: 0.4rem;
+  color: rgba(247, 239, 222, 0.55);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.day h3 {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.85;
+  text-transform: uppercase;
+}
+
+.fullDate {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+}
+
+.status {
+  align-self: end;
+  max-width: 15rem;
+  color: rgba(247, 239, 222, 0.65);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* CATEGORIES */
+
+.categories {
+  display: grid;
+  gap: 3rem;
+}
+
+.categoryIntro h3 {
+  max-width: 9ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.categoryEyebrow {
+  margin-bottom: 0.8rem;
+  color: var(--color-coral);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.categoryList {
+  border-top: 1px solid rgba(247, 239, 222, 0.35);
+}
+
+.category {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.5rem;
+  border-bottom: 1px solid rgba(247, 239, 222, 0.35);
+}
+
+.category > span:first-child {
+  color: var(--color-coral);
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.category p {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.arrow {
+  font-size: 1.2rem;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(247, 239, 222, 0.35);
+}
+
+.footer p {
+  max-width: 32rem;
+  color: rgba(247, 239, 222, 0.65);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.comingSoon {
+  width: fit-content;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-paper);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* TABLET */
+
+@media (min-width: 48rem) {
+  .headerGrid {
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(20rem, 0.7fr);
+
+    align-items: end;
+    gap: 4rem;
+  }
+
+  .headerGrid > p {
+    justify-self: end;
+  }
+
+  .schedule {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dayBody {
+    min-height: 22rem;
+  }
+
+  .categories {
+    grid-template-columns:
+      minmax(16rem, 0.7fr)
+      minmax(0, 1.3fr);
+
+    gap: 5rem;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+/* DESKTOP */
+
+@media (min-width: 70rem) {
+  .dayBody {
+    min-height: 26rem;
+  }
+
+  .category {
+    min-height: 5.25rem;
+    transition:
+      background 180ms ease,
+      color 180ms ease,
+      padding 180ms ease;
+  }
+
+  .category:hover {
+    padding-left: 1rem;
+    background: var(--color-coral);
+    color: var(--color-ink);
+  }
+
+  .category:hover > span:first-child {
+    color: var(--color-ink);
+  }
+}

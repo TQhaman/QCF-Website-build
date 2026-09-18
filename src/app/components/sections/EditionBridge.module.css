@@ -1,0 +1,208 @@
+.section {
+  padding: 5rem 0 6rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.headingRow {
+  display: grid;
+  gap: 1.4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(248, 242, 230, 0.25);
+}
+
+.eyebrow {
+  margin-bottom: 0.7rem;
+  color: var(--color-coral);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.headingRow h2 {
+  color: var(--color-paper);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.intro {
+  max-width: 37rem;
+  color: rgba(248, 242, 230, 0.72);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.pastCard,
+.upcomingCard {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(248, 242, 230, 0.32);
+}
+
+.pastCard {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--color-sand);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.cardCopy {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.35rem;
+}
+
+.cardCopy h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 4.7rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.pastCard .cardCopy p {
+  color: var(--color-ink-muted);
+}
+
+.cardMeta {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.placeholderLink {
+  margin-top: 0.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--color-line-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.upcomingCard {
+  position: relative;
+  display: grid;
+  min-height: 37rem;
+  align-content: space-between;
+  background: var(--color-coral);
+  color: var(--color-ink);
+}
+
+.upcomingCard::after {
+  content: "";
+  position: absolute;
+  width: 22rem;
+  aspect-ratio: 1;
+  right: -9rem;
+  top: 7rem;
+  border: 1px solid rgba(20, 18, 15, 0.32);
+  border-radius: 50%;
+}
+
+.upcomingTopline {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.35rem;
+  border-bottom: 1px solid rgba(20, 18, 15, 0.35);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.yearDisplay {
+  position: relative;
+  z-index: 1;
+  padding: 0 1.15rem;
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 24vw, 13rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.7;
+}
+
+.upcomingCard .cardCopy {
+  position: relative;
+  z-index: 1;
+}
+
+.upcomingCard .cardCopy > p {
+  color: rgba(20, 18, 15, 0.76);
+}
+
+.locationBlock {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(20, 18, 15, 0.32);
+}
+
+.locationBlock span {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.programmeCta {
+  display: inline-flex;
+  margin-top: 0.35rem;
+  justify-content: center;
+  border: 2px solid var(--color-ink);
+  padding: 0.8rem 1rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (min-width: 58rem) {
+  .headingRow {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.68fr);
+    align-items: end;
+  }
+
+  .intro {
+    justify-self: end;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pastCard,
+  .upcomingCard {
+    min-height: 46rem;
+  }
+
+  .pastCard {
+    display: grid;
+    grid-template-rows: minmax(20rem, 1fr) auto;
+  }
+
+  .imageWrap {
+    aspect-ratio: auto;
+  }
+}
