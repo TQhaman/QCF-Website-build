@@ -42,7 +42,7 @@ export function EditionBridge() {
             </div>
           </article>
 
-          <article className={styles.upcomingCard} id="programme">
+          <article className={styles.upcomingCard}>
             <div className={styles.upcomingTopline}>
               <span>UPCOMING</span>
               <span>{upcoming.theme}</span>

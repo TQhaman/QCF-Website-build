@@ -1,0 +1,314 @@
+.section {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.header {
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.eyebrow,
+.smallLabel {
+  color: var(--color-coral-dark);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+}
+
+.headerGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.header h2 {
+  max-width: 10ch;
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 9vw, 7.5rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.intro {
+  display: grid;
+  gap: 2rem;
+  align-content: end;
+}
+
+.intro > p {
+  max-width: 36rem;
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+}
+
+.location {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-ink);
+}
+
+.location span {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.location strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.location p {
+  margin-top: 0.5rem;
+  color: var(--color-ink-muted);
+  font-size: 0.8rem;
+}
+
+.mapBlock {
+  display: grid;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+  border: 1px solid var(--color-ink);
+}
+
+.mapPlaceholder {
+  position: relative;
+  min-height: 32rem;
+  overflow: hidden;
+  background: var(--color-green);
+  color: var(--color-paper);
+}
+
+.street {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.street span {
+  white-space: nowrap;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.streetOne {
+  left: -5%;
+  right: -5%;
+  top: 27%;
+  height: 3.2rem;
+  padding-left: 2rem;
+  transform: rotate(-5deg);
+}
+
+.streetTwo {
+  top: -10%;
+  bottom: -10%;
+  right: 24%;
+  width: 3.2rem;
+  justify-content: center;
+  transform: rotate(8deg);
+}
+
+.streetTwo span {
+  transform: rotate(90deg);
+}
+
+.mapCentre {
+  position: absolute;
+  left: clamp(1.5rem, 5vw, 4rem);
+  bottom: clamp(7rem, 18vw, 10rem);
+}
+
+.mapLabel {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-coral);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.mapCentre strong {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  letter-spacing: -0.04em;
+  line-height: 0.78;
+}
+
+.mapNote {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid currentColor;
+}
+
+.mapNote span {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mapNote p {
+  max-width: 28rem;
+  color: inherit;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.mapInfo {
+  display: grid;
+  align-content: end;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--color-sand);
+}
+
+.mapInfo h3 {
+  max-width: 11ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.mapInfo > p:not(.smallLabel) {
+  max-width: 31rem;
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+}
+
+.futureLayers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+
+.futureLayers span {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--color-ink);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.features {
+  display: grid;
+  border-top: 1px solid var(--color-ink);
+}
+
+.feature {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.featureTop {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-coral-dark);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.feature h3 {
+  max-width: 10ch;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.feature p {
+  max-width: 30rem;
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+}
+
+.mediaCallout {
+  display: grid;
+  gap: 2rem;
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding: clamp(2rem, 5vw, 4rem);
+  background: var(--color-coral);
+}
+
+.mediaCallout .smallLabel {
+  color: var(--color-ink);
+}
+
+.mediaCallout h3 {
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.mediaCallout > p {
+  max-width: 32rem;
+  align-self: end;
+  line-height: 1.6;
+}
+
+@media (min-width: 48rem) {
+  .headerGrid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.7fr);
+    gap: 4rem;
+  }
+
+  .mapBlock {
+    grid-template-columns: minmax(0, 1.4fr) minmax(20rem, 0.6fr);
+  }
+
+  .mapPlaceholder {
+    min-height: 38rem;
+  }
+
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--color-ink);
+  }
+
+  .feature {
+    padding: 2rem;
+    border-bottom: 0;
+  }
+
+  .feature + .feature {
+    border-left: 1px solid var(--color-ink);
+  }
+
+  .mediaCallout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+  }
+}

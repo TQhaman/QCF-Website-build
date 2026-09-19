@@ -3,7 +3,11 @@ import styles from "./FestivalStory.module.css";
 
 export function FestivalStory() {
   return (
-    <section className={styles.section} aria-labelledby="festival-story-title">
+    <section
+      className={styles.section}
+      id="festival"
+      aria-labelledby="festival-story-title"
+    >
       <div className="shell">
 <header className={styles.header}>
   <p className={styles.eyebrow}>QCF / More than a stage</p>

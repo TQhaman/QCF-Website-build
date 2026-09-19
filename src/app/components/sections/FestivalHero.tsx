@@ -3,7 +3,7 @@ import styles from "./FestivalHero.module.css";
 
 export function FestivalHero() {
   return (
-    <section className={styles.hero} id="festival">
+    <section className={styles.hero}>
       <div className="shell">
         <div className={styles.topline}>
           <p>{festivalConfig.hero.kicker}</p>

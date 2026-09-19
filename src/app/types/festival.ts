@@ -42,4 +42,20 @@ export type ProgrammeCategory = {
   name: string;
 };
 
+export type PrecinctFeature = {
+  number: string;
+  label: string;
+  title: string;
+  copy: string;
+};
 
+export type InvolvementPath = {
+  number: string;
+  label: string;
+  title: string;
+  copy: string;
+  status: string;
+  ctaLabel: string;
+  href: string | null;
+  tone: "paper" | "sand" | "green";
+};

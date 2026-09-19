@@ -1,10 +1,12 @@
 import type {
   FestivalEdition,
   FestivalExperience,
+  InvolvementPath,
   LinkItem,
-  StoryBeat,
+  PrecinctFeature,
   ProgrammeDay,
-  ProgrammeCategory
+  ProgrammeCategory,
+  StoryBeat,
 } from "@/app/types/festival";
 export const festivalConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
@@ -19,9 +21,9 @@ export const festivalConfig = {
     "Quigney Culture Festival brings music, food, fashion, art, design and community into the streets of Quigney, East London.",
   navItems: [
     { label: "Festival", href: "#festival" },
-    { label: "Editions", href: "#editions" },
     { label: "Programme", href: "#programme" },
-    { label: "Quigney Precinct", href: "#precinct" },
+    { label: "QCF Precinct", href: "#precinct" },
+    { label: "Get Involved", href: "#get-involved" },
     { label: "Visit", href: "#visit" },
   ] satisfies LinkItem[],
   primaryCta: { label: "2027 programme", href: "#programme" } satisfies LinkItem,
@@ -153,6 +155,82 @@ programmePreview: {
     { name: "Markets & Makers" },
     { name: "Community" },
   ] satisfies ProgrammeCategory[],
+},
+
+precinct: {
+  eyebrow: "QCF / The Festival Precinct",
+  title: "The streets are part of the experience.",
+  intro:
+    "QCF takes shape across Caxton and Burns Streets in Quigney. Rather than placing the festival behind a single venue door, the precinct becomes part of how people move, gather and experience the programme.",
+  location: {
+    primary: "Caxton & Burns Streets",
+    secondary: "Quigney, East London",
+  },
+  features: [
+    {
+      number: "01",
+      label: "Move",
+      title: "Walk the festival.",
+      copy:
+        "The QCF experience stretches through the precinct, allowing visitors to move between performances, food, creative activity and gathering spaces.",
+    },
+    {
+      number: "02",
+      label: "Discover",
+      title: "Find more between the stages.",
+      copy:
+        "QCF is designed around more than scheduled performances. Food, fashion, art, makers and other festival activity give visitors something to discover as they move through the streets.",
+    },
+    {
+      number: "03",
+      label: "Gather",
+      title: "Stay in the precinct.",
+      copy:
+        "The streets become places to meet, eat, watch, explore and spend time — making the spaces between programme moments part of the festival itself.",
+    },
+  ] satisfies PrecinctFeature[],
+},
+
+getInvolved: {
+  eyebrow: "QCF / Take Part",
+  title: "There’s more than one way to be part of QCF.",
+  intro:
+    "QCF is shaped by the people and organisations who perform, trade, create, partner and contribute to the festival precinct. Details for the 2027 edition will be added as each participation route is confirmed.",
+  paths: [
+    {
+      number: "01",
+      label: "Trade & Showcase",
+      title: "Bring what you make to the precinct.",
+      copy:
+        "For food traders, makers, designers and local businesses interested in becoming part of the market, hospitality and creative experience around QCF.",
+      status: "2027 application details pending",
+      ctaLabel: "Applications coming soon",
+      href: null,
+      tone: "sand",
+    },
+    {
+      number: "02",
+      label: "Artists & Performers",
+      title: "Bring your work to the festival.",
+      copy:
+        "For musicians, performers, fashion creatives and other artists interested in contributing to the QCF programme.",
+      status: "Programming details pending",
+      ctaLabel: "Artist information coming soon",
+      href: null,
+      tone: "paper",
+    },
+    {
+      number: "03",
+      label: "Partners & Sponsors",
+      title: "Help build what happens next.",
+      copy:
+        "For organisations interested in supporting QCF, collaborating with the festival or contributing to its programme, precinct and wider cultural activity.",
+      status: "Partnership information pending",
+      ctaLabel: "Enquiry details coming soon",
+      href: null,
+      tone: "green",
+    },
+  ] satisfies InvolvementPath[],
 },
 
   editions: [
