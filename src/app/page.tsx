@@ -16,7 +16,11 @@ export default function Home() {
   return (
     <>
       <a className="skipLink" href="#main-content">Skip to content</a>
-      <Navbar navItems={festivalConfig.navItems} cta={festivalConfig.primaryCta} />
+      <Navbar
+        navItems={festivalConfig.navItems}
+        cta={festivalConfig.primaryCta}
+        ticketUrl={festivalConfig.contact.ticketUrl}
+      />
       <main id="main-content">
         <FestivalHero />
         <FestivalStory />

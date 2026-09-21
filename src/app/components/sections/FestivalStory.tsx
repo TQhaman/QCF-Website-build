@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { festivalConfig } from "@/app/data/festival";
 import styles from "./FestivalStory.module.css";
 
@@ -9,24 +10,41 @@ export function FestivalStory() {
       aria-labelledby="festival-story-title"
     >
       <div className="shell">
-<header className={styles.header}>
-  <p className={styles.eyebrow}>QCF / More than a stage</p>
+        <header className={styles.header}>
+          <p className={styles.eyebrow}>QCF / More than a stage</p>
 
-  <h2 id="festival-story-title">
-    A festival shaped by Quigney.
-  </h2>
+          <h2 id="festival-story-title">A festival shaped by Quigney.</h2>
 
-  <p>
-    QCF brings the street, the people and different forms of creative
-    expression together — turning the precinct into part of the festival
-    itself.
-  </p>
-</header>
+          <p>
+            QCF brings the street, the people and different forms of creative
+            expression together — turning the precinct into part of the
+            festival itself.
+          </p>
+        </header>
 
         <div className={styles.timeline}>
           {festivalConfig.storyBeats.map((beat, index) => (
-            <article className={styles.beat} key={beat.kicker} data-reverse={index % 2 === 1}>
-              <div className={styles.media} data-tone={beat.tone}>
+            <article
+              className={styles.beat}
+              key={beat.kicker}
+              data-reverse={index % 2 === 1}
+            >
+              <div
+                className={styles.media}
+                data-tone={beat.tone}
+                data-has-image={Boolean(beat.image)}
+                data-orientation={beat.image?.orientation}
+              >
+                {beat.image ? (
+                  <Image
+                    className={styles.image}
+                    src={beat.image.src}
+                    alt={beat.image.alt}
+                    fill
+                    sizes="(min-width: 58rem) 55vw, calc(100vw - 1.5rem)"
+                    style={{ objectPosition: beat.image.objectPosition }}
+                  />
+                ) : null}
                 <span className={styles.mediaIndex}>0{index + 1}</span>
                 <span className={styles.mediaLabel}>{beat.mediaLabel}</span>
               </div>

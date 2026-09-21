@@ -1,16 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+import { festivalConfig } from "@/app/data/festival";
 import type { LinkItem } from "@/app/types/festival";
 import styles from "./Navbar.module.css";
 
 type NavbarProps = {
   navItems: LinkItem[];
   cta: LinkItem;
+  ticketUrl: string | null;
 };
 
-export function Navbar({ navItems, cta }: NavbarProps) {
+export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   function closeMenu() {
@@ -32,11 +35,14 @@ export function Navbar({ navItems, cta }: NavbarProps) {
       <div className="shell">
         <div className={styles.bar}>
           <Link className={styles.brand} href="/" onClick={closeMenu}>
-            <span className={styles.brandMark} aria-hidden="true">Q</span>
-            <span className={styles.brandText}>
-              <strong>QUIGNEY</strong>
-              <span>CULTURE FESTIVAL</span>
-            </span>
+            <Image
+              className={styles.brandLogo}
+              src={festivalConfig.media.logoGreen.src}
+              alt={festivalConfig.media.logoGreen.alt}
+              width={festivalConfig.media.logoGreen.width}
+              height={festivalConfig.media.logoGreen.height}
+              sizes="64px"
+            />
           </Link>
 
           <button
@@ -63,8 +69,15 @@ export function Navbar({ navItems, cta }: NavbarProps) {
               ))}
             </nav>
 
-            <a className={styles.cta} href={cta.href} onClick={closeMenu}>
-              {cta.label}
+            <a
+              className={styles.cta}
+              href={ticketUrl ?? cta.href}
+              onClick={closeMenu}
+              target={ticketUrl ? "_blank" : undefined}
+              rel={ticketUrl ? "noreferrer" : undefined}
+              aria-label={ticketUrl ? "Get QCF tickets (opens in a new tab)" : undefined}
+            >
+              {ticketUrl ? "Get tickets" : cta.label}
               <span aria-hidden="true">↗</span>
             </a>
           </div>

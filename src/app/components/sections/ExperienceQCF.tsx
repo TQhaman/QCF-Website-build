@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { festivalConfig } from "@/app/data/festival";
 import styles from "./ExperienceQCF.module.css";
 
@@ -32,7 +33,25 @@ export function ExperienceQCF() {
               data-tone={experience.tone}
               key={experience.label}
             >
-              <div className={styles.media}>
+              <div
+                className={styles.media}
+                data-has-image={Boolean(experience.image)}
+                data-orientation={experience.image?.orientation}
+              >
+                {experience.image ? (
+                  <Image
+                    className={styles.image}
+                    src={experience.image.src}
+                    alt={experience.image.alt}
+                    fill
+                    sizes={
+                      experience.layout === "feature"
+                        ? "(min-width: 70rem) 45vw, (min-width: 48rem) 58vw, calc(100vw - 1.5rem)"
+                        : "(min-width: 70rem) 35vw, (min-width: 48rem) 42vw, calc(100vw - 1.5rem)"
+                    }
+                    style={{ objectPosition: experience.image.objectPosition }}
+                  />
+                ) : null}
                 <span className={styles.number}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -43,15 +62,11 @@ export function ExperienceQCF() {
               </div>
 
               <div className={styles.copy}>
-                <p className={styles.label}>
-                  {experience.label}
-                </p>
+                <p className={styles.label}>{experience.label}</p>
 
                 <h3>{experience.title}</h3>
 
-                <p className={styles.description}>
-                  {experience.copy}
-                </p>
+                <p className={styles.description}>{experience.copy}</p>
               </div>
             </article>
           ))}

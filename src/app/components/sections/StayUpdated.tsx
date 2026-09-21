@@ -1,21 +1,14 @@
 import { festivalConfig } from "@/app/data/festival";
-import type { FestivalContact, LinkItem } from "@/app/types/festival";
+import { SocialIcon } from "@/app/components/shared/SocialIcon";
+import type { FestivalContact } from "@/app/types/festival";
 import styles from "./StayUpdated.module.css";
 
 export function StayUpdated() {
   const { stayUpdated } = festivalConfig;
   const contact: FestivalContact = festivalConfig.contact;
-  const socialLinks = [
-    contact.instagramUrl
-      ? { label: "Instagram", href: contact.instagramUrl }
-      : null,
-    contact.facebookUrl
-      ? { label: "Facebook", href: contact.facebookUrl }
-      : null,
-    contact.tiktokUrl
-      ? { label: "TikTok", href: contact.tiktokUrl }
-      : null,
-  ].filter((item): item is LinkItem => item !== null);
+  const hasConfirmedChannels = Boolean(
+    contact.instagramUrl || contact.tiktokUrl || contact.whatsappUrl,
+  );
 
   return (
     <section
@@ -30,45 +23,64 @@ export function StayUpdated() {
           <p className={styles.intro}>{stayUpdated.intro}</p>
         </header>
 
-        <div className={styles.actions}>
-          <div className={styles.actionGroup}>
-            <p className={styles.actionLabel}>Festival updates</p>
-            {contact.newsletterUrl ? (
-              <a className={styles.action} href={contact.newsletterUrl}>
-                {stayUpdated.newsletterLabel}
-                <span aria-hidden="true">↗</span>
-              </a>
-            ) : (
-              <span className={styles.pendingAction}>
-                {stayUpdated.newsletterPendingLabel}
-              </span>
-            )}
-          </div>
+        {hasConfirmedChannels || contact.newsletterUrl ? (
+          <div className={styles.actions}>
+            {hasConfirmedChannels ? (
+              <div className={styles.actionGroup}>
+                <p className={styles.actionLabel}>Follow QCF</p>
+                <nav className={styles.channelLinks} aria-label="Follow QCF">
+                  {contact.instagramUrl ? (
+                    <a
+                      className={styles.iconLink}
+                      href={contact.instagramUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="QCF on Instagram"
+                    >
+                      <SocialIcon platform="instagram" className={styles.icon} />
+                    </a>
+                  ) : null}
 
-          <div className={styles.actionGroup}>
-            <p className={styles.actionLabel}>Follow QCF</p>
-            {socialLinks.length > 0 ? (
-              <nav className={styles.socialLinks} aria-label="QCF social media">
-                {socialLinks.map((link) => (
-                  <a
-                    className={styles.action}
-                    href={link.href}
-                    key={link.label}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {link.label}
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                ))}
-              </nav>
-            ) : (
-              <p className={styles.socialPending}>
-                {stayUpdated.socialPendingLabel}
-              </p>
-            )}
+                  {contact.tiktokUrl ? (
+                    <a
+                      className={styles.iconLink}
+                      href={contact.tiktokUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="QCF on TikTok"
+                    >
+                      <SocialIcon platform="tiktok" className={styles.icon} />
+                    </a>
+                  ) : null}
+
+                  {contact.whatsappUrl && contact.whatsappDisplay ? (
+                    <a
+                      className={styles.whatsappLink}
+                      href={contact.whatsappUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Message QCF on WhatsApp at ${contact.whatsappDisplay}`}
+                    >
+                      <SocialIcon platform="whatsapp" className={styles.icon} />
+                      <span>{contact.whatsappDisplay}</span>
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
+                </nav>
+              </div>
+            ) : null}
+
+            {contact.newsletterUrl ? (
+              <div className={styles.actionGroup}>
+                <p className={styles.actionLabel}>Festival updates</p>
+                <a className={styles.action} href={contact.newsletterUrl}>
+                  {stayUpdated.newsletterLabel}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            ) : null}
           </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );

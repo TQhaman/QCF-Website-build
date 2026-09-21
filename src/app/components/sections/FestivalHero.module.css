@@ -193,6 +193,40 @@
   color: var(--color-ink-muted);
 }
 
+.heroMedia {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 2px solid var(--color-ink);
+  background: var(--color-ink);
+}
+
+.heroImageFrame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroMedia figcaption {
+  display: flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
 .posterStrip {
   position: relative;
   z-index: 1;
@@ -249,5 +283,9 @@
 
   .posterStrip {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .heroImageFrame {
+    aspect-ratio: 16 / 7;
   }
 }

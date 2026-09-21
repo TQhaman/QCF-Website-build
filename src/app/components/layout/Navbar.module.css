@@ -45,44 +45,13 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
   color: var(--color-ink);
 }
 
-.brandMark {
-  display: grid;
-  width: 2.6rem;
-  height: 2.6rem;
-  place-items: center;
-  border: 2px solid var(--color-ink);
-  background: var(--color-coral);
-  font-family: var(--font-display);
-  font-size: 1.55rem;
-  font-weight: 800;
-  line-height: 1;
-  transform: rotate(-3deg);
-}
-
-.brandText {
-  display: grid;
-  line-height: 0.8;
-}
-
-.brandText strong,
-.brandText span {
-  font-family: var(--font-display);
-}
-
-.brandText strong {
-  font-size: 1.05rem;
-  letter-spacing: 0.06em;
-}
-
-.brandText span {
-  margin-top: 0.22rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
+.brandLogo {
+  width: 3.8rem;
+  height: 3.8rem;
+  object-fit: contain;
 }
 
 .menuButton {

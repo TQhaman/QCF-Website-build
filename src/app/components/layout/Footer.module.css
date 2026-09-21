@@ -19,34 +19,21 @@
 .brandLockup {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
 }
 
-.brandMark {
-  display: grid;
-  width: 3.5rem;
-  height: 3.5rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 2px solid currentColor;
+.brandLogoPanel {
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  padding: 0.35rem;
   background: var(--color-coral);
-  color: var(--color-ink);
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
-  line-height: 1;
-  transform: rotate(-3deg);
+  transform: rotate(-2deg);
 }
 
-.brandLockup p {
-  max-width: 10ch;
-  color: inherit;
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  line-height: 0.82;
-  text-transform: uppercase;
+.brandLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .statement {
@@ -72,6 +59,21 @@
   font-size: 0.82rem;
 }
 
+.ticketAction {
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--color-coral);
+  color: var(--color-ink);
+  padding: 0.8rem 1rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .linkColumn {
   display: grid;
   align-content: start;
@@ -86,7 +88,7 @@
   text-transform: uppercase;
 }
 
-.linkColumn a {
+.linkColumn > a:not(.iconLink) {
   display: flex;
   min-height: 3.25rem;
   align-items: center;
@@ -99,14 +101,51 @@
   text-transform: uppercase;
 }
 
-.linkColumn a:hover {
+.linkColumn > a:hover {
   color: var(--color-coral);
 }
 
-.pending {
-  max-width: 18rem;
-  color: rgba(245, 237, 222, 0.58);
-  line-height: 1.6;
+.socialIcons {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.iconLink {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border: 1px solid rgba(245, 237, 222, 0.4);
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.iconLink:hover {
+  background: var(--color-coral);
+  color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.contactLink {
+  font-size: 1rem !important;
+}
+
+.contactIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: 0 0 auto;
+}
+
+.contactLink span:nth-last-child(2) {
+  margin-right: auto;
 }
 
 .bottom {

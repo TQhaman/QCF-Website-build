@@ -3,6 +3,17 @@ export type LinkItem = {
   href: string;
 };
 
+export type FestivalMedia = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  year?: number;
+  role: string;
+  orientation: "landscape" | "portrait" | "square";
+  objectPosition?: string;
+};
+
 export type FestivalEdition = {
   year: number;
   status: "past" | "upcoming" | "current";
@@ -20,6 +31,7 @@ export type StoryBeat = {
   copy: string;
   mediaLabel: string;
   tone: "ink" | "sand" | "ochre" | "green";
+  image?: FestivalMedia;
 };
 
 export type FestivalExperience = {
@@ -29,6 +41,7 @@ export type FestivalExperience = {
   mediaLabel: string;
   tone: "ink" | "sand" | "coral" | "green";
   layout: "feature" | "standard";
+  image?: FestivalMedia;
 };
 
 export type ProgrammeDay = {
@@ -69,6 +82,8 @@ export type Partner = {
 
 export type FestivalContact = {
   email: string | null;
+  whatsappDisplay: string | null;
+  whatsappUrl: string | null;
   ticketUrl: string | null;
   instagramUrl: string | null;
   facebookUrl: string | null;

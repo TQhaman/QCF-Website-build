@@ -2,6 +2,7 @@ import type {
   FestivalContact,
   FestivalEdition,
   FestivalExperience,
+  FestivalMedia,
   InvolvementPath,
   LinkItem,
   Partner,
@@ -10,6 +11,105 @@ import type {
   ProgrammeCategory,
   StoryBeat,
 } from "@/app/types/festival";
+
+const festivalMedia = {
+  logoGreen: {
+    src: "/images/Logo/Logo_PNG_1.png",
+    alt: "Quigney Culture Festival logo",
+    width: 1500,
+    height: 1500,
+    role: "brand mark for light backgrounds",
+    orientation: "square",
+  },
+  logoBlack: {
+    src: "/images/Logo/Logo_PNG.png",
+    alt: "Quigney Culture Festival logo",
+    width: 1500,
+    height: 1500,
+    role: "brand mark for coral backgrounds",
+    orientation: "square",
+  },
+  crowd: {
+    src: "/images/2026/Soley_Crowd.jpeg",
+    alt: "Crowd gathered behind a barrier at a previous Quigney Culture Festival",
+    width: 1280,
+    height: 854,
+    year: 2026,
+    role: "festival atmosphere and audience",
+    orientation: "landscape",
+    objectPosition: "center bottom",
+  },
+  people: {
+    src: "/images/2026/Friendly_QCF.jpeg",
+    alt: "Two festival visitors smiling with QCF face paint",
+    width: 1280,
+    height: 854,
+    year: 2026,
+    role: "people and community",
+    orientation: "landscape",
+    objectPosition: "center",
+  },
+  vendor: {
+    src: "/images/2026/Vendor.jpeg",
+    alt: "Festival visitor ordering from a colourful food trailer",
+    width: 1280,
+    height: 854,
+    year: 2026,
+    role: "food, vendors and markets",
+    orientation: "landscape",
+    objectPosition: "center",
+  },
+  streetRunway: {
+    src: "/images/2026/Group_streetrunway.jpeg",
+    alt: "Models walking an outdoor street runway at a previous QCF edition",
+    width: 854,
+    height: 1280,
+    year: 2026,
+    role: "street runway and fashion",
+    orientation: "portrait",
+    objectPosition: "center bottom",
+  },
+  fashionYellow: {
+    src: "/images/2026/Yellowdress_fashion.jpeg",
+    alt: "Model wearing a yellow patterned dress at a QCF runway presentation",
+    width: 854,
+    height: 1280,
+    year: 2026,
+    role: "fashion and design",
+    orientation: "portrait",
+    objectPosition: "center bottom",
+  },
+  fashionBlue: {
+    src: "/images/2026/Blue_dress_fashion.jpeg",
+    alt: "Model wearing a blue dress at a QCF runway presentation",
+    width: 854,
+    height: 1280,
+    year: 2026,
+    role: "supporting fashion imagery",
+    orientation: "portrait",
+    objectPosition: "center bottom",
+  },
+  performanceAudience: {
+    src: "/images/2026/Bongiwe.jpeg",
+    alt: "Musician performing with a guitar before a festival crowd",
+    width: 1280,
+    height: 854,
+    year: 2026,
+    role: "live music and audience",
+    orientation: "landscape",
+    objectPosition: "right center",
+  },
+  performanceStage: {
+    src: "/images/2026/Jabu.jpeg",
+    alt: "Guitarist performing on an outdoor stage before a festival crowd",
+    width: 1280,
+    height: 854,
+    year: 2026,
+    role: "street performance",
+    orientation: "landscape",
+    objectPosition: "right center",
+  },
+} satisfies Record<string, FestivalMedia>;
 
 const siteLinks = {
   festival: { label: "Festival", href: "#festival" },
@@ -30,6 +130,7 @@ export const festivalConfig = {
   location: "Caxton & Burns Streets, Quigney, East London",
   description:
     "Quigney Culture Festival brings music, food, fashion, art, design and community into the streets of Quigney, East London.",
+  media: festivalMedia,
   navItems: [
     siteLinks.festival,
     siteLinks.programme,
@@ -43,6 +144,7 @@ export const festivalConfig = {
     title: "Quigney Culture Festival",
     statement:
       "Music, food, fashion, art and community take over the streets of Quigney for two days of culture in motion.",
+    image: festivalMedia.crowd,
   },
   storyBeats: [
   {
@@ -50,24 +152,27 @@ export const festivalConfig = {
     title: "The streets become part of the festival.",
     copy:
       "QCF unfolds through Quigney's street precinct, with performance, food and gathering spaces extending the experience beyond a single stage.",
-    mediaLabel: "QCF in the streets",
+    mediaLabel: "QCF 2026 / Live in the street",
     tone: "ink",
+    image: festivalMedia.performanceStage,
   },
   {
     kicker: "02 / Culture",
     title: "Music, food, fashion and art share the street.",
     copy:
       "Live music sits alongside food, fashion and runway moments, visual art, design and storytelling — different expressions of culture meeting in one place.",
-    mediaLabel: "Culture in motion",
+    mediaLabel: "QCF 2026 / Runway and design",
     tone: "ochre",
+    image: festivalMedia.fashionYellow,
   },
   {
     kicker: "03 / People",
     title: "The festival is shaped by the people in it.",
     copy:
       "Artists, residents, visitors, vendors and local creatives all bring something to QCF. The experience is built around the people who perform, make, gather and take part.",
-    mediaLabel: "The people of QCF",
+    mediaLabel: "QCF 2026 / Festival faces",
     tone: "green",
+    image: festivalMedia.people,
   },
   {
     kicker: "04 / Place",
@@ -85,9 +190,10 @@ experiences: [
     title: "The street becomes a stage.",
     copy:
       "Live music and performance give QCF its pulse, bringing artists and audiences together across the festival precinct.",
-    mediaLabel: "Live music / performance",
+    mediaLabel: "QCF 2026 / Live performance",
     tone: "ink",
     layout: "feature",
+    image: festivalMedia.performanceAudience,
   },
   {
     label: "Food & Hospitality",
@@ -103,9 +209,10 @@ experiences: [
     title: "Style moves through the precinct.",
     copy:
       "Fashion, runway moments and design bring another form of performance to QCF, placing creative expression directly in front of festival audiences.",
-    mediaLabel: "Fashion / runway / design",
+    mediaLabel: "QCF 2026 / Street runway",
     tone: "coral",
     layout: "standard",
+    image: festivalMedia.streetRunway,
   },
   {
     label: "Art & Story",
@@ -121,9 +228,10 @@ experiences: [
     title: "Meet the people making here.",
     copy:
       "Creative markets bring local makers, vendors and small businesses into the festival experience and give visitors more of Quigney to discover.",
-    mediaLabel: "Markets / makers / local business",
+    mediaLabel: "QCF 2026 / Food and vendors",
     tone: "green",
     layout: "feature",
+    image: festivalMedia.vendor,
   },
   {
     label: "People & Community",
@@ -265,8 +373,6 @@ stayUpdated: {
   intro:
     "Programme announcements, ticket information, festival updates and new ways to take part will be shared as QCF 2027 takes shape.",
   newsletterLabel: "Join the QCF mailing list",
-  newsletterPendingLabel: "2027 updates coming soon",
-  socialPendingLabel: "Official social channels will be linked here once confirmed.",
 },
 
 footer: {
@@ -304,10 +410,12 @@ footer: {
   ] satisfies FestivalEdition[],
   contact: {
     email: null,
+    whatsappDisplay: "067 126 6242",
+    whatsappUrl: "https://wa.me/27671266242",
     ticketUrl: null,
-    instagramUrl: null,
+    instagramUrl: "https://www.instagram.com/thequigneyfest",
     facebookUrl: null,
-    tiktokUrl: null,
+    tiktokUrl: "https://www.tiktok.com/@thequigneyfest",
     newsletterUrl: null,
   } satisfies FestivalContact,
   seo: {
