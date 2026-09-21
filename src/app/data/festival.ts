@@ -1,13 +1,24 @@
 import type {
+  FestivalContact,
   FestivalEdition,
   FestivalExperience,
   InvolvementPath,
   LinkItem,
+  Partner,
   PrecinctFeature,
   ProgrammeDay,
   ProgrammeCategory,
   StoryBeat,
 } from "@/app/types/festival";
+
+const siteLinks = {
+  festival: { label: "Festival", href: "#festival" },
+  programme: { label: "Programme", href: "#programme" },
+  precinct: { label: "QCF Precinct", href: "#precinct" },
+  getInvolved: { label: "Get Involved", href: "#get-involved" },
+  visit: { label: "Visit", href: "#visit" },
+} satisfies Record<string, LinkItem>;
+
 export const festivalConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   locale: "en-ZA",
@@ -20,11 +31,11 @@ export const festivalConfig = {
   description:
     "Quigney Culture Festival brings music, food, fashion, art, design and community into the streets of Quigney, East London.",
   navItems: [
-    { label: "Festival", href: "#festival" },
-    { label: "Programme", href: "#programme" },
-    { label: "QCF Precinct", href: "#precinct" },
-    { label: "Get Involved", href: "#get-involved" },
-    { label: "Visit", href: "#visit" },
+    siteLinks.festival,
+    siteLinks.programme,
+    siteLinks.precinct,
+    siteLinks.getInvolved,
+    siteLinks.visit,
   ] satisfies LinkItem[],
   primaryCta: { label: "2027 programme", href: "#programme" } satisfies LinkItem,
   hero: {
@@ -39,7 +50,7 @@ export const festivalConfig = {
     title: "The streets become part of the festival.",
     copy:
       "QCF unfolds through Quigney's street precinct, with performance, food and gathering spaces extending the experience beyond a single stage.",
-    mediaLabel: "QCF street / crowd photography",
+    mediaLabel: "QCF in the streets",
     tone: "ink",
   },
   {
@@ -47,15 +58,15 @@ export const festivalConfig = {
     title: "Music, food, fashion and art share the street.",
     copy:
       "Live music sits alongside food, fashion and runway moments, visual art, design and storytelling — different expressions of culture meeting in one place.",
-    mediaLabel: "Performance / fashion / culture photography",
+    mediaLabel: "Culture in motion",
     tone: "ochre",
   },
   {
-    kicker: "03 / Voice",
+    kicker: "03 / People",
     title: "The festival is shaped by the people in it.",
     copy:
       "Artists, residents, visitors, vendors and local creatives all bring something to QCF. The experience is built around the people who perform, make, gather and take part.",
-    mediaLabel: "Artists / community / makers photography",
+    mediaLabel: "The people of QCF",
     tone: "green",
   },
   {
@@ -63,7 +74,7 @@ export const festivalConfig = {
     title: "Quigney is more than the location.",
     copy:
       "Caxton and Burns Streets become a cultural precinct for the festival, with the neighbourhood, its public spaces and its street life forming part of the experience.",
-    mediaLabel: "Drone / street precinct photography",
+    mediaLabel: "Rooted in Quigney",
     tone: "sand",
   },
 ] satisfies StoryBeat[],
@@ -74,7 +85,7 @@ experiences: [
     title: "The street becomes a stage.",
     copy:
       "Live music and performance give QCF its pulse, bringing artists and audiences together across the festival precinct.",
-    mediaLabel: "Live music / performance photography",
+    mediaLabel: "Live music / performance",
     tone: "ink",
     layout: "feature",
   },
@@ -83,7 +94,7 @@ experiences: [
     title: "Come hungry. Stay awhile.",
     copy:
       "Food and hospitality are part of the experience — giving people space to slow down, meet and stay in the precinct between performances.",
-    mediaLabel: "Food / hospitality photography",
+    mediaLabel: "Food / hospitality",
     tone: "sand",
     layout: "standard",
   },
@@ -92,7 +103,7 @@ experiences: [
     title: "Style moves through the precinct.",
     copy:
       "Fashion, runway moments and design bring another form of performance to QCF, placing creative expression directly in front of festival audiences.",
-    mediaLabel: "Fashion / runway / design photography",
+    mediaLabel: "Fashion / runway / design",
     tone: "coral",
     layout: "standard",
   },
@@ -101,7 +112,7 @@ experiences: [
     title: "Creativity lives beyond the stage.",
     copy:
       "Visual art, public art and storytelling give the festival another layer — creating things to discover as people move through the precinct.",
-    mediaLabel: "Art / installations / storytelling photography",
+    mediaLabel: "Art / installations / storytelling",
     tone: "sand",
     layout: "feature",
   },
@@ -110,7 +121,7 @@ experiences: [
     title: "Meet the people making here.",
     copy:
       "Creative markets bring local makers, vendors and small businesses into the festival experience and give visitors more of Quigney to discover.",
-    mediaLabel: "Market / vendors / makers photography",
+    mediaLabel: "Markets / makers / local business",
     tone: "green",
     layout: "feature",
   },
@@ -119,7 +130,7 @@ experiences: [
     title: "Made to be shared.",
     copy:
       "QCF brings together the people who perform, cook, sell, create, visit and gather — turning the festival into something experienced together rather than simply watched.",
-    mediaLabel: "People / families / community photography",
+    mediaLabel: "People / families / community",
     tone: "ink",
     layout: "standard",
   },
@@ -233,6 +244,43 @@ getInvolved: {
   ] satisfies InvolvementPath[],
 },
 
+partners: {
+  eyebrow: "QCF / Partners",
+  title: "Made possible together.",
+  intro:
+    "QCF grows through collaboration with organisations that support culture, creativity, community and the festival precinct. Confirmed 2027 partners will be recognised here.",
+  emptyState: "Partner information will be added once confirmed.",
+  futureCategories: [
+    "Cultural partners",
+    "Funding partners",
+    "Media partners",
+    "Hospitality partners",
+  ],
+  items: [] as Partner[],
+},
+
+stayUpdated: {
+  eyebrow: "QCF / Stay in the loop",
+  title: "The next announcement shouldn’t pass you by.",
+  intro:
+    "Programme announcements, ticket information, festival updates and new ways to take part will be shared as QCF 2027 takes shape.",
+  newsletterLabel: "Join the QCF mailing list",
+  newsletterPendingLabel: "2027 updates coming soon",
+  socialPendingLabel: "Official social channels will be linked here once confirmed.",
+},
+
+footer: {
+  tagline: "Where culture meets the street.",
+  exploreItems: [
+    siteLinks.festival,
+    siteLinks.programme,
+    siteLinks.precinct,
+    siteLinks.getInvolved,
+    siteLinks.visit,
+  ] satisfies LinkItem[],
+  informationItems: [] as LinkItem[],
+},
+
   editions: [
     {
       year: 2026,
@@ -260,7 +308,8 @@ getInvolved: {
     instagramUrl: null,
     facebookUrl: null,
     tiktokUrl: null,
-  },
+    newsletterUrl: null,
+  } satisfies FestivalContact,
   seo: {
     keywords: [
       "Quigney Culture Festival",

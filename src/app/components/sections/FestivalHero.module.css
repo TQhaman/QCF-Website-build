@@ -220,7 +220,7 @@
 }
 
 .posterStrip span:nth-child(3) {
-  /* VOICE carries the green accent in the 2027 concept. */
+  /* PEOPLE carries the green accent in the 2027 concept. */
   background: var(--color-green);
   color: var(--color-paper);
 }

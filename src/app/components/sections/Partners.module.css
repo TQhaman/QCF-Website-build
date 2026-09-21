@@ -1,0 +1,190 @@
+.section {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--color-sand);
+  color: var(--color-ink);
+}
+
+.header {
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.eyebrow,
+.emptyLabel,
+.category {
+  color: var(--color-coral-dark);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+}
+
+.headerGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header h2 {
+  max-width: 10ch;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.headerGrid > p {
+  max-width: 36rem;
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+}
+
+.emptyState {
+  position: relative;
+  display: grid;
+  min-height: clamp(18rem, 34vw, 28rem);
+  align-content: space-between;
+  gap: 3rem;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-top: 1px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.emptyState > p:not(.emptyLabel) {
+  position: relative;
+  z-index: 1;
+  max-width: 27rem;
+  color: var(--color-ink);
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.categoryBlock {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.categoryLabel {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.categories span {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(20, 18, 15, 0.35);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.emptyMark {
+  position: absolute;
+  right: -0.04em;
+  bottom: -0.2em;
+  color: rgba(21, 19, 15, 0.08);
+  font-family: var(--font-display);
+  font-size: clamp(9rem, 35vw, 28rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.72;
+}
+
+.partnerGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--color-ink);
+  border-left: 1px solid var(--color-ink);
+  list-style: none;
+}
+
+.partner {
+  min-width: 0;
+  border-right: 1px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.partnerContent {
+  position: relative;
+  display: grid;
+  min-height: 11rem;
+  align-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.logo {
+  width: 100%;
+  height: 4.5rem;
+  object-fit: contain;
+}
+
+.partnerName {
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.external {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.8rem;
+}
+
+@media (min-width: 48rem) {
+  .headerGrid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.7fr);
+    align-items: end;
+    gap: 4rem;
+  }
+
+  .headerGrid > p {
+    justify-self: end;
+  }
+
+  .emptyState {
+    grid-template-columns: minmax(12rem, 0.5fr) minmax(20rem, 0.7fr);
+    align-items: end;
+  }
+
+  .emptyState > p:not(.emptyLabel) {
+    justify-self: end;
+  }
+
+  .categoryBlock {
+    grid-column: 1 / -1;
+  }
+
+  .partnerGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .partnerContent {
+    min-height: 14rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 70rem) {
+  .partnerGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

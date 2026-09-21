@@ -55,19 +55,20 @@ export function QCFPrecinct() {
             <div className={styles.mapNote}>
               <span>Precinct map</span>
               <p>
-                Final stage, vendor, food and visitor locations will be added
-                once the festival layout is confirmed.
+                Stages, food, markets, art and visitor facilities will be
+                mapped here as the 2027 programme takes shape.
               </p>
             </div>
           </div>
 
           <aside className={styles.mapInfo}>
-            <p className={styles.smallLabel}>How to use this later</p>
+            <p className={styles.smallLabel}>Explore the precinct</p>
             <h3>Know where you&apos;re going before you arrive.</h3>
             <p>
-              Once the final site plan is confirmed, this area can become the
-              visitor&apos;s practical guide to stages, food, markets, art,
-              facilities and other points across the QCF precinct.
+              The QCF precinct will bring together stages, food, markets, art
+              and visitor facilities across Caxton and Burns Streets. A
+              detailed festival map will be available as the 2027 programme
+              takes shape.
             </p>
 
             <div className={styles.futureLayers}>
@@ -95,18 +96,17 @@ export function QCFPrecinct() {
 
         <div className={styles.mediaCallout}>
           <div>
-            <p className={styles.smallLabel}>Recommended media</p>
+            <p className={styles.smallLabel}>QCF in the streets</p>
             <h3>
-              Show the precinct
+              See the precinct
               <br />
-              full of people.
+              come alive.
             </h3>
           </div>
 
           <p>
-            A wide or elevated photograph — ideally drone footage or
-            photography from a previous QCF — would help visitors immediately
-            understand how the festival occupies the streets.
+            From performances and food to markets and gathering spaces, QCF
+            transforms the streets into part of the festival experience.
           </p>
         </div>
       </div>

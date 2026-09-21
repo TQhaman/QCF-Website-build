@@ -59,3 +59,19 @@ export type InvolvementPath = {
   href: string | null;
   tone: "paper" | "sand" | "green";
 };
+
+export type Partner = {
+  name: string;
+  category?: string;
+  logo?: string;
+  href?: string;
+};
+
+export type FestivalContact = {
+  email: string | null;
+  ticketUrl: string | null;
+  instagramUrl: string | null;
+  facebookUrl: string | null;
+  tiktokUrl: string | null;
+  newsletterUrl: string | null;
+};

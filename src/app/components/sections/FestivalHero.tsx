@@ -45,10 +45,13 @@ export function FestivalHero() {
           </div>
         </div>
 
-        <div className={styles.posterStrip} aria-label="QCF visual direction placeholder">
+        <div
+          className={styles.posterStrip}
+          aria-label="QCF themes: street, culture, people and place"
+        >
           <span>STREET</span>
           <span>CULTURE</span>
-          <span>VOICE</span>
+          <span>PEOPLE</span>
           <span>PLACE</span>
         </div>
       </div>

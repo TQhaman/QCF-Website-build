@@ -56,9 +56,9 @@ export function EditionBridge() {
                 <span>Festival precinct</span>
                 <strong>{upcoming.location}</strong>
               </div>
-              <a className={styles.programmeCta} href="#programme-details" aria-disabled="true">
+              <span className={styles.programmeCta}>
                 Programme announcements coming soon
-              </a>
+              </span>
             </div>
           </article>
         </div>

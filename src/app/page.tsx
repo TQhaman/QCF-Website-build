@@ -4,11 +4,13 @@ import { EditionBridge } from "@/app/components/sections/EditionBridge";
 import { FestivalHero } from "@/app/components/sections/FestivalHero";
 import { FestivalStory } from "@/app/components/sections/FestivalStory";
 import { GetInvolved } from "@/app/components/sections/GetInvolved";
+import { Partners } from "@/app/components/sections/Partners";
 import { StructuredData } from "@/app/components/shared/StructuredData";
 import { festivalConfig } from "@/app/data/festival";
 import { ExperienceQCF } from "@/app/components/sections/ExperienceQCF";
 import { ProgrammePreview } from "@/app/components/sections/ProgrammePreview";
 import { QCFPrecinct } from "@/app/components/sections/QCFPrecinct";
+import { StayUpdated } from "@/app/components/sections/StayUpdated";
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
         <ProgrammePreview />
         <QCFPrecinct />
         <GetInvolved />
+        <Partners />
+        <StayUpdated />
       </main>
       <Footer />
       <StructuredData />
