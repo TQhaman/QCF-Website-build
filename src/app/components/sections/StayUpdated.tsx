@@ -27,15 +27,15 @@ export function StayUpdated() {
           <div className={styles.actions}>
             {hasConfirmedChannels ? (
               <div className={styles.actionGroup}>
-                <p className={styles.actionLabel}>Follow QCF</p>
-                <nav className={styles.channelLinks} aria-label="Follow QCF">
+                <p className={styles.actionLabel}>Follow TQCF</p>
+                <nav className={styles.channelLinks} aria-label="Follow TQCF">
                   {contact.instagramUrl ? (
                     <a
                       className={styles.iconLink}
                       href={contact.instagramUrl}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="QCF on Instagram"
+                      aria-label="TQCF on Instagram"
                     >
                       <SocialIcon platform="instagram" className={styles.icon} />
                     </a>
@@ -47,7 +47,7 @@ export function StayUpdated() {
                       href={contact.tiktokUrl}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label="QCF on TikTok"
+                      aria-label="TQCF on TikTok"
                     >
                       <SocialIcon platform="tiktok" className={styles.icon} />
                     </a>
@@ -59,7 +59,7 @@ export function StayUpdated() {
                       href={contact.whatsappUrl}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`Message QCF on WhatsApp at ${contact.whatsappDisplay}`}
+                      aria-label={`Message TQCF on WhatsApp at ${contact.whatsappDisplay}`}
                     >
                       <SocialIcon platform="whatsapp" className={styles.icon} />
                       <span>{contact.whatsappDisplay}</span>

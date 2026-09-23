@@ -18,7 +18,7 @@ export function QCFPrecinct() {
             <h2 id="precinct-title">
               Discover the
               <br />
-              QCF Precinct.
+              TQCF Precinct.
             </h2>
 
             <div className={styles.intro}>
@@ -44,7 +44,7 @@ export function QCFPrecinct() {
             </div>
 
             <div className={styles.mapCentre}>
-              <span className={styles.mapLabel}>QCF</span>
+              <span className={styles.mapLabel}>TQCF</span>
               <strong>
                 FESTIVAL
                 <br />
@@ -55,8 +55,7 @@ export function QCFPrecinct() {
             <div className={styles.mapNote}>
               <span>Precinct map</span>
               <p>
-                Stages, food, markets, art and visitor facilities will be
-                mapped here as the 2027 programme takes shape.
+                The full precinct map is coming with the 2027 programme.
               </p>
             </div>
           </div>
@@ -65,10 +64,9 @@ export function QCFPrecinct() {
             <p className={styles.smallLabel}>Explore the precinct</p>
             <h3>Know where you&apos;re going before you arrive.</h3>
             <p>
-              The QCF precinct will bring together stages, food, markets, art
-              and visitor facilities across Caxton and Burns Streets. A
-              detailed festival map will be available as the 2027 programme
-              takes shape.
+              Move between stages, food, markets, art and visitor facilities
+              across Caxton and Burns Streets. The full precinct map is coming
+              with the 2027 programme.
             </p>
 
             <div className={styles.futureLayers}>
@@ -96,7 +94,7 @@ export function QCFPrecinct() {
 
         <div className={styles.mediaCallout}>
           <div>
-            <p className={styles.smallLabel}>QCF in the streets</p>
+            <p className={styles.smallLabel}>TQCF in the streets</p>
             <h3>
               See the precinct
               <br />
@@ -105,8 +103,8 @@ export function QCFPrecinct() {
           </div>
 
           <p>
-            From performances and food to markets and gathering spaces, QCF
-            transforms the streets into part of the festival experience.
+            From performances and food to markets and gathering spaces, TQCF
+            makes the streets part of the festival.
           </p>
         </div>
       </div>

@@ -56,8 +56,8 @@ export function GetInvolved() {
         <div className={styles.note}>
           <p className={styles.noteLabel}>2027 participation</p>
           <p>
-            Application forms, deadlines, eligibility requirements and contact
-            details will be added once confirmed by the QCF team.
+            Want to trade, perform or partner with TQCF? 2027 opportunities
+            will be shared here.
           </p>
         </div>
       </div>

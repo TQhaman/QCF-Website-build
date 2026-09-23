@@ -17,7 +17,7 @@ export function EditionBridge() {
             <h2 id="editions-title">The story continues.</h2>
           </div>
           <p className={styles.intro}>
-            Every edition leaves its own memories. QCF can look forward to what is coming next while keeping the photographs, performances and moments from previous years part of the story.
+            Relive the moments that shaped TQCF, then see where the festival goes next.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export function EditionBridge() {
             <div className={styles.yearDisplay}>{upcoming.year}</div>
             <div className={styles.cardCopy}>
               <p className={styles.cardMeta}>{upcoming.dates}</p>
-              <h3>What comes next</h3>
+              <h3>See what&apos;s next</h3>
               <p>{upcoming.summary}</p>
               <div className={styles.locationBlock}>
                 <span>Festival precinct</span>

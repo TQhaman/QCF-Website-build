@@ -25,9 +25,9 @@ export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
       <div className={styles.editionBar}>
         <div className="shell">
           <p>
-            <strong>QCF 2027</strong>
+            <strong>TQCF 2027</strong>
             <span>26–27 FEB</span>
-            <span>QUIGNEY · EAST LONDON</span>
+            <span>QUIGNEY · KUGOMPO</span>
           </p>
         </div>
       </div>
@@ -37,7 +37,7 @@ export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
           <Link
             className={styles.brand}
             href="/"
-            aria-label="Quigney Culture Festival home"
+            aria-label="The Quigney Culture Festival home"
             onClick={closeMenu}
           >
             <Image
@@ -80,7 +80,7 @@ export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
               onClick={closeMenu}
               target={ticketUrl ? "_blank" : undefined}
               rel={ticketUrl ? "noopener noreferrer" : undefined}
-              aria-label={ticketUrl ? "Get QCF tickets (opens in a new tab)" : undefined}
+              aria-label={ticketUrl ? "Get TQCF tickets (opens in a new tab)" : undefined}
             >
               {ticketUrl ? "Get tickets" : cta.label}
               {ticketUrl ? <span aria-hidden="true">↗</span> : null}

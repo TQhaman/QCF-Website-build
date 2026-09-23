@@ -11,14 +11,13 @@ export function FestivalStory() {
     >
       <div className="shell">
         <header className={styles.header}>
-          <p className={styles.eyebrow}>QCF / More than a stage</p>
+          <p className={styles.eyebrow}>TQCF / More than a stage</p>
 
           <h2 id="festival-story-title">A festival shaped by Quigney.</h2>
 
           <p>
-            QCF brings the street, the people and different forms of creative
-            expression together — turning the precinct into part of the
-            festival itself.
+            At TQCF, the streets, the people and every form of creative
+            expression are part of the festival.
           </p>
         </header>
 

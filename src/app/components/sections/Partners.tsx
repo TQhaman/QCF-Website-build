@@ -23,7 +23,7 @@ export function Partners() {
         </header>
 
         {hasPartners ? (
-          <ul className={styles.partnerGrid} aria-label="QCF partners and supporters">
+          <ul className={styles.partnerGrid} aria-label="TQCF partners and supporters">
             {partners.items.map((partner) => {
               const content = (
                 <>
@@ -78,7 +78,7 @@ export function Partners() {
               </div>
             </div>
 
-            <span className={styles.emptyMark} aria-hidden="true">QCF</span>
+            <span className={styles.emptyMark} aria-hidden="true">TQCF</span>
           </div>
         )}
       </div>

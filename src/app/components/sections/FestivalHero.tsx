@@ -43,7 +43,7 @@ export function FestivalHero() {
                   href={contact.ticketUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Get QCF tickets (opens in a new tab)"
+                  aria-label="Get TQCF tickets (opens in a new tab)"
                 >
                   Get tickets <span aria-hidden="true">↗</span>
                 </a>
@@ -78,14 +78,14 @@ export function FestivalHero() {
             />
           </div>
           <figcaption>
-            <span>QCF {hero.image.year}</span>
+            <span>TQCF {hero.image.year}</span>
             <span>Festival atmosphere</span>
           </figcaption>
         </figure>
 
         <div
           className={styles.posterStrip}
-          aria-label="QCF themes: street, culture, people and place"
+          aria-label="TQCF themes: street, culture, people and place"
         >
           <span>STREET</span>
           <span>CULTURE</span>

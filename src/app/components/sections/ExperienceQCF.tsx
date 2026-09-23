@@ -11,17 +11,17 @@ export function ExperienceQCF() {
     >
       <div className="shell">
         <header className={styles.header}>
-          <p className={styles.eyebrow}>QCF / Across the precinct</p>
+          <p className={styles.eyebrow}>TQCF / Across the precinct</p>
 
           <div className={styles.headerGrid}>
             <h2 id="experience-title">
-              There&apos;s more than one way into QCF.
+              There&apos;s more than one way into TQCF.
             </h2>
 
             <p>
-              Come for a performance and find food, fashion, art, makers
-              and people along the way. QCF is designed as a festival you
-              move through, not an experience that happens on one stage.
+              Come for a performance and find food, fashion, art, makers and
+              people along the way. TQCF moves through the precinct, not just
+              one stage.
             </p>
           </div>
         </header>

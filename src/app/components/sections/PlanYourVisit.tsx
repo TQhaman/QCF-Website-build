@@ -39,7 +39,7 @@ export function PlanYourVisit() {
                 href={contact.ticketUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Get QCF tickets (opens in a new tab)"
+                aria-label="Get TQCF tickets (opens in a new tab)"
               >
                 {visit.ticketLabel}
                 <span aria-hidden="true">↗</span>

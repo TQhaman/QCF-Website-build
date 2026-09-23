@@ -25,7 +25,7 @@ export default function OpenGraphImage() {
           <span>{festivalConfig.dates}</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column", lineHeight: 0.78, fontSize: 108, fontWeight: 800 }}>
-          <span>QUIGNEY</span>
+          <span>THE QUIGNEY</span>
           <span>CULTURE</span>
           <span>FESTIVAL <b style={{ color: "#a94e2e" }}>2027</b></span>
         </div>

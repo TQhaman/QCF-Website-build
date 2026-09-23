@@ -67,7 +67,7 @@ export function ProgrammePreview() {
         <div className={styles.categories}>
           <div className={styles.categoryIntro}>
             <p className={styles.categoryEyebrow}>
-              Across QCF
+              Across TQCF
             </p>
 
             <h3>
@@ -95,8 +95,7 @@ export function ProgrammePreview() {
 
         <footer className={styles.footer}>
           <p>
-            Full programme, artist details, venues and
-            performance times will be published once confirmed.
+            Artists, venues and performance times are still to come.
           </p>
 
           <span className={styles.comingSoon}>

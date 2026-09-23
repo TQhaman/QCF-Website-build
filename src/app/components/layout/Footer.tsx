@@ -45,14 +45,14 @@ export function Footer() {
                 href={contact.ticketUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Get QCF tickets (opens in a new tab)"
+                aria-label="Get TQCF tickets (opens in a new tab)"
               >
                 Get tickets <span aria-hidden="true">↗</span>
               </a>
             ) : null}
           </div>
 
-          <nav className={styles.linkColumn} aria-label="Explore QCF">
+          <nav className={styles.linkColumn} aria-label="Explore TQCF">
             <p className={styles.columnLabel}>Explore</p>
             {festivalConfig.footer.exploreItems.map((item) => (
               <a key={item.href} href={item.href}>
@@ -72,7 +72,7 @@ export function Footer() {
                     href={contact.instagramUrl}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="QCF on Instagram"
+                    aria-label="TQCF on Instagram"
                   >
                     <SocialIcon platform="instagram" className={styles.icon} />
                   </a>
@@ -84,7 +84,7 @@ export function Footer() {
                     href={contact.tiktokUrl}
                     target="_blank"
                     rel="noreferrer"
-                    aria-label="QCF on TikTok"
+                    aria-label="TQCF on TikTok"
                   >
                     <SocialIcon platform="tiktok" className={styles.icon} />
                   </a>
@@ -97,7 +97,7 @@ export function Footer() {
                   href={contact.whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`Message QCF on WhatsApp at ${contact.whatsappDisplay}`}
+                  aria-label={`Message TQCF on WhatsApp at ${contact.whatsappDisplay}`}
                 >
                   <SocialIcon platform="whatsapp" className={styles.contactIcon} />
                   <span>{contact.whatsappDisplay}</span>
@@ -119,7 +119,7 @@ export function Footer() {
 
               {contact.email ? (
                 <a className={styles.contactLink} href={`mailto:${contact.email}`}>
-                  <span>Email QCF</span>
+                  <span>Email TQCF</span>
                   <span aria-hidden="true">↗</span>
                 </a>
               ) : null}
@@ -140,7 +140,7 @@ export function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>Quigney Culture Festival</p>
+          <p>The Quigney Culture Festival</p>
           <p>{festivalConfig.editionYear} edition</p>
         </div>
       </div>
