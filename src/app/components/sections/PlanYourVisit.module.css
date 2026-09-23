@@ -1,0 +1,145 @@
+.section {
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.header {
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.eyebrow,
+.ticketLabel,
+.fact dt {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--color-coral-dark);
+}
+
+.headerGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header h2 {
+  max-width: 10ch;
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.headerGrid > p {
+  max-width: 34rem;
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+}
+
+.content {
+  display: grid;
+  border-top: 1px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.facts {
+  margin: 0;
+}
+
+.fact {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.fact:last-child {
+  border-bottom: 0;
+}
+
+.fact dt {
+  color: var(--color-coral-dark);
+}
+
+.fact dd {
+  max-width: 24ch;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.ticketPanel {
+  display: grid;
+  align-content: end;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.ticketLabel {
+  color: var(--color-coral);
+}
+
+.ticketPending {
+  max-width: 22rem;
+  color: rgba(245, 237, 222, 0.78);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.ticketAction {
+  display: flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--color-coral);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (min-width: 48rem) {
+  .headerGrid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.7fr);
+    align-items: end;
+    gap: 4rem;
+  }
+
+  .headerGrid > p {
+    justify-self: end;
+  }
+
+  .content {
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+  }
+
+  .facts {
+    padding-right: clamp(2rem, 5vw, 5rem);
+  }
+
+  .fact {
+    grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+}

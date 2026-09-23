@@ -34,14 +34,19 @@ export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
 
       <div className="shell">
         <div className={styles.bar}>
-          <Link className={styles.brand} href="/" onClick={closeMenu}>
+          <Link
+            className={styles.brand}
+            href="/"
+            aria-label="Quigney Culture Festival home"
+            onClick={closeMenu}
+          >
             <Image
               className={styles.brandLogo}
               src={festivalConfig.media.logoGreen.src}
               alt={festivalConfig.media.logoGreen.alt}
               width={festivalConfig.media.logoGreen.width}
               height={festivalConfig.media.logoGreen.height}
-              sizes="64px"
+              sizes="72px"
             />
           </Link>
 
@@ -74,11 +79,11 @@ export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
               href={ticketUrl ?? cta.href}
               onClick={closeMenu}
               target={ticketUrl ? "_blank" : undefined}
-              rel={ticketUrl ? "noreferrer" : undefined}
+              rel={ticketUrl ? "noopener noreferrer" : undefined}
               aria-label={ticketUrl ? "Get QCF tickets (opens in a new tab)" : undefined}
             >
               {ticketUrl ? "Get tickets" : cta.label}
-              <span aria-hidden="true">↗</span>
+              {ticketUrl ? <span aria-hidden="true">↗</span> : null}
             </a>
           </div>
         </div>

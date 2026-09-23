@@ -4,6 +4,7 @@ import styles from "./FestivalHero.module.css";
 
 export function FestivalHero() {
   const { contact, hero } = festivalConfig;
+  const { dates, location } = festivalConfig.event;
 
   return (
     <section className={styles.hero}>
@@ -27,10 +28,10 @@ export function FestivalHero() {
 
         <div className={styles.detailsGrid}>
           <div className={styles.dateBlock}>
-            <span>26</span>
+            <span>{dates.startDay}</span>
             <span className={styles.dateConnector}>—</span>
-            <span>27</span>
-            <small>FEB / 2027</small>
+            <span>{dates.endDay}</span>
+            <small>{dates.monthShort} / {festivalConfig.editionYear}</small>
           </div>
 
           <div className={styles.statement}>
@@ -41,7 +42,7 @@ export function FestivalHero() {
                   className={styles.primaryAction}
                   href={contact.ticketUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label="Get QCF tickets (opens in a new tab)"
                 >
                   Get tickets <span aria-hidden="true">↗</span>
@@ -59,8 +60,8 @@ export function FestivalHero() {
 
           <div className={styles.location}>
             <span className={styles.locationLabel}>Festival precinct</span>
-            <strong>Caxton &amp; Burns Streets</strong>
-            <p>Quigney · East London · Eastern Cape</p>
+            <strong>{location.primary}</strong>
+            <p>{location.suburb} · {location.city} · {location.region}</p>
           </div>
         </div>
 

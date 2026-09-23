@@ -55,13 +55,13 @@
 
 .imageWrap {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
   overflow: hidden;
   background: var(--color-sand);
 }
 
 .image {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .cardCopy {
@@ -199,10 +199,6 @@
 
   .pastCard {
     display: grid;
-    grid-template-rows: minmax(20rem, 1fr) auto;
-  }
-
-  .imageWrap {
-    aspect-ratio: auto;
+    grid-template-rows: auto 1fr;
   }
 }

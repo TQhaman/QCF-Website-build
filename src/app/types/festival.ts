@@ -9,6 +9,8 @@ export type FestivalMedia = {
   width: number;
   height: number;
   year?: number;
+  credit?: string;
+  source?: string;
   role: string;
   orientation: "landscape" | "portrait" | "square";
   objectPosition?: string;
@@ -21,8 +23,7 @@ export type FestivalEdition = {
   dates: string;
   location: string;
   summary: string;
-  image?: string;
-  imageAlt?: string;
+  image?: FestivalMedia;
 };
 
 export type StoryBeat = {
@@ -71,6 +72,11 @@ export type InvolvementPath = {
   ctaLabel: string;
   href: string | null;
   tone: "paper" | "sand" | "green";
+};
+
+export type VisitFact = {
+  label: string;
+  value: string;
 };
 
 export type Partner = {

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import { siteConfig } from "@/app/config/site";
+import { festivalConfig } from "@/app/data/festival";
 import { absoluteUrl } from "@/app/lib/site";
 import "./globals.css";
 
@@ -29,6 +30,15 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.businessName }],
   creator: siteConfig.businessName,
   publisher: siteConfig.businessName,
+  icons: {
+    icon: [
+      {
+        url: festivalConfig.media.logoGreen.src,
+        type: "image/png",
+        sizes: `${festivalConfig.media.logoGreen.width}x${festivalConfig.media.logoGreen.height}`,
+      },
+    ],
+  },
   alternates: { canonical: "/" },
   category: "arts and entertainment",
   openGraph: {

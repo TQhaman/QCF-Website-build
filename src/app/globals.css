@@ -89,8 +89,9 @@ main {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-coral-dark);
-  outline-offset: 4px;
+  outline: 2px solid var(--color-paper-clean);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--color-ink);
 }
 
 html {

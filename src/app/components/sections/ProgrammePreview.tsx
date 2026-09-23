@@ -87,13 +87,6 @@ export function ProgrammePreview() {
                   </span>
 
                   <p>{category.name}</p>
-
-                  <span
-                    className={styles.arrow}
-                    aria-hidden="true"
-                  >
-                    ↗
-                  </span>
                 </div>
               )
             )}

@@ -26,11 +26,12 @@ export function EditionBridge() {
             <div className={styles.imageWrap}>
               {past.image ? (
                 <Image
-                  src={past.image}
-                  alt={past.imageAlt ?? `QCF ${past.year}`}
+                  src={past.image.src}
+                  alt={past.image.alt}
                   fill
                   sizes="(min-width: 900px) 50vw, 100vw"
                   className={styles.image}
+                  style={{ objectPosition: past.image.objectPosition }}
                 />
               ) : null}
             </div>

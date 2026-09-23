@@ -11,8 +11,11 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#f5edde",
     theme_color: "#15130f",
     icons: [
-      { src: "/icon.svg", sizes: "any", type: "image/svg+xml" },
-      { src: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      {
+        src: festivalConfig.media.logoGreen.src,
+        sizes: `${festivalConfig.media.logoGreen.width}x${festivalConfig.media.logoGreen.height}`,
+        type: "image/png",
+      },
     ],
   };
 }

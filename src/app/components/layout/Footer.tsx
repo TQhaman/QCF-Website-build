@@ -15,7 +15,7 @@ export function Footer() {
   );
 
   return (
-    <footer className={styles.footer} id="visit">
+    <footer className={styles.footer}>
       <div className="shell">
         <div className={styles.footerGrid}>
           <div className={styles.brand}>
@@ -44,7 +44,7 @@ export function Footer() {
                 className={styles.ticketAction}
                 href={contact.ticketUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Get QCF tickets (opens in a new tab)"
               >
                 Get tickets <span aria-hidden="true">↗</span>
@@ -57,7 +57,6 @@ export function Footer() {
             {festivalConfig.footer.exploreItems.map((item) => (
               <a key={item.href} href={item.href}>
                 {item.label}
-                <span aria-hidden="true">↗</span>
               </a>
             ))}
           </nav>

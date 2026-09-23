@@ -5,6 +5,7 @@ import { FestivalHero } from "@/app/components/sections/FestivalHero";
 import { FestivalStory } from "@/app/components/sections/FestivalStory";
 import { GetInvolved } from "@/app/components/sections/GetInvolved";
 import { Partners } from "@/app/components/sections/Partners";
+import { PlanYourVisit } from "@/app/components/sections/PlanYourVisit";
 import { StructuredData } from "@/app/components/shared/StructuredData";
 import { festivalConfig } from "@/app/data/festival";
 import { ExperienceQCF } from "@/app/components/sections/ExperienceQCF";
@@ -29,6 +30,7 @@ export default function Home() {
         <ProgrammePreview />
         <QCFPrecinct />
         <GetInvolved />
+        <PlanYourVisit />
         <Partners />
         <StayUpdated />
       </main>

@@ -10,7 +10,33 @@ import type {
   ProgrammeDay,
   ProgrammeCategory,
   StoryBeat,
+  VisitFact,
 } from "@/app/types/festival";
+
+const developmentSiteUrl = "http://localhost:3000";
+
+// Production deployments must provide NEXT_PUBLIC_SITE_URL.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? developmentSiteUrl;
+
+const festivalDates = {
+  display: "26–27 February 2027",
+  startISO: "2027-02-26",
+  endISO: "2027-02-27",
+  startDay: "26",
+  endDay: "27",
+  monthShort: "FEB",
+} as const;
+
+const festivalLocation = {
+  precinctName: "Caxton & Burns Streets precinct",
+  primary: "Caxton & Burns Streets",
+  suburb: "Quigney",
+  city: "East London",
+  region: "Eastern Cape",
+  countryCode: "ZA",
+  secondary: "Quigney, East London",
+  display: "Caxton & Burns Streets, Quigney, East London",
+} as const;
 
 const festivalMedia = {
   logoGreen: {
@@ -28,6 +54,16 @@ const festivalMedia = {
     height: 1500,
     role: "brand mark for coral backgrounds",
     orientation: "square",
+  },
+  poster2026: {
+    src: "/images/qcf/qcf-2026-poster.jpg",
+    alt: "Quigney Culture Festival 2026 event artwork",
+    width: 1500,
+    height: 750,
+    year: 2026,
+    role: "2026 festival edition artwork",
+    orientation: "landscape",
+    objectPosition: "center",
   },
   crowd: {
     src: "/images/2026/Soley_Crowd.jpeg",
@@ -97,7 +133,7 @@ const festivalMedia = {
     year: 2026,
     role: "live music and audience",
     orientation: "landscape",
-    objectPosition: "right center",
+    objectPosition: "left center",
   },
   performanceStage: {
     src: "/images/2026/Jabu.jpeg",
@@ -107,7 +143,7 @@ const festivalMedia = {
     year: 2026,
     role: "street performance",
     orientation: "landscape",
-    objectPosition: "right center",
+    objectPosition: "left center",
   },
 } satisfies Record<string, FestivalMedia>;
 
@@ -120,14 +156,18 @@ const siteLinks = {
 } satisfies Record<string, LinkItem>;
 
 export const festivalConfig = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  siteUrl,
   locale: "en-ZA",
   name: "Quigney Culture Festival",
   shortName: "QCF",
   editionYear: 2027,
   editionTheme: "SAND & SEA",
-  dates: "26–27 February 2027",
-  location: "Caxton & Burns Streets, Quigney, East London",
+  dates: festivalDates.display,
+  location: festivalLocation.display,
+  event: {
+    dates: festivalDates,
+    location: festivalLocation,
+  },
   description:
     "Quigney Culture Festival brings music, food, fashion, art, design and community into the streets of Quigney, East London.",
   media: festivalMedia,
@@ -282,8 +322,8 @@ precinct: {
   intro:
     "QCF takes shape across Caxton and Burns Streets in Quigney. Rather than placing the festival behind a single venue door, the precinct becomes part of how people move, gather and experience the programme.",
   location: {
-    primary: "Caxton & Burns Streets",
-    secondary: "Quigney, East London",
+    primary: festivalLocation.primary,
+    secondary: festivalLocation.secondary,
   },
   features: [
     {
@@ -352,6 +392,25 @@ getInvolved: {
   ] satisfies InvolvementPath[],
 },
 
+visit: {
+  eyebrow: "QCF / Visit",
+  title: "Plan your visit.",
+  intro:
+    "QCF 2027 takes place across Caxton and Burns Streets in Quigney, East London.",
+  facts: [
+    {
+      label: "Dates",
+      value: festivalDates.display,
+    },
+    {
+      label: "Festival precinct",
+      value: festivalLocation.display,
+    },
+  ] satisfies VisitFact[],
+  ticketLabel: "Get tickets",
+  ticketPending: "Ticket information will be shared once confirmed.",
+},
+
 partners: {
   eyebrow: "QCF / Partners",
   title: "Made possible together.",
@@ -395,15 +454,14 @@ footer: {
       location: "Caxton & Burns Streets, Quigney, East London",
       summary:
         "The 2026 edition brought performance, culture and gathering into the streets of Quigney. This space will become a home for the photographs, highlights and moments that tell the story of that year.",
-      image: "/images/qcf/qcf-2026-poster.jpg",
-      imageAlt: "Quigney Culture Festival 2026 event artwork",
+      image: festivalMedia.poster2026,
     },
     {
       year: 2027,
       status: "upcoming",
       theme: "SAND & SEA",
-      dates: "26–27 February 2027",
-      location: "Caxton & Burns Streets, Quigney, East London",
+      dates: festivalDates.display,
+      location: festivalLocation.display,
       summary:
         "QCF returns to the Caxton and Burns Street precinct in February 2027. The new edition is beginning to take shape, with programme announcements and more festival details still to come.",
     },
