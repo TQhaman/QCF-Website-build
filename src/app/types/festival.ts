@@ -33,6 +33,8 @@ export type OrganiserCredit = {
   heading: string;
   role: string;
   copy: string;
+  image?: FestivalMedia;
+  mediaLabel?: string;
 };
 
 export type StoryBeat = {

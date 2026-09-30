@@ -70,6 +70,26 @@ const festivalMedia = {
     orientation: "landscape",
     objectPosition: "center",
   },
+  childrensBookLaunchPoster: {
+    src: "/images/2026/art-story/childrens-book-launch-poster.jpg",
+    alt: "Poster promoting a children’s book launch at the 2026 festival",
+    width: 1280,
+    height: 1600,
+    year: 2026,
+    role: "historical art and storytelling activation",
+    orientation: "portrait",
+    objectPosition: "center",
+  },
+  neighbourhoodPainting: {
+    src: "/images/2026/community/neighbourhood-painting.jpg",
+    alt: "A volunteer painting the exterior wall of a building near the festival precinct",
+    width: 478,
+    height: 850,
+    year: 2026,
+    role: "community participation and neighbourhood activity",
+    orientation: "portrait",
+    objectPosition: "center",
+  },
   crowd: {
     src: "/images/2026/Soley_Crowd.jpeg",
     alt: "Crowd gathered behind a barrier at a previous edition of The Quigney Culture Festival",
@@ -271,9 +291,10 @@ experiences: [
     title: "Creativity lives beyond the stage.",
     copy:
       "Visual art, public art and storytelling add more to discover as you move through the precinct.",
-    mediaLabel: "Art / installations / storytelling",
+    mediaLabel: "TQCF 2026 / Children’s book launch",
     tone: "sand",
     layout: "feature",
+    image: festivalMedia.childrensBookLaunchPoster,
   },
   {
     label: "Markets & Makers",
@@ -480,6 +501,8 @@ organiserCredits: [
     role: "Social-impact partner",
     copy:
       "House 87 Culture Lab is the festival’s social-impact wing and partner, supporting youth development, creative skills, enterprise and community participation.",
+    mediaLabel: "TQCF 2026 / Community in the precinct",
+    image: festivalMedia.neighbourhoodPainting,
   },
 ] satisfies OrganiserCredit[],
 
