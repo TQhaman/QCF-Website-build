@@ -5,12 +5,15 @@ import type {
   FestivalMedia,
   InvolvementPath,
   LinkItem,
+  OrganiserCredit,
   Partner,
   PrecinctFeature,
   ProgrammeDay,
   ProgrammeCategory,
+  ProgrammeEntry,
   StoryBeat,
   VisitFact,
+  VisitInformationItem,
 } from "@/app/types/festival";
 
 const developmentSiteUrl = "http://localhost:3000";
@@ -20,6 +23,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? developmentSiteUrl;
 
 const festivalDates = {
   display: "26–27 February 2027",
+  footerDisplay: "26 – 27 February 2027",
   startISO: "2027-02-26",
   endISO: "2027-02-27",
   startDay: "26",
@@ -32,10 +36,11 @@ const festivalLocation = {
   primary: "Caxton & Burns Streets",
   suburb: "Quigney",
   city: "KuGompo",
+  displayCity: "KuGompo City",
   region: "Eastern Cape",
   countryCode: "ZA",
-  secondary: "Quigney, KuGompo",
-  display: "Caxton & Burns Streets, Quigney, KuGompo",
+  secondary: "Quigney, KuGompo City",
+  display: "Caxton & Burns Streets, Quigney, KuGompo City",
 } as const;
 
 const festivalMedia = {
@@ -169,7 +174,7 @@ export const festivalConfig = {
     location: festivalLocation,
   },
   description:
-    "The Quigney Culture Festival brings music, food, fashion, art, design and community to the streets of Quigney, KuGompo.",
+    "The Quigney Culture Festival brings music, food, fashion, art, design and community to the streets of Quigney, KuGompo City.",
   media: festivalMedia,
   navItems: [
     siteLinks.festival,
@@ -178,20 +183,27 @@ export const festivalConfig = {
     siteLinks.getInvolved,
     siteLinks.visit,
   ] satisfies LinkItem[],
-  primaryCta: { label: "2027 programme", href: "#programme" } satisfies LinkItem,
   hero: {
     kicker: "Where culture meets the street",
     title: "The Quigney Culture Festival",
     statement:
-      "Music, food, fashion, art and community take over the streets of Quigney for two days of culture in motion.",
+      "Music, food, fashion, art, innovation and community take over the streets of Quigney for two days of culture in motion.",
     image: festivalMedia.crowd,
+    programmeCta: {
+      label: "Explore 2027",
+      href: siteLinks.programme.href,
+    } satisfies LinkItem,
+    archiveCta: {
+      label: "Relive 2026",
+      href: "#editions",
+    } satisfies LinkItem,
   },
   storyBeats: [
   {
     kicker: "01 / Street",
     title: "The streets become part of the festival.",
     copy:
-      "TQCF moves through Quigney’s street precinct, with music, food and places to gather beyond any one stage.",
+      "TQCF unfolds through Quigney, with performance, food, markets and gathering spaces extending the experience beyond a single stage.",
     mediaLabel: "TQCF 2026 / Live in the street",
     tone: "ink",
     image: festivalMedia.performanceStage,
@@ -200,16 +212,16 @@ export const festivalConfig = {
     kicker: "02 / Culture",
     title: "Music, food, fashion and art share the street.",
     copy:
-      "Music, food, fashion, runway, art, design and storytelling meet in the street.",
+      "Music meets food, fashion, visual art, design, storytelling and innovation — different cultural expressions coming together in one precinct.",
     mediaLabel: "TQCF 2026 / Runway and design",
     tone: "ochre",
     image: festivalMedia.fashionYellow,
   },
   {
     kicker: "03 / People",
-    title: "The festival is shaped by the people in it.",
+    title: "The festival is shaped by its people.",
     copy:
-      "Artists, residents, visitors, traders and local creatives bring TQCF to life — performing, making, gathering and taking part.",
+      "Artists, residents, visitors, vendors and local creatives shape TQCF through what they perform, make, share and experience together.",
     mediaLabel: "TQCF 2026 / Festival faces",
     tone: "green",
     image: festivalMedia.people,
@@ -218,7 +230,7 @@ export const festivalConfig = {
     kicker: "04 / Place",
     title: "Quigney is more than the location.",
     copy:
-      "Caxton and Burns Streets are more than a venue. Quigney’s public spaces and street life are part of TQCF’s identity.",
+      "Its streets, buildings, businesses and public spaces give TQCF its character and become part of the festival experience.",
     mediaLabel: "Rooted in Quigney",
     tone: "sand",
   },
@@ -289,7 +301,7 @@ programmePreview: {
   eyebrow: "TQCF 2027 / Programme",
   title: "Two days. A street full of things to discover.",
   intro:
-    "Two days of music, food, fashion, art and more across the TQCF precinct.",
+    "The 2027 programme will bring music, performance, food, fashion, art, enterprise and other experiences into the Quigney festival precinct.",
 
   days: [
     {
@@ -314,6 +326,8 @@ programmePreview: {
     { name: "Markets & Makers" },
     { name: "Community" },
   ] satisfies ProgrammeCategory[],
+
+  entries: [] satisfies ProgrammeEntry[],
 },
 
 precinct: {
@@ -348,6 +362,10 @@ precinct: {
         "Meet, eat, watch, explore and stay awhile between programme moments.",
     },
   ] satisfies PrecinctFeature[],
+  visitCta: {
+    label: "Plan your visit",
+    href: siteLinks.visit.href,
+  } satisfies LinkItem,
 },
 
 getInvolved: {
@@ -396,7 +414,7 @@ visit: {
   eyebrow: "TQCF / Visit",
   title: "Plan your visit.",
   intro:
-    "TQCF 2027 comes to Caxton and Burns Streets in Quigney, KuGompo.",
+    "TQCF 2027 comes to Caxton and Burns Streets in Quigney, KuGompo City.",
   facts: [
     {
       label: "Dates",
@@ -407,8 +425,24 @@ visit: {
       value: festivalLocation.display,
     },
   ] satisfies VisitFact[],
+  information: [
+    {
+      label: "Getting there",
+      copy: "Travel information will be shared closer to the festival.",
+    },
+    {
+      label: "Accessibility",
+      copy: "Accessibility information will be shared closer to the festival.",
+    },
+    {
+      label: "Family information",
+      copy: "Age and family guidance will be shared closer to the festival.",
+    },
+  ] satisfies VisitInformationItem[],
+  ticketTitle: "Get your tickets",
+  ticketCopy: "Tickets for TQCF 2027 are available through FIXR.",
   ticketLabel: "Get tickets",
-  ticketPending: "Ticket information is coming soon.",
+  ticketUnavailable: "Ticket sales are currently unavailable.",
 },
 
 partners: {
@@ -434,8 +468,25 @@ stayUpdated: {
   newsletterLabel: "Join the TQCF mailing list",
 },
 
+organiserCredits: [
+  {
+    heading: "Born at House 87",
+    role: "Organiser and curator",
+    copy:
+      "The Quigney Culture Festival is organised and curated by House 87. Born at House 87 in Quigney, TQCF extends its culture-led hospitality and programming into the surrounding streets.",
+  },
+  {
+    heading: "House 87 Culture Lab",
+    role: "Social-impact partner",
+    copy:
+      "House 87 Culture Lab is the festival’s social-impact wing and partner, supporting youth development, creative skills, enterprise and community participation.",
+  },
+] satisfies OrganiserCredit[],
+
 footer: {
-  tagline: "Where culture meets the street.",
+  tagline: "Culture in the street. Quigney in the story.",
+  date: festivalDates.footerDisplay,
+  location: festivalLocation.display,
   exploreItems: [
     siteLinks.festival,
     siteLinks.programme,
@@ -450,27 +501,33 @@ footer: {
     {
       year: 2026,
       status: "past",
-      dates: "28 February 2026",
+      dates: "27–28 February 2026",
+      title: "Relive 2026",
       location: festivalLocation.display,
       summary:
-        "The 2026 edition brought performance, culture and people into the streets of Quigney. Relive the moments from that year.",
+        "More than 1,500 people joined the inaugural TQCF, creating approximately 75 work and market opportunities across the festival precinct.",
+      ctaLabel: "Explore the 2026 Festival",
+      ctaHref: null,
       image: festivalMedia.poster2026,
     },
     {
       year: 2027,
       status: "upcoming",
-      theme: "SAND & SEA",
       dates: festivalDates.display,
+      title: "What comes next",
       location: festivalLocation.display,
       summary:
-        "TQCF returns to Caxton and Burns Streets in February 2027. More programme announcements and festival details are on the way.",
+        "TQCF returns to Caxton and Burns Streets with two days of music, food, fashion, art, enterprise and shared cultural experiences.",
+      ctaLabel: "Programme announcements coming soon",
+      ctaHref: null,
     },
   ] satisfies FestivalEdition[],
   contact: {
     email: null,
     whatsappDisplay: "067 126 6242",
     whatsappUrl: "https://wa.me/27671266242",
-    ticketUrl: null,
+    ticketUrl:
+      "https://fixr.co/event/the-quigney-culture-festival-tickets-239554709",
     instagramUrl: "https://www.instagram.com/thequigneyfest",
     facebookUrl: null,
     tiktokUrl: "https://www.tiktok.com/@thequigneyfest",
@@ -479,12 +536,13 @@ footer: {
   seo: {
     keywords: [
       "The Quigney Culture Festival",
-      "TQCF 2027",
+      "QCF 2027",
       "KuGompo festival",
       "Quigney events",
       "Eastern Cape culture festival",
       "live music KuGompo",
       "cultural experiences KuGompo",
+      "festival",
     ],
   },
 } as const;

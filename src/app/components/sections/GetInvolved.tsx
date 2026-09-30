@@ -21,36 +21,54 @@ export function GetInvolved() {
         </header>
 
         <div className={styles.grid}>
-          {getInvolved.paths.map((path) => (
-            <article
-              className={styles.card}
-              data-tone={path.tone}
-              key={path.number}
-            >
-              <div className={styles.cardTop}>
-                <span>{path.number}</span>
-                <span>{path.label}</span>
-              </div>
+          {getInvolved.paths.map((path) => {
+            const isExternal = path.href
+              ? /^https?:\/\//.test(path.href)
+              : false;
 
-              <div className={styles.cardBody}>
-                <h3>{path.title}</h3>
-                <p>{path.copy}</p>
-              </div>
+            return (
+              <article
+                className={styles.card}
+                data-tone={path.tone}
+                key={path.number}
+              >
+                <div className={styles.cardTop}>
+                  <span>{path.number}</span>
+                  <span>{path.label}</span>
+                </div>
 
-              <div className={styles.cardFooter}>
-                <p className={styles.status}>{path.status}</p>
+                <div className={styles.cardBody}>
+                  <h3>{path.title}</h3>
+                  <p>{path.copy}</p>
+                </div>
 
-                {path.href ? (
-                  <a className={styles.action} href={path.href}>
-                    {path.ctaLabel}
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                ) : (
-                  <span className={styles.disabledAction}>{path.ctaLabel}</span>
-                )}
-              </div>
-            </article>
-          ))}
+                <div className={styles.cardFooter}>
+                  <p className={styles.status}>{path.status}</p>
+
+                  {path.href ? (
+                    <a
+                      className={styles.action}
+                      href={path.href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      aria-label={
+                        isExternal
+                          ? `${path.ctaLabel} (opens in a new tab)`
+                          : undefined
+                      }
+                    >
+                      {path.ctaLabel}
+                      {isExternal ? <span aria-hidden="true">↗</span> : null}
+                    </a>
+                  ) : (
+                    <span className={styles.disabledAction}>
+                      {path.ctaLabel}
+                    </span>
+                  )}
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <div className={styles.note}>

@@ -2,19 +2,35 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { festivalConfig } from "@/app/data/festival";
 import type { LinkItem } from "@/app/types/festival";
 import styles from "./Navbar.module.css";
 
 type NavbarProps = {
   navItems: LinkItem[];
-  cta: LinkItem;
   ticketUrl: string | null;
 };
 
-export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
+export function Navbar({ navItems, ticketUrl }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
 
   function closeMenu() {
     setIsOpen(false);
@@ -26,8 +42,8 @@ export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
         <div className="shell">
           <p>
             <strong>TQCF 2027</strong>
-            <span>26–27 FEB</span>
-            <span>QUIGNEY · KUGOMPO</span>
+            <span>26 – 27 FEB</span>
+            <span>QUIGNEY · KUGOMPO CITY</span>
           </p>
         </div>
       </div>
@@ -51,6 +67,7 @@ export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
           </Link>
 
           <button
+            ref={menuButtonRef}
             type="button"
             className={styles.menuButton}
             aria-expanded={isOpen}
@@ -74,17 +91,19 @@ export function Navbar({ navItems, cta, ticketUrl }: NavbarProps) {
               ))}
             </nav>
 
-            <a
-              className={styles.cta}
-              href={ticketUrl ?? cta.href}
-              onClick={closeMenu}
-              target={ticketUrl ? "_blank" : undefined}
-              rel={ticketUrl ? "noopener noreferrer" : undefined}
-              aria-label={ticketUrl ? "Get TQCF tickets (opens in a new tab)" : undefined}
-            >
-              {ticketUrl ? "Get tickets" : cta.label}
-              {ticketUrl ? <span aria-hidden="true">↗</span> : null}
-            </a>
+            {ticketUrl ? (
+              <a
+                className={styles.cta}
+                href={ticketUrl}
+                onClick={closeMenu}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get TQCF tickets (opens in a new tab)"
+              >
+                Get tickets
+                <span aria-hidden="true">↗</span>
+              </a>
+            ) : null}
           </div>
         </div>
       </div>

@@ -76,6 +76,11 @@ export function QCFPrecinct() {
               <span>Art</span>
               <span>Facilities</span>
             </div>
+
+            <a className={styles.visitLink} href={precinct.visitCta.href}>
+              {precinct.visitCta.label}
+              <span aria-hidden="true">↓</span>
+            </a>
           </aside>
         </div>
 

@@ -6,6 +6,7 @@ import { FestivalStory } from "@/app/components/sections/FestivalStory";
 import { GetInvolved } from "@/app/components/sections/GetInvolved";
 import { Partners } from "@/app/components/sections/Partners";
 import { PlanYourVisit } from "@/app/components/sections/PlanYourVisit";
+import { OrganiserCredits } from "@/app/components/sections/OrganiserCredits";
 import { StructuredData } from "@/app/components/shared/StructuredData";
 import { festivalConfig } from "@/app/data/festival";
 import { ExperienceQCF } from "@/app/components/sections/ExperienceQCF";
@@ -19,7 +20,6 @@ export default function Home() {
       <a className="skipLink" href="#main-content">Skip to content</a>
       <Navbar
         navItems={festivalConfig.navItems}
-        cta={festivalConfig.primaryCta}
         ticketUrl={festivalConfig.contact.ticketUrl}
       />
       <main id="main-content">
@@ -33,6 +33,7 @@ export default function Home() {
         <PlanYourVisit />
         <Partners />
         <StayUpdated />
+        <OrganiserCredits />
       </main>
       <Footer />
       <StructuredData />

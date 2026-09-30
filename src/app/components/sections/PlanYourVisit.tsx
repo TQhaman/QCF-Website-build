@@ -34,21 +34,44 @@ export function PlanYourVisit() {
             <p className={styles.ticketLabel}>Tickets</p>
 
             {contact.ticketUrl ? (
-              <a
-                className={styles.ticketAction}
-                href={contact.ticketUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get TQCF tickets (opens in a new tab)"
-              >
-                {visit.ticketLabel}
-                <span aria-hidden="true">↗</span>
-              </a>
+              <>
+                <h3 className={styles.ticketTitle}>{visit.ticketTitle}</h3>
+                <p className={styles.ticketCopy}>{visit.ticketCopy}</p>
+                <a
+                  className={styles.ticketAction}
+                  href={contact.ticketUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get TQCF tickets on FIXR (opens in a new tab)"
+                >
+                  {visit.ticketLabel}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </>
             ) : (
-              <p className={styles.ticketPending}>{visit.ticketPending}</p>
+              <p className={styles.ticketPending}>{visit.ticketUnavailable}</p>
             )}
           </aside>
         </div>
+
+        <section
+          className={styles.visitorInfo}
+          aria-labelledby="visitor-information-title"
+        >
+          <header className={styles.visitorInfoHeader}>
+            <p className={styles.infoEyebrow}>Visitor information</p>
+            <h3 id="visitor-information-title">Before you arrive.</h3>
+          </header>
+
+          <div className={styles.infoGrid}>
+            {visit.information.map((item) => (
+              <article className={styles.infoItem} key={item.label}>
+                <h4>{item.label}</h4>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
     </section>
   );

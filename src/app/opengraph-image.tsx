@@ -31,7 +31,7 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 24, fontWeight: 700 }}>
           <span>{festivalConfig.location}</span>
-          <span style={{ background: "#e99568", padding: "10px 18px" }}>{festivalConfig.editionTheme}</span>
+          <span style={{ background: "#e99568", padding: "10px 18px" }}>2027 EDITION</span>
         </div>
       </div>
     ),

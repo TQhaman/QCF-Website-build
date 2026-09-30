@@ -15,13 +15,13 @@ export function ExperienceQCF() {
 
           <div className={styles.headerGrid}>
             <h2 id="experience-title">
-              There&apos;s more than one way into TQCF.
+              There’s more than one way into TQCF.
             </h2>
 
             <p>
-              Come for a performance and find food, fashion, art, makers and
-              people along the way. TQCF moves through the precinct, not just
-              one stage.
+              Come for a performance and discover food, fashion, art, makers
+              and people along the way. TQCF is a festival you move through —
+              not one experienced from a single stage.
             </p>
           </div>
         </header>

@@ -35,8 +35,8 @@ export function Footer() {
             <p className={styles.statement}>{festivalConfig.footer.tagline}</p>
 
             <div className={styles.festivalDetails}>
-              <p>{festivalConfig.dates}</p>
-              <p>{festivalConfig.location}</p>
+              <p>{festivalConfig.footer.date}</p>
+              <p>{festivalConfig.footer.location}</p>
             </div>
 
             {contact.ticketUrl ? (

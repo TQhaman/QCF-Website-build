@@ -21,9 +21,18 @@ export type FestivalEdition = {
   status: "past" | "upcoming" | "current";
   theme?: string;
   dates: string;
+  title: string;
   location: string;
   summary: string;
+  ctaLabel: string;
+  ctaHref: string | null;
   image?: FestivalMedia;
+};
+
+export type OrganiserCredit = {
+  heading: string;
+  role: string;
+  copy: string;
 };
 
 export type StoryBeat = {
@@ -56,6 +65,19 @@ export type ProgrammeCategory = {
   name: string;
 };
 
+export type ProgrammeEntry = {
+  id: string;
+  title: string;
+  category: string;
+  day: string;
+  startTime: string;
+  endTime?: string;
+  venue?: string;
+  image?: FestivalMedia;
+  description?: string;
+  ticketUrl?: string;
+};
+
 export type PrecinctFeature = {
   number: string;
   label: string;
@@ -77,6 +99,11 @@ export type InvolvementPath = {
 export type VisitFact = {
   label: string;
   value: string;
+};
+
+export type VisitInformationItem = {
+  label: string;
+  copy: string;
 };
 
 export type Partner = {

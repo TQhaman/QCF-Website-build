@@ -12,6 +12,6 @@ export const siteConfig = {
   seo: {
     keywords: festivalConfig.seo.keywords,
     ogImageTitle: festivalConfig.name,
-    ogImageTagline: `${festivalConfig.editionTheme} · ${festivalConfig.editionYear}`,
+    ogImageTagline: `${festivalConfig.editionYear} EDITION`,
   },
 };

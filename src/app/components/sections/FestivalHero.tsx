@@ -3,7 +3,7 @@ import { festivalConfig } from "@/app/data/festival";
 import styles from "./FestivalHero.module.css";
 
 export function FestivalHero() {
-  const { contact, hero } = festivalConfig;
+  const { hero } = festivalConfig;
   const { dates, location } = festivalConfig.event;
 
   return (
@@ -11,7 +11,7 @@ export function FestivalHero() {
       <div className="shell">
         <div className={styles.topline}>
           <p>{hero.kicker}</p>
-          <p>{festivalConfig.editionTheme} · {festivalConfig.editionYear} EDITION</p>
+          <p>{festivalConfig.editionYear} EDITION</p>
         </div>
 
         <div className={styles.titleBlock}>
@@ -37,31 +37,22 @@ export function FestivalHero() {
           <div className={styles.statement}>
             <p>{hero.statement}</p>
             <div className={styles.actions}>
-              {contact.ticketUrl ? (
-                <a
-                  className={styles.primaryAction}
-                  href={contact.ticketUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Get TQCF tickets (opens in a new tab)"
-                >
-                  Get tickets <span aria-hidden="true">↗</span>
-                </a>
-              ) : null}
               <a
-                className={contact.ticketUrl ? styles.textAction : styles.primaryAction}
-                href="#programme"
+                className={styles.primaryAction}
+                href={hero.programmeCta.href}
               >
-                Explore 2027
+                {hero.programmeCta.label}
               </a>
-              <a className={styles.textAction} href="#editions">Relive 2026 <span aria-hidden="true">↘</span></a>
+              <a className={styles.textAction} href={hero.archiveCta.href}>
+                {hero.archiveCta.label}
+              </a>
             </div>
           </div>
 
           <div className={styles.location}>
             <span className={styles.locationLabel}>Festival precinct</span>
             <strong>{location.primary}</strong>
-            <p>{location.suburb} · {location.city} · {location.region}</p>
+            <p>{location.suburb} · {location.displayCity} · {location.region}</p>
           </div>
         </div>
 

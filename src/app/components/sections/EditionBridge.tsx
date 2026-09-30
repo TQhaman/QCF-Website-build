@@ -17,7 +17,9 @@ export function EditionBridge() {
             <h2 id="editions-title">The story continues.</h2>
           </div>
           <p className={styles.intro}>
-            Relive the moments that shaped TQCF, then see where the festival goes next.
+            Each edition leaves its own memories. Relive the inaugural festival
+            through its people, performances and street moments while looking
+            ahead to TQCF 2027.
           </p>
         </div>
 
@@ -37,29 +39,39 @@ export function EditionBridge() {
             </div>
             <div className={styles.cardCopy}>
               <p className={styles.cardMeta}>PAST EDITION · {past.dates}</p>
-              <h3>Relive {past.year}</h3>
+              <h3>{past.title}</h3>
               <p>{past.summary}</p>
-              <span className={styles.placeholderLink}>Gallery coming soon</span>
+              {past.ctaHref ? (
+                <a className={styles.editionCta} href={past.ctaHref}>
+                  {past.ctaLabel}
+                </a>
+              ) : (
+                <span className={styles.editionCta}>{past.ctaLabel}</span>
+              )}
             </div>
           </article>
 
           <article className={styles.upcomingCard}>
             <div className={styles.upcomingTopline}>
               <span>UPCOMING</span>
-              <span>{upcoming.theme}</span>
+              <span>· {upcoming.year} EDITION</span>
             </div>
             <div className={styles.yearDisplay}>{upcoming.year}</div>
             <div className={styles.cardCopy}>
               <p className={styles.cardMeta}>{upcoming.dates}</p>
-              <h3>See what&apos;s next</h3>
+              <h3>{upcoming.title}</h3>
               <p>{upcoming.summary}</p>
               <div className={styles.locationBlock}>
                 <span>Festival precinct</span>
                 <strong>{upcoming.location}</strong>
               </div>
-              <span className={styles.programmeCta}>
-                Programme announcements coming soon
-              </span>
+              {upcoming.ctaHref ? (
+                <a className={styles.programmeCta} href={upcoming.ctaHref}>
+                  {upcoming.ctaLabel}
+                </a>
+              ) : (
+                <span className={styles.programmeCta}>{upcoming.ctaLabel}</span>
+              )}
             </div>
           </article>
         </div>

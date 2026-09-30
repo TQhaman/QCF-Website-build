@@ -16,8 +16,9 @@ export function FestivalStory() {
           <h2 id="festival-story-title">A festival shaped by Quigney.</h2>
 
           <p>
-            At TQCF, the streets, the people and every form of creative
-            expression are part of the festival.
+            Born at House 87, TQCF brings people and creative expression into
+            the streets, making the Quigney precinct part of the festival
+            itself.
           </p>
         </header>
 
