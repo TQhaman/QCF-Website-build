@@ -1,5 +1,5 @@
 .section {
-  padding: 5rem 0 6rem;
+  padding: clamp(4rem, 7vw, 6rem) 0;
   background: var(--color-ink);
   color: var(--color-paper);
 }
@@ -7,7 +7,7 @@
 .headingRow {
   display: grid;
   gap: 1.4rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(248, 242, 230, 0.25);
 }
 
@@ -38,12 +38,16 @@
 .grid {
   display: grid;
   gap: 1rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
 }
 
 .pastCard,
 .upcomingCard {
+  position: relative;
+  display: grid;
   min-width: 0;
+  min-height: 32rem;
+  align-content: space-between;
   overflow: hidden;
   border: 1px solid rgba(248, 242, 230, 0.32);
 }
@@ -53,15 +57,16 @@
   color: var(--color-ink);
 }
 
-.imageWrap {
-  position: relative;
-  aspect-ratio: 2 / 1;
-  overflow: hidden;
-  background: var(--color-sand);
-}
-
-.image {
-  object-fit: contain;
+.pastCard::after,
+.upcomingCard::after {
+  content: "";
+  position: absolute;
+  width: 22rem;
+  aspect-ratio: 1;
+  right: -9rem;
+  top: 7rem;
+  border: 1px solid rgba(20, 18, 15, 0.25);
+  border-radius: 50%;
 }
 
 .cardCopy {
@@ -101,25 +106,11 @@
 }
 
 .upcomingCard {
-  position: relative;
-  display: grid;
-  min-height: 37rem;
-  align-content: space-between;
   background: var(--color-coral);
   color: var(--color-ink);
 }
 
-.upcomingCard::after {
-  content: "";
-  position: absolute;
-  width: 22rem;
-  aspect-ratio: 1;
-  right: -9rem;
-  top: 7rem;
-  border: 1px solid rgba(20, 18, 15, 0.32);
-  border-radius: 50%;
-}
-
+.pastTopline,
 .upcomingTopline {
   position: relative;
   z-index: 1;
@@ -133,6 +124,7 @@
   letter-spacing: 0.1em;
 }
 
+.pastYear,
 .yearDisplay {
   position: relative;
   z-index: 1;
@@ -142,6 +134,10 @@
   font-weight: 800;
   letter-spacing: -0.06em;
   line-height: 0.7;
+}
+
+.pastYear {
+  color: rgba(20, 18, 15, 0.86);
 }
 
 .upcomingCard .cardCopy {
@@ -171,11 +167,9 @@
 .programmeCta {
   display: inline-flex;
   margin-top: 0.35rem;
-  justify-content: center;
-  border: 2px solid var(--color-ink);
-  padding: 0.8rem 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(20, 18, 15, 0.35);
   font-weight: 800;
-  text-align: center;
   text-transform: uppercase;
 }
 
@@ -195,11 +189,6 @@
 
   .pastCard,
   .upcomingCard {
-    min-height: 46rem;
-  }
-
-  .pastCard {
-    display: grid;
-    grid-template-rows: auto 1fr;
+    min-height: 38rem;
   }
 }

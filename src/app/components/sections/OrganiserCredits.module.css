@@ -1,5 +1,5 @@
 .section {
-  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
   border-top: 1px solid var(--color-ink);
   border-bottom: 1px solid var(--color-ink);
   background: var(--color-sand);
@@ -13,8 +13,8 @@
 
 .credit {
   display: grid;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
+  gap: 1.75rem;
+  padding: 2rem 0;
   border-bottom: 1px solid var(--color-line-strong);
 }
 
@@ -26,7 +26,7 @@
 
 .headingGroup h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(2.35rem, 5vw, 3.8rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 0.95;
@@ -44,30 +44,27 @@
 .copy {
   max-width: 40rem;
   color: var(--color-ink-muted);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
   line-height: 1.65;
 }
 
 .creditMedia {
   display: grid;
-  overflow: hidden;
-  border: 1px solid var(--color-ink);
-  background: var(--color-ink);
-  color: var(--color-paper);
+  gap: 0.65rem;
 }
 
 .mediaFrame {
   position: relative;
-  min-height: clamp(17rem, 62vw, 21rem);
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
 .mediaImage {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .mediaLabel {
-  padding: 0.75rem 1rem;
-  border-top: 1px solid var(--color-paper);
+  color: var(--color-coral-dark);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -81,16 +78,13 @@
 
   .credit {
     grid-template-rows: auto 1fr;
-    padding: 2rem;
+    padding: 2.5rem;
   }
 
   .credit + .credit {
     border-left: 1px solid var(--color-line-strong);
   }
 
-  .mediaFrame {
-    min-height: clamp(18rem, 28vw, 21rem);
-  }
 }
 
 @media (min-width: 70rem) {
@@ -104,7 +98,4 @@
     grid-row: 1 / span 2;
   }
 
-  .credit[data-has-media="true"] .mediaFrame {
-    min-height: 20rem;
-  }
 }

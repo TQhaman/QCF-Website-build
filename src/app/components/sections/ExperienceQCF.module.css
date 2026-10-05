@@ -1,11 +1,11 @@
 .section {
-  padding: clamp(5rem, 10vw, 9rem) 0;
+  padding: clamp(4rem, 7vw, 7rem) 0;
   background: var(--color-paper);
   color: var(--color-ink);
 }
 
 .header {
-  margin-bottom: clamp(3rem, 7vw, 6rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 .eyebrow {
@@ -54,7 +54,7 @@
 
 .media {
   position: relative;
-  min-height: 19rem;
+  min-height: 16.5rem;
   overflow: hidden;
   background: var(--color-sand);
   color: var(--color-ink);
@@ -116,48 +116,22 @@
   object-fit: contain;
 }
 
-.number {
-  position: absolute;
-  z-index: 1;
-  left: 1rem;
-  top: 0.7rem;
-  font-family: var(--font-display);
-  font-size: clamp(5rem, 15vw, 9rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  opacity: 0.25;
-}
-
 .mediaLabel {
   position: absolute;
   z-index: 1;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  padding-top: 0.65rem;
-  border-top: 1px solid currentColor;
-  font-size: 0.68rem;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.4rem 0.55rem;
+  background: rgba(21, 19, 15, 0.82);
+  color: var(--color-paper);
+  font-size: 0.64rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-.media[data-has-image="true"] .number {
-  color: var(--color-paper);
-  text-shadow: 0 1px 1px rgba(21, 19, 15, 0.5);
-  opacity: 0.9;
-}
-
 .media[data-has-image="true"] .mediaLabel {
-  left: 0;
-  right: auto;
-  bottom: 0;
-  max-width: calc(100% - 5.5rem);
-  padding: 0.8rem 1rem;
-  border-top: 0;
-  background: var(--color-ink);
-  color: var(--color-paper);
+  max-width: calc(100% - 1.5rem);
 }
 
 .copy {
@@ -168,9 +142,10 @@
 
 .label {
   color: var(--color-coral-dark);
-  font-size: 0.72rem;
+  font-size: clamp(0.82rem, 1.4vw, 0.95rem);
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
   text-transform: uppercase;
 }
 
@@ -214,17 +189,17 @@
   }
 
   .feature .media {
-    min-height: 28rem;
+    min-height: 24rem;
   }
 
   .standard .media {
-    min-height: 22rem;
+    min-height: 19rem;
   }
 }
 
 @media (min-width: 70rem) {
   .card {
-    min-height: 39rem;
+    min-height: 34rem;
   }
 
   .feature {

@@ -87,6 +87,21 @@ export type PrecinctFeature = {
   copy: string;
 };
 
+export type FestivalMapMarker = {
+  id: string;
+  label: string;
+  position: {
+    x: number;
+    y: number;
+  };
+  details?: string;
+};
+
+export type FestivalMapDay = {
+  label: string;
+  markers: FestivalMapMarker[];
+};
+
 export type InvolvementPath = {
   number: string;
   label: string;

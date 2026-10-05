@@ -38,6 +38,7 @@ export function StayUpdated() {
                       aria-label="TQCF on Instagram"
                     >
                       <SocialIcon platform="instagram" className={styles.icon} />
+                      <span>Instagram</span>
                     </a>
                   ) : null}
 
@@ -50,6 +51,7 @@ export function StayUpdated() {
                       aria-label="TQCF on TikTok"
                     >
                       <SocialIcon platform="tiktok" className={styles.icon} />
+                      <span>TikTok</span>
                     </a>
                   ) : null}
 
