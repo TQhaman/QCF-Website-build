@@ -48,6 +48,12 @@
   min-height: 31rem;
   grid-template-rows: auto 1fr auto;
   border: 1px solid var(--color-ink);
+  --card-offset: 0rem;
+  transform: translateY(var(--card-offset));
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
 }
 
 .card[data-tone="paper"] {
@@ -130,6 +136,17 @@
   text-transform: uppercase;
 }
 
+.card:active {
+  filter: brightness(0.98);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(calc(var(--card-offset) - 0.35rem));
+    box-shadow: 0 0.8rem 1.4rem rgba(21, 19, 15, 0.14);
+  }
+}
+
 .action {
   transition:
     background 160ms ease,
@@ -201,6 +218,12 @@
   }
 
   .card:nth-child(2) {
-    transform: translateY(2rem);
+    --card-offset: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
   }
 }

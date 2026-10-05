@@ -27,7 +27,7 @@ export function ExperienceQCF() {
         </header>
 
         <div className={styles.grid}>
-          {festivalConfig.experiences.map((experience, index) => (
+          {festivalConfig.experiences.map((experience) => (
             <article
               className={`${styles.card} ${styles[experience.layout]}`}
               data-tone={experience.tone}
@@ -52,10 +52,6 @@ export function ExperienceQCF() {
                     style={{ objectPosition: experience.image.objectPosition }}
                   />
                 ) : null}
-                <span className={styles.number}>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
                 <span className={styles.mediaLabel}>
                   {experience.mediaLabel}
                 </span>

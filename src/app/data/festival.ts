@@ -3,6 +3,7 @@ import type {
   FestivalEdition,
   FestivalExperience,
   FestivalMedia,
+  FestivalMapDay,
   InvolvementPath,
   LinkItem,
   OrganiserCredit,
@@ -67,6 +68,66 @@ const festivalMedia = {
     height: 750,
     year: 2026,
     role: "2026 festival edition artwork",
+    orientation: "landscape",
+    objectPosition: "center",
+  },
+  childrensBookLaunchPoster: {
+    src: "/images/2026/art-story/childrens-book-launch-poster.jpg",
+    alt: "Poster promoting a children’s book launch at the 2026 festival",
+    width: 1280,
+    height: 1600,
+    year: 2026,
+    role: "historical art and storytelling activation",
+    orientation: "portrait",
+    objectPosition: "center",
+  },
+  neighbourhoodPainting: {
+    src: "/images/2026/community/neighbourhood-painting.jpg",
+    alt: "A volunteer painting the exterior wall of a building near the festival precinct",
+    width: 478,
+    height: 850,
+    year: 2026,
+    role: "community participation and neighbourhood activity",
+    orientation: "portrait",
+    objectPosition: "center",
+  },
+  neighbourhoodPaintingLandscape: {
+    src: "/images/2026/community/neighbourhood-painting-landscape.jpg",
+    alt: "People painting the exterior of a home near the festival streets",
+    width: 1280,
+    height: 960,
+    year: 2026,
+    role: "community participation and neighbourhood painting",
+    orientation: "landscape",
+    objectPosition: "center",
+  },
+  festivalGathering: {
+    src: "/images/2026/community/festival-gathering.jpg",
+    alt: "Festival visitors gathering around outdoor tables in a Quigney street",
+    width: 1280,
+    height: 854,
+    year: 2026,
+    role: "people gathering in the festival streets",
+    orientation: "landscape",
+    objectPosition: "center",
+  },
+  quigneyFestivalStreet: {
+    src: "/images/2026/place/quigney-festival-street.jpg",
+    alt: "Festival tables and umbrellas arranged along a street in Quigney",
+    width: 1280,
+    height: 854,
+    year: 2026,
+    role: "Quigney streetscape during the festival",
+    orientation: "landscape",
+    objectPosition: "center",
+  },
+  localMakersArtStall: {
+    src: "/images/2026/markets/local-makers-art-stall.jpg",
+    alt: "Paintings and handmade objects displayed at a festival market stall",
+    width: 1280,
+    height: 854,
+    year: 2026,
+    role: "local art, makers and market activity",
     orientation: "landscape",
     objectPosition: "center",
   },
@@ -155,7 +216,7 @@ const festivalMedia = {
 const siteLinks = {
   festival: { label: "Festival", href: "#festival" },
   programme: { label: "Programme", href: "#programme" },
-  precinct: { label: "TQCF Precinct", href: "#precinct" },
+  precinct: { label: "Festival Map", href: "#precinct" },
   getInvolved: { label: "Get Involved", href: "#get-involved" },
   visit: { label: "Visit", href: "#visit" },
 } satisfies Record<string, LinkItem>;
@@ -204,7 +265,7 @@ export const festivalConfig = {
     title: "The streets become part of the festival.",
     copy:
       "TQCF unfolds through Quigney, with performance, food, markets and gathering spaces extending the experience beyond a single stage.",
-    mediaLabel: "TQCF 2026 / Live in the street",
+    mediaLabel: "TQCF 2026",
     tone: "ink",
     image: festivalMedia.performanceStage,
   },
@@ -213,7 +274,7 @@ export const festivalConfig = {
     title: "Music, food, fashion and art share the street.",
     copy:
       "Music meets food, fashion, visual art, design, storytelling and innovation — different cultural expressions coming together in one precinct.",
-    mediaLabel: "TQCF 2026 / Runway and design",
+    mediaLabel: "TQCF 2026",
     tone: "ochre",
     image: festivalMedia.fashionYellow,
   },
@@ -222,7 +283,7 @@ export const festivalConfig = {
     title: "The festival is shaped by its people.",
     copy:
       "Artists, residents, visitors, vendors and local creatives shape TQCF through what they perform, make, share and experience together.",
-    mediaLabel: "TQCF 2026 / Festival faces",
+    mediaLabel: "TQCF 2026",
     tone: "green",
     image: festivalMedia.people,
   },
@@ -231,8 +292,9 @@ export const festivalConfig = {
     title: "Quigney is more than the location.",
     copy:
       "Its streets, buildings, businesses and public spaces give TQCF its character and become part of the festival experience.",
-    mediaLabel: "Rooted in Quigney",
+    mediaLabel: "TQCF 2026",
     tone: "sand",
+    image: festivalMedia.quigneyFestivalStreet,
   },
 ] satisfies StoryBeat[],
 
@@ -242,26 +304,27 @@ experiences: [
     title: "The street becomes a stage.",
     copy:
       "Live music and performance give TQCF its pulse, bringing artists and audiences together across the precinct.",
-    mediaLabel: "TQCF 2026 / Live performance",
+    mediaLabel: "TQCF 2026",
     tone: "ink",
     layout: "feature",
     image: festivalMedia.performanceAudience,
   },
   {
     label: "Food & Hospitality",
-    title: "Come hungry. Stay awhile.",
+    title: "Come hungry. Stay a while.",
     copy:
       "Food and hospitality are part of the experience — giving people space to slow down, meet and stay in the precinct between performances.",
-    mediaLabel: "Food / hospitality",
+    mediaLabel: "TQCF 2026",
     tone: "sand",
     layout: "standard",
+    image: festivalMedia.vendor,
   },
   {
     label: "Fashion & Design",
     title: "Style moves through the precinct.",
     copy:
       "Fashion, runway and design turn the street into another kind of stage.",
-    mediaLabel: "TQCF 2026 / Street runway",
+    mediaLabel: "TQCF 2026",
     tone: "coral",
     layout: "standard",
     image: festivalMedia.streetRunway,
@@ -271,28 +334,30 @@ experiences: [
     title: "Creativity lives beyond the stage.",
     copy:
       "Visual art, public art and storytelling add more to discover as you move through the precinct.",
-    mediaLabel: "Art / installations / storytelling",
+    mediaLabel: "TQCF 2026",
     tone: "sand",
     layout: "feature",
+    image: festivalMedia.childrensBookLaunchPoster,
   },
   {
     label: "Markets & Makers",
     title: "Meet the people making here.",
     copy:
       "Meet local makers, traders and small businesses, and discover more of Quigney along the way.",
-    mediaLabel: "TQCF 2026 / Food and vendors",
+    mediaLabel: "TQCF 2026",
     tone: "green",
     layout: "feature",
-    image: festivalMedia.vendor,
+    image: festivalMedia.localMakersArtStall,
   },
   {
     label: "People & Community",
     title: "Made to be shared.",
     copy:
       "Performers, cooks, traders, creatives and visitors make TQCF something to share, not simply watch.",
-    mediaLabel: "People / families / community",
+    mediaLabel: "TQCF 2026",
     tone: "ink",
     layout: "standard",
+    image: festivalMedia.festivalGathering,
   },
 ] satisfies FestivalExperience[],
 
@@ -301,20 +366,20 @@ programmePreview: {
   eyebrow: "TQCF 2027 / Programme",
   title: "Two days. A street full of things to discover.",
   intro:
-    "The 2027 programme will bring music, performance, food, fashion, art, enterprise and other experiences into the Quigney festival precinct.",
+    "The 2027 programme will bring music, performance, food, fashion, art, local makers and other experiences into the Quigney festival streets.",
 
   days: [
     {
       day: "Friday",
       date: "26 February 2027",
       shortDate: "26 FEB",
-      status: "Programme announcements coming soon",
+      status: "Full programme · December 2026",
     },
     {
       day: "Saturday",
       date: "27 February 2027",
       shortDate: "27 FEB",
-      status: "Programme announcements coming soon",
+      status: "Full programme · December 2026",
     },
   ] satisfies ProgrammeDay[],
 
@@ -328,17 +393,23 @@ programmePreview: {
   ] satisfies ProgrammeCategory[],
 
   entries: [] satisfies ProgrammeEntry[],
+  launchStatus: "Programme launches December 2026",
 },
 
 precinct: {
-  eyebrow: "TQCF / The Festival Precinct",
-  title: "The streets are part of the experience.",
+  eyebrow: "TQCF / Festival Map",
+  title: "TQCF takes the streets.",
   intro:
     "TQCF takes shape across Caxton and Burns Streets in Quigney. Move between performances, food, markets and places to gather as the streets become part of the festival.",
   location: {
     primary: festivalLocation.primary,
     secondary: festivalLocation.secondary,
   },
+  mapTitle: "Find your way around TQCF.",
+  mapDays: [
+    { label: "26 FEB", markers: [] },
+    { label: "27 FEB", markers: [] },
+  ] satisfies FestivalMapDay[],
   features: [
     {
       number: "01",
@@ -359,7 +430,7 @@ precinct: {
       label: "Gather",
       title: "Stay in the precinct.",
       copy:
-        "Meet, eat, watch, explore and stay awhile between programme moments.",
+        "Meet, eat, watch, explore and stay a while between programme moments.",
     },
   ] satisfies PrecinctFeature[],
   visitCta: {
@@ -413,8 +484,7 @@ getInvolved: {
 visit: {
   eyebrow: "TQCF / Visit",
   title: "Plan your visit.",
-  intro:
-    "TQCF 2027 comes to Caxton and Burns Streets in Quigney, KuGompo City.",
+  intro: "Practical details for your TQCF 2027 festival day.",
   facts: [
     {
       label: "Dates",
@@ -439,6 +509,7 @@ visit: {
       copy: "Age and family guidance will be shared closer to the festival.",
     },
   ] satisfies VisitInformationItem[],
+  informationTitle: "Know before you go.",
   ticketTitle: "Get your tickets",
   ticketCopy: "Tickets for TQCF 2027 are available through FIXR.",
   ticketLabel: "Get tickets",
@@ -451,12 +522,6 @@ partners: {
   intro:
     "The people and organisations helping bring TQCF 2027 to life will be featured here.",
   emptyState: "2027 partner announcements are on the way.",
-  futureCategories: [
-    "Cultural partners",
-    "Funding partners",
-    "Media partners",
-    "Hospitality partners",
-  ],
   items: [] as Partner[],
 },
 
@@ -480,6 +545,8 @@ organiserCredits: [
     role: "Social-impact partner",
     copy:
       "House 87 Culture Lab is the festival’s social-impact wing and partner, supporting youth development, creative skills, enterprise and community participation.",
+    mediaLabel: "TQCF 2026",
+    image: festivalMedia.neighbourhoodPaintingLandscape,
   },
 ] satisfies OrganiserCredit[],
 
@@ -508,7 +575,6 @@ footer: {
         "More than 1,500 people joined the inaugural TQCF, creating approximately 75 work and market opportunities across the festival precinct.",
       ctaLabel: "Explore the 2026 Festival",
       ctaHref: null,
-      image: festivalMedia.poster2026,
     },
     {
       year: 2027,
@@ -517,7 +583,7 @@ footer: {
       title: "What comes next",
       location: festivalLocation.display,
       summary:
-        "TQCF returns to Caxton and Burns Streets with two days of music, food, fashion, art, enterprise and shared cultural experiences.",
+        "TQCF returns to Caxton and Burns Streets with two days of music, food, fashion, art, local makers and shared cultural experiences.",
       ctaLabel: "Programme announcements coming soon",
       ctaHref: null,
     },

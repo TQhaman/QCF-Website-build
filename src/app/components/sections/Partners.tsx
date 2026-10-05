@@ -69,15 +69,6 @@ export function Partners() {
             <p className={styles.emptyLabel}>2027 partnerships</p>
             <p>{partners.emptyState}</p>
 
-            <div className={styles.categoryBlock}>
-              <p className={styles.categoryLabel}>Partnership areas</p>
-              <div className={styles.categories}>
-                {partners.futureCategories.map((category) => (
-                  <span key={category}>{category}</span>
-                ))}
-              </div>
-            </div>
-
             <span className={styles.emptyMark} aria-hidden="true">TQCF</span>
           </div>
         )}

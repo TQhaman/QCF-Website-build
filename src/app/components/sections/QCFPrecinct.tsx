@@ -15,17 +15,13 @@ export function QCFPrecinct() {
           <p className={styles.eyebrow}>{precinct.eyebrow}</p>
 
           <div className={styles.headerGrid}>
-            <h2 id="precinct-title">
-              Discover the
-              <br />
-              TQCF Precinct.
-            </h2>
+            <h2 id="precinct-title">{precinct.title}</h2>
 
             <div className={styles.intro}>
               <p>{precinct.intro}</p>
 
               <div className={styles.location}>
-                <span>Festival precinct</span>
+                <span>Festival streets</span>
                 <strong>{precinct.location.primary}</strong>
                 <p>{precinct.location.secondary}</p>
               </div>
@@ -34,7 +30,7 @@ export function QCFPrecinct() {
         </header>
 
         <div className={styles.mapBlock}>
-          <div className={styles.mapPlaceholder}>
+          <div className={styles.mapGraphic}>
             <div className={`${styles.street} ${styles.streetOne}`}>
               <span>CAXTON STREET</span>
             </div>
@@ -48,24 +44,24 @@ export function QCFPrecinct() {
               <strong>
                 FESTIVAL
                 <br />
-                PRECINCT
+                MAP
               </strong>
             </div>
 
             <div className={styles.mapNote}>
-              <span>Precinct map</span>
+              <span>2027 festival map</span>
               <p>
-                The full precinct map is coming with the 2027 programme.
+                The full festival map is coming with the 2027 programme.
               </p>
             </div>
           </div>
 
           <aside className={styles.mapInfo}>
-            <p className={styles.smallLabel}>Explore the precinct</p>
-            <h3>Know where you&apos;re going before you arrive.</h3>
+            <p className={styles.smallLabel}>Festival map</p>
+            <h3>{precinct.mapTitle}</h3>
             <p>
               Move between stages, food, markets, art and visitor facilities
-              across Caxton and Burns Streets. The full precinct map is coming
+              across Caxton and Burns Streets. The full festival map is coming
               with the 2027 programme.
             </p>
 
@@ -97,21 +93,6 @@ export function QCFPrecinct() {
           ))}
         </div>
 
-        <div className={styles.mediaCallout}>
-          <div>
-            <p className={styles.smallLabel}>TQCF in the streets</p>
-            <h3>
-              See the precinct
-              <br />
-              come alive.
-            </h3>
-          </div>
-
-          <p>
-            From performances and food to markets and gathering spaces, TQCF
-            makes the streets part of the festival.
-          </p>
-        </div>
       </div>
     </section>
   );

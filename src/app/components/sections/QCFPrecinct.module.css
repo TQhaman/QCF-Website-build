@@ -1,11 +1,11 @@
 .section {
-  padding: clamp(5rem, 10vw, 9rem) 0;
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
   background: var(--color-paper);
   color: var(--color-ink);
 }
 
 .header {
-  margin-bottom: clamp(3rem, 7vw, 6rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 .eyebrow,
@@ -82,7 +82,7 @@
   border: 1px solid var(--color-ink);
 }
 
-.mapPlaceholder {
+.mapGraphic {
   position: relative;
   min-height: 32rem;
   overflow: hidden;
@@ -110,7 +110,7 @@
   right: -5%;
   top: 27%;
   height: 3.2rem;
-  padding-left: 2rem;
+  padding-left: clamp(2.75rem, 6vw, 5.5rem);
   transform: rotate(-5deg);
 }
 
@@ -273,34 +273,6 @@
   line-height: 1.6;
 }
 
-.mediaCallout {
-  display: grid;
-  gap: 2rem;
-  margin-top: clamp(4rem, 8vw, 7rem);
-  padding: clamp(2rem, 5vw, 4rem);
-  background: var(--color-coral);
-}
-
-.mediaCallout .smallLabel {
-  color: var(--color-ink);
-}
-
-.mediaCallout h3 {
-  margin-top: 0.75rem;
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.82;
-  text-transform: uppercase;
-}
-
-.mediaCallout > p {
-  max-width: 32rem;
-  align-self: end;
-  line-height: 1.6;
-}
-
 @media (min-width: 48rem) {
   .headerGrid {
     grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.7fr);
@@ -311,7 +283,7 @@
     grid-template-columns: minmax(0, 1.4fr) minmax(20rem, 0.6fr);
   }
 
-  .mapPlaceholder {
+  .mapGraphic {
     min-height: 38rem;
   }
 
@@ -333,7 +305,4 @@
     border-left: 1px solid var(--color-ink);
   }
 
-  .mediaCallout {
-    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
-  }
 }

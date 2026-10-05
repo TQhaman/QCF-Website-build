@@ -71,7 +71,7 @@ export function ProgrammePreview() {
             </p>
 
             <h3>
-              Explore the programme your way.
+              What to expect across TQCF.
             </h3>
           </div>
 
@@ -99,7 +99,7 @@ export function ProgrammePreview() {
           </p>
 
           <span className={styles.comingSoon}>
-            2027 programme coming soon
+            {programmePreview.launchStatus}
           </span>
         </footer>
       </div>

@@ -8,6 +8,7 @@ import { Partners } from "@/app/components/sections/Partners";
 import { PlanYourVisit } from "@/app/components/sections/PlanYourVisit";
 import { OrganiserCredits } from "@/app/components/sections/OrganiserCredits";
 import { StructuredData } from "@/app/components/shared/StructuredData";
+import { BackToTop } from "@/app/components/shared/BackToTop";
 import { festivalConfig } from "@/app/data/festival";
 import { ExperienceQCF } from "@/app/components/sections/ExperienceQCF";
 import { ProgrammePreview } from "@/app/components/sections/ProgrammePreview";
@@ -36,6 +37,7 @@ export default function Home() {
         <OrganiserCredits />
       </main>
       <Footer />
+      <BackToTop />
       <StructuredData />
     </>
   );

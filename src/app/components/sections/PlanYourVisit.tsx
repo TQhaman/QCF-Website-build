@@ -60,7 +60,7 @@ export function PlanYourVisit() {
         >
           <header className={styles.visitorInfoHeader}>
             <p className={styles.infoEyebrow}>Visitor information</p>
-            <h3 id="visitor-information-title">Before you arrive.</h3>
+            <h3 id="visitor-information-title">{visit.informationTitle}</h3>
           </header>
 
           <div className={styles.infoGrid}>

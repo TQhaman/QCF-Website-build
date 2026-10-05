@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { festivalConfig } from "@/app/data/festival";
 import styles from "./EditionBridge.module.css";
 
@@ -25,18 +24,15 @@ export function EditionBridge() {
 
         <div className={styles.grid}>
           <article className={styles.pastCard}>
-            <div className={styles.imageWrap}>
-              {past.image ? (
-                <Image
-                  src={past.image.src}
-                  alt={past.image.alt}
-                  fill
-                  sizes="(min-width: 900px) 50vw, 100vw"
-                  className={styles.image}
-                  style={{ objectPosition: past.image.objectPosition }}
-                />
-              ) : null}
+            <div className={styles.pastTopline}>
+              <span>PAST EDITION</span>
+              <span>· {past.year}</span>
             </div>
+
+            <div className={styles.pastYear} aria-hidden="true">
+              {past.year}
+            </div>
+
             <div className={styles.cardCopy}>
               <p className={styles.cardMeta}>PAST EDITION · {past.dates}</p>
               <h3>{past.title}</h3>

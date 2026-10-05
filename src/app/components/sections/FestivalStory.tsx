@@ -29,7 +29,7 @@ export function FestivalStory() {
               key={beat.kicker}
               data-reverse={index % 2 === 1}
             >
-              <div
+              <figure
                 className={styles.media}
                 data-tone={beat.tone}
                 data-has-image={Boolean(beat.image)}
@@ -45,9 +45,10 @@ export function FestivalStory() {
                     style={{ objectPosition: beat.image.objectPosition }}
                   />
                 ) : null}
-                <span className={styles.mediaIndex}>0{index + 1}</span>
-                <span className={styles.mediaLabel}>{beat.mediaLabel}</span>
-              </div>
+                <figcaption className={styles.mediaLabel}>
+                  {beat.mediaLabel}
+                </figcaption>
+              </figure>
 
               <div className={styles.copy}>
                 <p className={styles.kicker}>{beat.kicker}</p>

@@ -33,6 +33,8 @@ export type OrganiserCredit = {
   heading: string;
   role: string;
   copy: string;
+  image?: FestivalMedia;
+  mediaLabel?: string;
 };
 
 export type StoryBeat = {
@@ -83,6 +85,21 @@ export type PrecinctFeature = {
   label: string;
   title: string;
   copy: string;
+};
+
+export type FestivalMapMarker = {
+  id: string;
+  label: string;
+  position: {
+    x: number;
+    y: number;
+  };
+  details?: string;
+};
+
+export type FestivalMapDay = {
+  label: string;
+  markers: FestivalMapMarker[];
 };
 
 export type InvolvementPath = {
