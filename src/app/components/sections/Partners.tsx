@@ -32,13 +32,20 @@ export function Partners() {
                   ) : null}
 
                   {partner.logo ? (
-                    <Image
-                      className={styles.logo}
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      width={280}
-                      height={100}
-                    />
+                    <>
+                      <div className={styles.logoFrame}>
+                        <Image
+                          className={styles.logo}
+                          src={partner.logo}
+                          alt={`${partner.name} logo`}
+                          fill
+                          sizes="(min-width: 70rem) 280px, (min-width: 48rem) calc((100vw - 3rem) / 3 - 3rem), calc((100vw - 1.5rem) / 2 - 2rem)"
+                        />
+                      </div>
+                      <span className={styles.partnerCaption} aria-hidden="true">
+                        {partner.name}
+                      </span>
+                    </>
                   ) : (
                     <strong className={styles.partnerName}>{partner.name}</strong>
                   )}
@@ -46,7 +53,7 @@ export function Partners() {
               );
 
               return (
-                <li className={styles.partner} key={partner.name}>
+                <li className={styles.partner} data-partner={partner.name} key={partner.name}>
                   {partner.href ? (
                     <a
                       className={styles.partnerContent}

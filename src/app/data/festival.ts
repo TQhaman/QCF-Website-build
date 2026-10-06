@@ -45,6 +45,15 @@ const festivalLocation = {
 } as const;
 
 const festivalMedia = {
+  festivalLayoutConcept: {
+    src: "/images/maps/festival-layout-concept.jpg",
+    alt: "Illustrative festival layout concept showing stages, audience areas and facilities; not a confirmed 2027 operational map",
+    width: 1055,
+    height: 1491,
+    role: "supplied alternative festival layout concept",
+    orientation: "portrait",
+    objectPosition: "center",
+  },
   logoGreen: {
     src: "/images/Logo/Logo_PNG_1.png",
     alt: "The Quigney Culture Festival logo",
@@ -132,8 +141,8 @@ const festivalMedia = {
     objectPosition: "center",
   },
   crowd: {
-    src: "/images/2026/Soley_Crowd.jpeg",
-    alt: "Crowd gathered behind a barrier at a previous edition of The Quigney Culture Festival",
+    src: "/images/2026/WhatsApp Image 2026-10-06 at 13.27.42.jpeg",
+    alt: "Festival crowd gathered behind a barrier, with umbrellas and Quigney buildings in the background",
     width: 1280,
     height: 854,
     year: 2026,
@@ -202,14 +211,14 @@ const festivalMedia = {
     objectPosition: "left center",
   },
   performanceStage: {
-    src: "/images/2026/Jabu.jpeg",
-    alt: "Guitarist performing on an outdoor stage before a festival crowd",
-    width: 1280,
-    height: 854,
+    src: "/images/2026/WhatsApp Image 2026-10-06 at 13.27.55.jpeg",
+    alt: "Singer performing at a microphone, with a guitar in the foreground and a keyboard player behind",
+    width: 936,
+    height: 1280,
     year: 2026,
-    role: "street performance",
-    orientation: "landscape",
-    objectPosition: "left center",
+    role: "historical live performance",
+    orientation: "portrait",
+    objectPosition: "center",
   },
 } satisfies Record<string, FestivalMedia>;
 
@@ -406,6 +415,10 @@ precinct: {
     secondary: festivalLocation.secondary,
   },
   mapTitle: "Find your way around TQCF.",
+  mapImage: festivalMedia.festivalLayoutConcept,
+  mapCaption:
+    "Illustrative festival layout concept. The confirmed 2027 festival map will be released with the programme.",
+  mapFullSizeLabel: "View full-size map",
   mapDays: [
     { label: "26 FEB", markers: [] },
     { label: "27 FEB", markers: [] },
@@ -517,12 +530,32 @@ visit: {
 },
 
 partners: {
-  eyebrow: "TQCF / Partners",
+  eyebrow: "Partners & supporters",
   title: "Made possible together.",
   intro:
-    "The people and organisations helping bring TQCF 2027 to life will be featured here.",
+    "The organisations supporting TQCF.",
   emptyState: "2027 partner announcements are on the way.",
-  items: [] as Partner[],
+  items: [
+    {
+      name: "Presidential Employment Stimulus",
+      logo: "/images/partners/presidential-employment-stimulus.png",
+    },
+    {
+      name: "National Arts Council (NAC)",
+      logo: "/images/partners/national-arts-council.png",
+    },
+    { name: "Coca-Cola", logo: "/images/partners/coca-cola.png" },
+    {
+      name: "Fridge Foods Group (FFG)",
+      logo: "/images/partners/fridge-foods-group.png",
+    },
+    { name: "House 87" },
+    { name: "Cortex Hub", logo: "/images/partners/cortex-hub.png" },
+    {
+      name: "Eastern Cape Arts and Culture Department",
+      logo: "/images/partners/eastern-cape-sport-arts-culture.png",
+    },
+  ] as Partner[],
 },
 
 stayUpdated: {

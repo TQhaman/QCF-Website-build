@@ -46,8 +46,8 @@ export function ExperienceQCF() {
                     fill
                     sizes={
                       experience.layout === "feature"
-                        ? "(min-width: 70rem) 45vw, (min-width: 48rem) 58vw, calc(100vw - 1.5rem)"
-                        : "(min-width: 70rem) 35vw, (min-width: 48rem) 42vw, calc(100vw - 1.5rem)"
+                        ? "(min-width: 89rem) 338px, (min-width: 80rem) calc(24.8vw - 1rem), (min-width: 48rem) calc(58.333vw - 2.167rem), calc(100vw - 1.625rem)"
+                        : "(min-width: 89rem) 562px, (min-width: 48rem) calc(41.667vw - 1.96rem), calc(100vw - 1.625rem)"
                     }
                     style={{ objectPosition: experience.image.objectPosition }}
                   />
