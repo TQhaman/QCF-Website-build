@@ -105,7 +105,14 @@
 }
 
 .media[data-has-image="true"][data-orientation="portrait"] .image {
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.media[data-has-image="true"][data-orientation="portrait"] {
+  width: min(100%, 22rem);
+  min-height: 0;
+  justify-self: center;
+  background: transparent;
 }
 
 .mediaLabel {
@@ -174,5 +181,9 @@
 
   .media {
     min-height: 28rem;
+  }
+
+  .media[data-has-image="true"][data-orientation="portrait"] {
+    width: min(100%, 18.68rem);
   }
 }

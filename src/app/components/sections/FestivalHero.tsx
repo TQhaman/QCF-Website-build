@@ -70,7 +70,6 @@ export function FestivalHero() {
           </div>
           <figcaption>
             <span>TQCF {hero.image.year}</span>
-            <span>Festival atmosphere</span>
           </figcaption>
         </figure>
 

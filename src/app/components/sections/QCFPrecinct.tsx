@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { festivalConfig } from "@/app/data/festival";
 import styles from "./QCFPrecinct.module.css";
 
@@ -30,31 +31,29 @@ export function QCFPrecinct() {
         </header>
 
         <div className={styles.mapBlock}>
-          <div className={styles.mapGraphic}>
-            <div className={`${styles.street} ${styles.streetOne}`}>
-              <span>CAXTON STREET</span>
-            </div>
-
-            <div className={`${styles.street} ${styles.streetTwo}`}>
-              <span>BURNS STREET</span>
-            </div>
-
-            <div className={styles.mapCentre}>
-              <span className={styles.mapLabel}>TQCF</span>
-              <strong>
-                FESTIVAL
-                <br />
-                MAP
-              </strong>
-            </div>
-
-            <div className={styles.mapNote}>
-              <span>2027 festival map</span>
-              <p>
-                The full festival map is coming with the 2027 programme.
-              </p>
-            </div>
-          </div>
+          <figure className={styles.mapFigure}>
+            <Image
+              className={styles.mapImage}
+              src={precinct.mapImage.src}
+              alt={precinct.mapImage.alt}
+              width={precinct.mapImage.width}
+              height={precinct.mapImage.height}
+              sizes="(min-width: 64rem) 608px, (min-width: 48rem) calc(100vw - 370px), (min-width: 40rem) 608px, calc(100vw - 26px)"
+            />
+            <figcaption className={styles.mapCaption}>
+              <p>{precinct.mapCaption}</p>
+              <a
+                className={styles.mapLink}
+                href={precinct.mapImage.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${precinct.mapFullSizeLabel} (opens in a new tab)`}
+              >
+                {precinct.mapFullSizeLabel}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </figcaption>
+          </figure>
 
           <aside className={styles.mapInfo}>
             <p className={styles.smallLabel}>Festival map</p>

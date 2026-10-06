@@ -82,98 +82,43 @@
   border: 1px solid var(--color-ink);
 }
 
-.mapGraphic {
-  position: relative;
-  min-height: 32rem;
-  overflow: hidden;
-  background: var(--color-green);
-  color: var(--color-paper);
-}
-
-.street {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  background: var(--color-paper);
-  color: var(--color-ink);
-}
-
-.street span {
-  white-space: nowrap;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-}
-
-.streetOne {
-  left: -5%;
-  right: -5%;
-  top: 27%;
-  height: 3.2rem;
-  padding-left: clamp(2.75rem, 6vw, 5.5rem);
-  transform: rotate(-5deg);
-}
-
-.streetTwo {
-  top: -10%;
-  bottom: -10%;
-  right: 8%;
-  width: 3.2rem;
-  justify-content: center;
-  transform: rotate(8deg);
-}
-
-.streetTwo span {
-  transform: rotate(90deg);
-}
-
-.mapCentre {
-  position: absolute;
-  left: clamp(1.5rem, 5vw, 4rem);
-  bottom: clamp(7rem, 18vw, 10rem);
-}
-
-.mapLabel {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--color-coral);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-}
-
-.mapCentre strong {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 10vw, 7rem);
-  letter-spacing: -0.04em;
-  line-height: 0.78;
-}
-
-.mapNote {
-  position: absolute;
-  z-index: 1;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
+.mapFigure {
   display: grid;
-  gap: 0.5rem;
-  padding: 0.8rem;
-  border-top: 1px solid currentColor;
-  background: var(--color-green);
+  min-width: 0;
+  align-content: center;
+  justify-items: center;
+  background: var(--color-paper-clean);
 }
 
-.mapNote span {
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.mapImage {
+  width: 100%;
+  max-width: 38rem;
+  height: auto;
+  object-fit: contain;
 }
 
-.mapNote p {
-  max-width: 28rem;
-  color: inherit;
-  font-size: 0.75rem;
+.mapCaption {
+  display: grid;
+  width: 100%;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
   line-height: 1.5;
+}
+
+.mapLink {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.mapLink:hover {
+  color: var(--color-coral-dark);
 }
 
 .mapInfo {
@@ -281,14 +226,6 @@
 
   .mapBlock {
     grid-template-columns: minmax(0, 1.4fr) minmax(20rem, 0.6fr);
-  }
-
-  .mapGraphic {
-    min-height: 38rem;
-  }
-
-  .streetTwo {
-    right: 24%;
   }
 
   .features {

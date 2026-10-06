@@ -34,6 +34,11 @@ export function FestivalStory() {
                 data-tone={beat.tone}
                 data-has-image={Boolean(beat.image)}
                 data-orientation={beat.image?.orientation}
+                style={
+                  beat.image?.orientation === "portrait"
+                    ? { aspectRatio: `${beat.image.width} / ${beat.image.height}` }
+                    : undefined
+                }
               >
                 {beat.image ? (
                   <Image
@@ -41,7 +46,11 @@ export function FestivalStory() {
                     src={beat.image.src}
                     alt={beat.image.alt}
                     fill
-                    sizes="(min-width: 58rem) 55vw, calc(100vw - 1.5rem)"
+                    sizes={
+                      beat.image.orientation === "portrait"
+                        ? "(min-width: 58rem) 18.68rem, (min-width: 23.5rem) 22rem, calc(100vw - 1.5rem)"
+                        : "(min-width: 58rem) 55vw, calc(100vw - 1.5rem)"
+                    }
                     style={{ objectPosition: beat.image.objectPosition }}
                   />
                 ) : null}

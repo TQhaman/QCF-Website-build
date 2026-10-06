@@ -95,21 +95,54 @@
   position: relative;
   display: grid;
   min-height: 11rem;
-  align-content: space-between;
+  height: 100%;
+  align-content: center;
+  justify-items: center;
   gap: 1.5rem;
   padding: 1rem;
+  text-align: center;
+}
+
+.logoFrame {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 17.5rem;
+  height: 4.5rem;
+  place-items: center;
 }
 
 .logo {
-  width: 100%;
-  height: 4.5rem;
   object-fit: contain;
+}
+
+.partnerCaption {
+  max-width: 30ch;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Preserve the supplied white mark; scale only its transparent padding. */
+.partner[data-partner="Cortex Hub"] .logoFrame {
+  height: 6rem;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+
+.partner[data-partner="Cortex Hub"] .logo {
+  transform: scale(1.5);
+}
+
+.partner[data-partner="Eastern Cape Arts and Culture Department"] .logoFrame {
+  max-width: 263px;
 }
 
 .partnerName {
   max-width: 14ch;
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 4vw, 2.6rem);
+  overflow-wrap: anywhere;
   line-height: 0.95;
   text-transform: uppercase;
 }
