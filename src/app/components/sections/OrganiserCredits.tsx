@@ -28,7 +28,7 @@ export function OrganiserCredits() {
                       alt={credit.image.alt}
                       fill
                       loading="lazy"
-                      sizes="(min-width: 80rem) 36rem, (min-width: 48rem) 46vw, calc(100vw - 3rem)"
+                      sizes="(min-width: 89rem) 348px, (min-width: 70rem) max(256px, calc(30vw - 79.2px)), (min-width: 48rem) calc(50vw - 104px), calc(100vw - 24px)"
                       style={{ objectPosition: credit.image.objectPosition }}
                     />
                   </div>

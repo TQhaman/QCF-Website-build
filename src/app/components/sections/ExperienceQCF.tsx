@@ -33,29 +33,36 @@ export function ExperienceQCF() {
               data-tone={experience.tone}
               key={experience.label}
             >
-              <div
-                className={styles.media}
-                data-has-image={Boolean(experience.image)}
-                data-orientation={experience.image?.orientation}
-              >
-                {experience.image ? (
-                  <Image
-                    className={styles.image}
-                    src={experience.image.src}
-                    alt={experience.image.alt}
-                    fill
-                    sizes={
-                      experience.layout === "feature"
-                        ? "(min-width: 89rem) 338px, (min-width: 80rem) calc(24.8vw - 1rem), (min-width: 48rem) calc(58.333vw - 2.167rem), calc(100vw - 1.625rem)"
-                        : "(min-width: 89rem) 562px, (min-width: 48rem) calc(41.667vw - 1.96rem), calc(100vw - 1.625rem)"
+              {experience.image ? (
+                <figure className={styles.mediaGroup}>
+                  <div
+                    className={styles.media}
+                    data-orientation={experience.image.orientation}
+                    style={
+                      experience.image.orientation === "portrait"
+                        ? { aspectRatio: `${experience.image.width} / ${experience.image.height}` }
+                        : undefined
                     }
-                    style={{ objectPosition: experience.image.objectPosition }}
-                  />
-                ) : null}
-                <span className={styles.mediaLabel}>
-                  {experience.mediaLabel}
-                </span>
-              </div>
+                  >
+                    <Image
+                      className={styles.image}
+                      src={experience.image.src}
+                      alt={experience.image.alt}
+                      fill
+                      loading="lazy"
+                      sizes={
+                        experience.layout === "feature"
+                          ? "(min-width: 89rem) 796px, (min-width: 48rem) calc(58.333vw - 34.667px), calc(100vw - 24px)"
+                          : "(min-width: 89rem) 564px, (min-width: 48rem) calc(41.667vw - 29.333px), calc(100vw - 24px)"
+                      }
+                      style={{ objectPosition: experience.image.objectPosition }}
+                    />
+                  </div>
+                  <figcaption className={styles.mediaLabel}>
+                    {experience.mediaLabel}
+                  </figcaption>
+                </figure>
+              ) : null}
 
               <div className={styles.copy}>
                 <p className={styles.label}>{experience.label}</p>
