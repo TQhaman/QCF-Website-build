@@ -10,9 +10,20 @@ import styles from "./Navbar.module.css";
 type NavbarProps = {
   navItems: LinkItem[];
   ticketUrl: string | null;
+  editionBar?: { name: string; dates: string; location: string; wrap?: boolean };
+  ticketLabel?: string;
 };
 
-export function Navbar({ navItems, ticketUrl }: NavbarProps) {
+export function Navbar({
+  navItems,
+  ticketUrl,
+  editionBar = {
+    name: "TQCF 2027",
+    dates: "26 – 27 FEB",
+    location: "QUIGNEY · KUGOMPO CITY",
+  },
+  ticketLabel = "Get tickets",
+}: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -38,12 +49,12 @@ export function Navbar({ navItems, ticketUrl }: NavbarProps) {
 
   return (
     <header className={styles.wrap}>
-      <div className={styles.editionBar}>
+      <div className={styles.editionBar} data-wrap={editionBar.wrap || undefined}>
         <div className="shell">
           <p>
-            <strong>TQCF 2027</strong>
-            <span>26 – 27 FEB</span>
-            <span>QUIGNEY · KUGOMPO CITY</span>
+            <strong>{editionBar.name}</strong>
+            <span>{editionBar.dates}</span>
+            <span>{editionBar.location}</span>
           </p>
         </div>
       </div>
@@ -98,9 +109,9 @@ export function Navbar({ navItems, ticketUrl }: NavbarProps) {
                 onClick={closeMenu}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Get TQCF tickets (opens in a new tab)"
+                aria-label={`${ticketLabel} for TQCF (opens in a new tab)`}
               >
-                Get tickets
+                {ticketLabel}
                 <span aria-hidden="true">↗</span>
               </a>
             ) : null}

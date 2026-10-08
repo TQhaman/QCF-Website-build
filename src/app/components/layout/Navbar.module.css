@@ -33,6 +33,14 @@
   color: var(--color-coral);
 }
 
+/* The archive context is longer; keep its locality readable on narrow screens. */
+.editionBar[data-wrap="true"] p {
+  flex-wrap: wrap;
+  row-gap: 0;
+  padding-block: 0.25rem;
+  white-space: normal;
+}
+
 .bar {
   position: relative;
   display: flex;

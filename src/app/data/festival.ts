@@ -285,7 +285,7 @@ export const festivalConfig = {
     } satisfies LinkItem,
     archiveCta: {
       label: "Relive 2026",
-      href: "#editions",
+      href: "/2026",
     } satisfies LinkItem,
   },
   storyBeats: [
@@ -626,8 +626,8 @@ footer: {
       location: festivalLocation.display,
       summary:
         "More than 1,500 people joined the inaugural TQCF, creating approximately 75 work and market opportunities across the festival precinct.",
-      ctaLabel: "Explore the 2026 Festival",
-      ctaHref: null,
+      ctaLabel: "Explore the 2026 Archive",
+      ctaHref: "/2026",
     },
     {
       year: 2027,

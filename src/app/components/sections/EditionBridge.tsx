@@ -38,8 +38,9 @@ export function EditionBridge() {
               <h3>{past.title}</h3>
               <p>{past.summary}</p>
               {past.ctaHref ? (
-                <a className={styles.editionCta} href={past.ctaHref}>
+                <a className={styles.archiveButton} href={past.ctaHref}>
                   {past.ctaLabel}
+                  <span aria-hidden="true">→</span>
                 </a>
               ) : (
                 <span className={styles.editionCta}>{past.ctaLabel}</span>
