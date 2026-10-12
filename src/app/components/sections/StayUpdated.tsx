@@ -3,7 +3,7 @@ import { SocialIcon } from "@/app/components/shared/SocialIcon";
 import type { FestivalContact } from "@/app/types/festival";
 import styles from "./StayUpdated.module.css";
 
-export function StayUpdated() {
+export function StayUpdated({ compact = false }: { compact?: boolean }) {
   const { stayUpdated } = festivalConfig;
   const contact: FestivalContact = festivalConfig.contact;
   const hasConfirmedChannels = Boolean(
@@ -12,7 +12,7 @@ export function StayUpdated() {
 
   return (
     <section
-      className={styles.section}
+      className={[styles.section, compact && styles.compact].filter(Boolean).join(" ")}
       id="stay-updated"
       aria-labelledby="stay-updated-title"
     >

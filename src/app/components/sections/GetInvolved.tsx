@@ -45,7 +45,7 @@ export function GetInvolved() {
                 <div className={styles.cardFooter}>
                   <p className={styles.status}>{path.status}</p>
 
-                  {path.href ? (
+                  {path.applicationReady && path.href ? (
                     <a
                       className={styles.action}
                       href={path.href}

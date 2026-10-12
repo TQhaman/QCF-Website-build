@@ -110,6 +110,8 @@ export type InvolvementPath = {
   status: string;
   ctaLabel: string;
   href: string | null;
+  // True only after eligibility, deadlines, contact, process and URL are approved.
+  applicationReady: boolean;
   tone: "paper" | "sand" | "green";
 };
 

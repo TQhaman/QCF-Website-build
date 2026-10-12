@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/app/config/site";
+import { absoluteUrl } from "@/app/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -9,5 +10,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: absoluteUrl("/2026"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...["/festival", "/programme", "/visit", "/get-involved"].map((path) => ({
+      url: absoluteUrl(path),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
   ];
 }

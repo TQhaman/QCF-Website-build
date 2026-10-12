@@ -1,10 +1,28 @@
 import Image from "next/image";
+import Link from "next/link";
+import type { Route } from "next";
 import { festivalConfig } from "@/app/data/festival";
 import { SocialIcon } from "@/app/components/shared/SocialIcon";
-import type { FestivalContact } from "@/app/types/festival";
+import type { FestivalContact, LinkItem } from "@/app/types/festival";
 import styles from "./Footer.module.css";
 
-export function Footer() {
+type FooterProps = {
+  date?: string;
+  location?: string;
+  editionYear?: number;
+  exploreItems?: LinkItem[];
+  ticketLabel?: string;
+  compact?: boolean;
+};
+
+export function Footer({
+  date = festivalConfig.footer.date,
+  location = festivalConfig.footer.location,
+  editionYear = festivalConfig.editionYear,
+  exploreItems = festivalConfig.footer.exploreItems,
+  ticketLabel = "Get tickets",
+  compact = false,
+}: FooterProps) {
   const contact: FestivalContact = festivalConfig.contact;
   const hasConnectItems = Boolean(
     contact.instagramUrl ||
@@ -15,7 +33,7 @@ export function Footer() {
   );
 
   return (
-    <footer className={styles.footer}>
+    <footer className={[styles.footer, compact && styles.compact].filter(Boolean).join(" ")}>
       <div className="shell">
         <div className={styles.footerGrid}>
           <div className={styles.brand}>
@@ -27,7 +45,7 @@ export function Footer() {
                   alt={festivalConfig.media.logoBlack.alt}
                   width={festivalConfig.media.logoBlack.width}
                   height={festivalConfig.media.logoBlack.height}
-                  sizes="112px"
+                  sizes={compact ? "64px" : "112px"}
                 />
               </span>
             </div>
@@ -35,8 +53,8 @@ export function Footer() {
             <p className={styles.statement}>{festivalConfig.footer.tagline}</p>
 
             <div className={styles.festivalDetails}>
-              <p>{festivalConfig.footer.date}</p>
-              <p>{festivalConfig.footer.location}</p>
+              <p>{date}</p>
+              <p>{location}</p>
             </div>
 
             {contact.ticketUrl ? (
@@ -45,19 +63,19 @@ export function Footer() {
                 href={contact.ticketUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Get TQCF tickets (opens in a new tab)"
+                aria-label={`${ticketLabel} for TQCF (opens in a new tab)`}
               >
-                Get tickets <span aria-hidden="true">↗</span>
+                {ticketLabel} <span aria-hidden="true">↗</span>
               </a>
             ) : null}
           </div>
 
           <nav className={styles.linkColumn} aria-label="Explore TQCF">
             <p className={styles.columnLabel}>Explore</p>
-            {festivalConfig.footer.exploreItems.map((item) => (
-              <a key={item.href} href={item.href}>
+            {exploreItems.map((item) => (
+              <Link key={item.href} href={item.href as Route}>
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -139,9 +157,14 @@ export function Footer() {
           ) : null}
         </div>
 
+        {compact ? (
+          <div className={styles.attribution}>
+            {festivalConfig.footer.organiserAttribution.map((line) => <p key={line}>{line}</p>)}
+          </div>
+        ) : null}
         <div className={styles.bottom}>
           <p>The Quigney Culture Festival</p>
-          <p>{festivalConfig.editionYear} edition</p>
+          <p>{editionYear} edition</p>
         </div>
       </div>
     </footer>

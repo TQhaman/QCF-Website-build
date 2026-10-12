@@ -140,6 +140,7 @@
   max-width: 35rem;
 }
 
+.copy h2,
 .copy h3 {
   color: var(--color-ink);
   font-family: var(--font-display);
