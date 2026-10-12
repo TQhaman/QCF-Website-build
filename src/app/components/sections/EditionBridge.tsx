@@ -1,14 +1,16 @@
 import { festivalConfig } from "@/app/data/festival";
+import Link from "next/link";
+import type { Route } from "next";
 import styles from "./EditionBridge.module.css";
 
-export function EditionBridge() {
+export function EditionBridge({ compact = false }: { compact?: boolean }) {
   const past = festivalConfig.editions.find((edition) => edition.status === "past");
   const upcoming = festivalConfig.editions.find((edition) => edition.status === "upcoming");
 
   if (!past || !upcoming) return null;
 
   return (
-    <section className={styles.section} id="editions" aria-labelledby="editions-title">
+    <section className={[styles.section, compact && styles.compact].filter(Boolean).join(" ")} id="editions" aria-labelledby="editions-title">
       <div className="shell">
         <div className={styles.headingRow}>
           <div>
@@ -29,19 +31,19 @@ export function EditionBridge() {
               <span>· {past.year}</span>
             </div>
 
-            <div className={styles.pastYear} aria-hidden="true">
+            {!compact ? <div className={styles.pastYear} aria-hidden="true">
               {past.year}
-            </div>
+            </div> : null}
 
             <div className={styles.cardCopy}>
               <p className={styles.cardMeta}>PAST EDITION · {past.dates}</p>
               <h3>{past.title}</h3>
               <p>{past.summary}</p>
               {past.ctaHref ? (
-                <a className={styles.archiveButton} href={past.ctaHref}>
+                <Link className={styles.archiveButton} href={past.ctaHref as Route}>
                   {past.ctaLabel}
                   <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               ) : (
                 <span className={styles.editionCta}>{past.ctaLabel}</span>
               )}
@@ -53,7 +55,7 @@ export function EditionBridge() {
               <span>UPCOMING</span>
               <span>· {upcoming.year} EDITION</span>
             </div>
-            <div className={styles.yearDisplay}>{upcoming.year}</div>
+            {!compact ? <div className={styles.yearDisplay}>{upcoming.year}</div> : null}
             <div className={styles.cardCopy}>
               <p className={styles.cardMeta}>{upcoming.dates}</p>
               <h3>{upcoming.title}</h3>
@@ -63,12 +65,17 @@ export function EditionBridge() {
                 <strong>{upcoming.location}</strong>
               </div>
               {upcoming.ctaHref ? (
-                <a className={styles.programmeCta} href={upcoming.ctaHref}>
+                <Link className={styles.programmeCta} href={upcoming.ctaHref as Route}>
                   {upcoming.ctaLabel}
-                </a>
+                </Link>
               ) : (
                 <span className={styles.programmeCta}>{upcoming.ctaLabel}</span>
               )}
+              {compact ? (
+                <Link className={styles.archiveButton} href={festivalConfig.landing.upcomingCta.href as Route}>
+                  {festivalConfig.landing.upcomingCta.label} <span aria-hidden="true">→</span>
+                </Link>
+              ) : null}
             </div>
           </article>
         </div>

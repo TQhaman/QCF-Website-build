@@ -243,12 +243,20 @@ const festivalMedia = {
 } satisfies Record<string, FestivalMedia>;
 
 const siteLinks = {
-  festival: { label: "Festival", href: "#festival" },
-  programme: { label: "Programme", href: "#programme" },
-  precinct: { label: "Festival Map", href: "#precinct" },
-  getInvolved: { label: "Get Involved", href: "#get-involved" },
-  visit: { label: "Visit", href: "#visit" },
+  festival: { label: "Festival", href: "/festival" },
+  programme: { label: "Programme", href: "/programme" },
+  getInvolved: { label: "Get Involved", href: "/get-involved" },
+  visit: { label: "Visit", href: "/visit" },
+  archive: { label: "Relive 2026", href: "/2026" },
 } satisfies Record<string, LinkItem>;
+
+const storyIntro = {
+  eyebrow: "TQCF / More than a stage",
+  title: "A festival shaped by Quigney.",
+  copy: "Born at House 87, TQCF brings people and creative expression into the streets, making the Quigney precinct part of the festival itself.",
+};
+
+const streetCopy = "TQCF unfolds through Quigney, with performance, food, markets and gathering spaces extending the experience beyond a single stage.";
 
 export const festivalConfig = {
   siteUrl,
@@ -269,10 +277,48 @@ export const festivalConfig = {
   navItems: [
     siteLinks.festival,
     siteLinks.programme,
-    siteLinks.precinct,
-    siteLinks.getInvolved,
     siteLinks.visit,
+    siteLinks.getInvolved,
   ] satisfies LinkItem[],
+  storyIntro,
+  landing: {
+    introImage: festivalMedia.localMakersArtStall,
+    discoverCta: { label: "Discover TQCF", href: siteLinks.festival.href },
+    planTitle: "Plan your festival",
+    planItems: [
+      { id: "programme", title: "Programme", copy: "See what is happening across the festival.", href: siteLinks.programme.href },
+      { id: "precinct", headingId: "visit", title: "Festival Map & Visit", copy: "Find the precinct, practical visitor information and planning details.", href: siteLinks.visit.href },
+      { id: "get-involved", title: "Get Involved", copy: "Artists, vendors, volunteers, partners and participation opportunities.", href: siteLinks.getInvolved.href },
+    ],
+    upcomingCta: { label: "Explore the 2027 programme", href: siteLinks.programme.href },
+  },
+  pages: {
+    festival: {
+      eyebrow: storyIntro.eyebrow,
+      title: storyIntro.title,
+      intro: storyIntro.copy,
+      description: "Discover The Quigney Culture Festival: street culture, music, food, fashion, art and community, born at House 87 in Quigney, KuGompo City.",
+      links: [siteLinks.programme, siteLinks.visit, siteLinks.getInvolved],
+    },
+    programme: {
+      eyebrow: "TQCF 2027",
+      title: "2027 Programme",
+      description: "Explore the two-day TQCF 2027 festival programme direction for 26–27 February in Quigney, KuGompo City. The full programme launches December 2026.",
+      links: [siteLinks.festival, { label: "Festival Map & Visit", href: siteLinks.visit.href }],
+    },
+    visit: {
+      eyebrow: "TQCF 2027 / Visitor information",
+      title: "Festival Map & Visit",
+      description: "Plan your visit to TQCF on 26–27 February 2027 at Caxton & Burns Streets, Quigney, KuGompo City. Find the layout concept, tickets and visitor updates.",
+      links: [siteLinks.programme, siteLinks.festival],
+    },
+    "get-involved": {
+      eyebrow: "TQCF 2027 / Participation",
+      title: "Get involved",
+      description: "Explore trading, artist and partnership pathways for The Quigney Culture Festival 2027. Application and enquiry opportunities will be shared as they open.",
+      links: [siteLinks.festival, { label: "Festival updates", href: "/#stay-updated" }],
+    },
+  },
   hero: {
     kicker: "Where culture meets the street",
     title: "The Quigney Culture Festival",
@@ -292,8 +338,7 @@ export const festivalConfig = {
   {
     kicker: "01 / Street",
     title: "The streets become part of the festival.",
-    copy:
-      "TQCF unfolds through Quigney, with performance, food, markets and gathering spaces extending the experience beyond a single stage.",
+    copy: streetCopy,
     mediaLabel: "TQCF 2026",
     tone: "ink",
     image: festivalMedia.performanceStage,
@@ -468,7 +513,7 @@ precinct: {
   ] satisfies PrecinctFeature[],
   visitCta: {
     label: "Plan your visit",
-    href: siteLinks.visit.href,
+    href: "#visit",
   } satisfies LinkItem,
 },
 
@@ -487,6 +532,7 @@ getInvolved: {
       status: "Applications not yet open",
       ctaLabel: "Applications coming soon",
       href: null,
+      applicationReady: false,
       tone: "sand",
     },
     {
@@ -498,6 +544,7 @@ getInvolved: {
       status: "2027 opportunities to come",
       ctaLabel: "Artist information coming soon",
       href: null,
+      applicationReady: false,
       tone: "paper",
     },
     {
@@ -509,6 +556,7 @@ getInvolved: {
       status: "Partnership details to come",
       ctaLabel: "Enquiry details coming soon",
       href: null,
+      applicationReady: false,
       tone: "green",
     },
   ] satisfies InvolvementPath[],
@@ -610,10 +658,14 @@ footer: {
   exploreItems: [
     siteLinks.festival,
     siteLinks.programme,
-    siteLinks.precinct,
-    siteLinks.getInvolved,
     siteLinks.visit,
+    siteLinks.getInvolved,
+    siteLinks.archive,
   ] satisfies LinkItem[],
+  organiserAttribution: [
+    "Organised and curated by House 87",
+    "Social-impact partner: House 87 Culture Lab",
+  ],
   informationItems: [] as LinkItem[],
 },
 

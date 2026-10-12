@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import type { Route } from "next";
 import { festivalConfig } from "@/app/data/festival";
 import { SocialIcon } from "@/app/components/shared/SocialIcon";
 import type { FestivalContact, LinkItem } from "@/app/types/festival";
@@ -10,6 +12,7 @@ type FooterProps = {
   editionYear?: number;
   exploreItems?: LinkItem[];
   ticketLabel?: string;
+  compact?: boolean;
 };
 
 export function Footer({
@@ -18,6 +21,7 @@ export function Footer({
   editionYear = festivalConfig.editionYear,
   exploreItems = festivalConfig.footer.exploreItems,
   ticketLabel = "Get tickets",
+  compact = false,
 }: FooterProps) {
   const contact: FestivalContact = festivalConfig.contact;
   const hasConnectItems = Boolean(
@@ -29,7 +33,7 @@ export function Footer({
   );
 
   return (
-    <footer className={styles.footer}>
+    <footer className={[styles.footer, compact && styles.compact].filter(Boolean).join(" ")}>
       <div className="shell">
         <div className={styles.footerGrid}>
           <div className={styles.brand}>
@@ -41,7 +45,7 @@ export function Footer({
                   alt={festivalConfig.media.logoBlack.alt}
                   width={festivalConfig.media.logoBlack.width}
                   height={festivalConfig.media.logoBlack.height}
-                  sizes="112px"
+                  sizes={compact ? "64px" : "112px"}
                 />
               </span>
             </div>
@@ -69,9 +73,9 @@ export function Footer({
           <nav className={styles.linkColumn} aria-label="Explore TQCF">
             <p className={styles.columnLabel}>Explore</p>
             {exploreItems.map((item) => (
-              <a key={item.href} href={item.href}>
+              <Link key={item.href} href={item.href as Route}>
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -153,6 +157,11 @@ export function Footer({
           ) : null}
         </div>
 
+        {compact ? (
+          <div className={styles.attribution}>
+            {festivalConfig.footer.organiserAttribution.map((line) => <p key={line}>{line}</p>)}
+          </div>
+        ) : null}
         <div className={styles.bottom}>
           <p>The Quigney Culture Festival</p>
           <p>{editionYear} edition</p>

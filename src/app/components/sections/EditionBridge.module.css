@@ -212,3 +212,19 @@
     min-height: 38rem;
   }
 }
+
+.compact { padding: clamp(2rem, 4vw, 3.5rem) 0; }
+.compact .headingRow { gap: 0.8rem; padding-bottom: 1rem; }
+.compact .headingRow h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
+.compact .grid { padding-top: 1rem; }
+.compact .pastCard,
+.compact .upcomingCard { min-height: 0; align-content: start; }
+.compact .pastCard::after,
+.compact .upcomingCard::after { display: none; }
+.compact .cardCopy { gap: 0.65rem; padding: 1.15rem; }
+.compact .cardCopy h3 { font-size: clamp(2.25rem, 4vw, 3.25rem); }
+.compact .pastTopline,
+.compact .upcomingTopline { padding: 0.65rem 1.15rem; }
+.compact .locationBlock { margin-top: 0; padding-top: 0.65rem; }
+.compact .programmeCta { padding-top: 0; border: 0; font-size: 0.8rem; }
+.compact .archiveButton { font-size: 0.8rem; }

@@ -169,7 +169,7 @@ export const archive2026 = {
   dates: "27–28 February 2026",
   location: festivalConfig.event.location.display,
   locality: `Quigney · ${festivalConfig.event.location.displayCity}`,
-  globalNav: festivalConfig.navItems.map((item) => ({ ...item, href: `/${item.href}` })),
+  globalNav: festivalConfig.navItems,
   editionBar: { name: "TQCF 2026 / ARCHIVE", dates: "27–28 FEB", location: "QUIGNEY · KUGOMPO CITY", wrap: true },
   ticketLabel: "Get 2027 tickets",
   seo: {

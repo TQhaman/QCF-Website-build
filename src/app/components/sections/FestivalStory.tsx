@@ -2,7 +2,8 @@ import Image from "next/image";
 import { festivalConfig } from "@/app/data/festival";
 import styles from "./FestivalStory.module.css";
 
-export function FestivalStory() {
+export function FestivalStory({ showIntro = true }: { showIntro?: boolean }) {
+  const Heading = showIntro ? "h3" : "h2";
   return (
     <section
       className={styles.section}
@@ -10,17 +11,15 @@ export function FestivalStory() {
       aria-labelledby="festival-story-title"
     >
       <div className="shell">
-        <header className={styles.header}>
-          <p className={styles.eyebrow}>TQCF / More than a stage</p>
-
-          <h2 id="festival-story-title">A festival shaped by Quigney.</h2>
-
-          <p>
-            Born at House 87, TQCF brings people and creative expression into
-            the streets, making the Quigney precinct part of the festival
-            itself.
-          </p>
-        </header>
+        {showIntro ? (
+          <header className={styles.header}>
+            <p className={styles.eyebrow}>{festivalConfig.storyIntro.eyebrow}</p>
+            <h2 id="festival-story-title">{festivalConfig.storyIntro.title}</h2>
+            <p>{festivalConfig.storyIntro.copy}</p>
+          </header>
+        ) : (
+          <p id="festival-story-title" className="srOnly">Street, culture, people and place</p>
+        )}
 
         <div className={styles.timeline}>
           {festivalConfig.storyBeats.map((beat, index) => (
@@ -61,7 +60,7 @@ export function FestivalStory() {
 
               <div className={styles.copy}>
                 <p className={styles.kicker}>{beat.kicker}</p>
-                <h3>{beat.title}</h3>
+                <Heading>{beat.title}</Heading>
                 <p>{beat.copy}</p>
               </div>
             </article>

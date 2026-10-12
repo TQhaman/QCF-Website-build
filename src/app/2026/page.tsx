@@ -238,7 +238,7 @@ export default function Archive2026Page() {
           </div>
         </section>
       </main>
-      <Footer date={data.dates} location={data.location} editionYear={data.year} exploreItems={data.globalNav} ticketLabel={data.ticketLabel} />
+      <Footer date={data.dates} location={data.location} editionYear={data.year} ticketLabel={data.ticketLabel} />
       <BackToTop />
     </>
   );

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import type { Route } from "next";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { festivalConfig } from "@/app/data/festival";
 import type { LinkItem } from "@/app/types/festival";
@@ -25,6 +27,7 @@ export function Navbar({
   ticketLabel = "Get tickets",
 }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -96,9 +99,10 @@ export function Navbar({
           <div className={styles.panel} data-open={isOpen} id="primary-navigation">
             <nav className={styles.nav} aria-label="Primary">
               {navItems.map((item) => (
-                <a key={item.href} className={styles.link} href={item.href} onClick={closeMenu}>
+                <Link key={item.href} className={styles.link} href={item.href as Route}
+                  aria-current={pathname === item.href ? "page" : undefined} onClick={closeMenu}>
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
 

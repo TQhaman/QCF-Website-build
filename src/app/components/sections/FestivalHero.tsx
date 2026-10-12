@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import type { Route } from "next";
 import { festivalConfig } from "@/app/data/festival";
 import styles from "./FestivalHero.module.css";
 
@@ -37,15 +39,19 @@ export function FestivalHero() {
           <div className={styles.statement}>
             <p>{hero.statement}</p>
             <div className={styles.actions}>
-              <a
-                className={styles.primaryAction}
-                href={hero.programmeCta.href}
-              >
-                {hero.programmeCta.label}
-              </a>
-              <a className={styles.textAction} href={hero.archiveCta.href}>
-                {hero.archiveCta.label}
-              </a>
+              {festivalConfig.contact.ticketUrl ? (
+                <a className={styles.primaryAction} href={festivalConfig.contact.ticketUrl}
+                  target="_blank" rel="noopener noreferrer"
+                  aria-label="Get TQCF 2027 tickets on FIXR (opens in a new tab)">
+                  Get tickets <span aria-hidden="true">↗</span>
+                </a>
+              ) : null}
+              <div className={styles.secondaryActions}>
+                <Link className={festivalConfig.contact.ticketUrl ? styles.textAction : styles.primaryAction} href={hero.programmeCta.href as Route}>
+                  {hero.programmeCta.label}
+                </Link>
+                <Link className={styles.textAction} href={hero.archiveCta.href as Route}>{hero.archiveCta.label}</Link>
+              </div>
             </div>
           </div>
 
@@ -73,15 +79,6 @@ export function FestivalHero() {
           </figcaption>
         </figure>
 
-        <div
-          className={styles.posterStrip}
-          aria-label="TQCF themes: street, culture, people and place"
-        >
-          <span>STREET</span>
-          <span>CULTURE</span>
-          <span>PEOPLE</span>
-          <span>PLACE</span>
-        </div>
       </div>
     </section>
   );

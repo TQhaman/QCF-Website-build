@@ -183,3 +183,14 @@
     grid-column: 1 / -1;
   }
 }
+
+.compact { padding: clamp(1.75rem, 3vw, 2.5rem) 0; }
+.compact::after { display: none; }
+.compact .header { gap: 0.75rem; }
+.compact .header h2 { max-width: 25ch; font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 0.92; }
+.compact .intro { font-size: 1rem; }
+.compact .actions { margin-top: 1rem; padding-top: 1rem; gap: 1rem; }
+.compact .actionGroup { gap: 0.65rem; }
+.compact .iconLink,
+.compact .whatsappLink { min-height: 3rem; min-width: 0; padding: 0.65rem 0.8rem; font-size: 1.05rem; }
+.compact .channelLinks { gap: 0.6rem; }

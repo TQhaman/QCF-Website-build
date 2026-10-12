@@ -1,0 +1,36 @@
+.header {
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  background: var(--color-paper);
+}
+.eyebrow {
+  margin-bottom: 0.8rem;
+  color: var(--color-coral-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.header h1 {
+  max-width: 20ch;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.intro { max-width: 42rem; margin-top: 1.25rem; }
+.facts { display: grid; gap: 0.35rem; margin-top: 1.25rem; font-weight: 700; }
+.onward { padding: 1.5rem 0; background: var(--color-sand); }
+.onward :global(.shell) { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+.link,
+.ticket {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.ticket { padding: 0.6rem 1rem; background: var(--color-ink); color: var(--color-paper); }

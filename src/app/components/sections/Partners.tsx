@@ -2,13 +2,13 @@ import Image from "next/image";
 import { festivalConfig } from "@/app/data/festival";
 import styles from "./Partners.module.css";
 
-export function Partners() {
+export function Partners({ compact = false }: { compact?: boolean }) {
   const { partners } = festivalConfig;
   const hasPartners = partners.items.length > 0;
 
   return (
     <section
-      className={styles.section}
+      className={[styles.section, compact && styles.compact].filter(Boolean).join(" ")}
       id="partners"
       aria-labelledby="partners-title"
     >
@@ -39,7 +39,9 @@ export function Partners() {
                           src={partner.logo}
                           alt={`${partner.name} logo`}
                           fill
-                          sizes="(min-width: 70rem) 280px, (min-width: 48rem) calc((100vw - 3rem) / 3 - 3rem), calc((100vw - 1.5rem) / 2 - 2rem)"
+                          sizes={compact
+                            ? "(min-width: 86rem) 164px, (min-width: 70rem) 12vw, (min-width: 48rem) 21vw, 28vw"
+                            : "(min-width: 70rem) 280px, (min-width: 48rem) calc((100vw - 3rem) / 3 - 3rem), calc((100vw - 1.5rem) / 2 - 2rem)"}
                         />
                       </div>
                       <span className={styles.partnerCaption} aria-hidden="true">
