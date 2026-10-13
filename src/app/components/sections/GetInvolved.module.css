@@ -61,6 +61,7 @@
 }
 
 .card[data-tone="sand"] {
+  --color-ink-muted: var(--color-ink);
   background: var(--color-sand);
 }
 
@@ -105,7 +106,6 @@
 .cardBody p {
   max-width: 29rem;
   line-height: 1.6;
-  opacity: 0.78;
 }
 
 .cardFooter {
@@ -165,7 +165,6 @@
 
 .disabledAction {
   cursor: default;
-  opacity: 0.48;
 }
 
 .note {

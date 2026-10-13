@@ -122,6 +122,8 @@
 }
 
 .mapInfo {
+  --color-ink-muted: var(--color-ink);
+  --color-coral-dark: var(--color-ink);
   display: grid;
   align-content: end;
   gap: 1.25rem;

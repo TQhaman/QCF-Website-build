@@ -61,7 +61,7 @@
 .vendorRecord { min-width: 0; }
 .fashionGrid { display: grid; gap: 1.5rem; align-items: center; }
 .fashionGrid > .figure:first-child { width: min(100%, 18rem); justify-self: center; }
-.food { background: var(--color-sand); }
+.food { background: var(--color-sand); --color-ink-muted: var(--color-ink); --color-coral-dark: var(--color-ink); }
 .communityGrid > .figure:last-child { width: 200px; justify-self: center; }
 .closing { padding: clamp(2.5rem, 4vw, 3.5rem) 0; background: var(--color-coral); color: var(--color-ink); }
 .closingContent { display: grid; gap: 1.5rem; align-items: center; }

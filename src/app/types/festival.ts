@@ -54,6 +54,7 @@ export type FestivalExperience = {
   tone: "ink" | "sand" | "coral" | "green";
   layout: "feature" | "standard";
   image?: FestivalMedia;
+  pendingImageLabel?: string;
 };
 
 export type ProgrammeDay = {

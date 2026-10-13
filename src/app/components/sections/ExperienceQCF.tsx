@@ -38,8 +38,10 @@ export function ExperienceQCF() {
                   <div
                     className={styles.media}
                     data-orientation={experience.image.orientation}
+                    data-role={experience.image.role}
                     style={
-                      experience.image.orientation === "portrait"
+                      experience.image.orientation === "portrait" ||
+                      experience.image.role === "food and hospitality"
                         ? { aspectRatio: `${experience.image.width} / ${experience.image.height}` }
                         : undefined
                     }
@@ -62,6 +64,12 @@ export function ExperienceQCF() {
                     {experience.mediaLabel}
                   </figcaption>
                 </figure>
+              ) : "pendingImageLabel" in experience &&
+                typeof experience.pendingImageLabel === "string" &&
+                experience.pendingImageLabel ? (
+                <div className={`${styles.media} ${styles.pendingMedia}`}>
+                  <p>{experience.pendingImageLabel}</p>
+                </div>
               ) : null}
 
               <div className={styles.copy}>

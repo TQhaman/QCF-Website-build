@@ -66,7 +66,23 @@
   object-fit: cover;
 }
 
-.card .media[data-orientation="portrait"] {
+.pendingMedia {
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: var(--color-sand);
+  color: var(--color-ink-muted);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pendingMedia p {
+  color: var(--color-ink);
+}
+
+.card .media[data-orientation="portrait"],
+.card .media[data-role="food and hospitality"] {
   min-height: 0;
 }
 

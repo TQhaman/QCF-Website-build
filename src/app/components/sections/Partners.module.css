@@ -1,4 +1,6 @@
 .section {
+  --color-ink-muted: var(--color-ink);
+  --color-coral-dark: var(--color-ink);
   padding: clamp(4.5rem, 8vw, 7rem) 0;
   background: var(--color-sand);
   color: var(--color-ink);

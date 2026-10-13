@@ -184,6 +184,17 @@ const festivalMedia = {
     orientation: "landscape",
     objectPosition: "center",
   },
+  foodHospitalityReplacement: {
+    src: "/images/2026/house-87/food-hospitality-replacement.jpeg",
+    alt: "A diner eating at a table with plates of food and bottled drinks.",
+    width: 1280,
+    height: 878,
+    year: 2026,
+    source: "WhatsApp Image-replacement-vendor.jpeg",
+    role: "food and hospitality",
+    orientation: "landscape",
+    objectPosition: "center",
+  },
   streetRunway: {
     src: "/images/2026/Group_streetrunway.jpeg",
     alt: "Models walking an outdoor street runway at a previous TQCF edition",
@@ -391,7 +402,7 @@ experiences: [
     mediaLabel: "TQCF 2026",
     tone: "sand",
     layout: "standard",
-    image: festivalMedia.vendor,
+    image: festivalMedia.foodHospitalityReplacement,
   },
   {
     label: "Fashion & Design",
