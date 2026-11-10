@@ -89,8 +89,8 @@ export function Footer({
                     className={styles.iconLink}
                     href={contact.instagramUrl}
                     target="_blank"
-                    rel="noreferrer"
-                    aria-label="TQCF on Instagram"
+                    rel="noopener noreferrer"
+                    aria-label="TQCF on Instagram (opens in a new tab)"
                   >
                     <SocialIcon platform="instagram" className={styles.icon} />
                   </a>
@@ -101,8 +101,8 @@ export function Footer({
                     className={styles.iconLink}
                     href={contact.tiktokUrl}
                     target="_blank"
-                    rel="noreferrer"
-                    aria-label="TQCF on TikTok"
+                    rel="noopener noreferrer"
+                    aria-label="TQCF on TikTok (opens in a new tab)"
                   >
                     <SocialIcon platform="tiktok" className={styles.icon} />
                   </a>
@@ -114,8 +114,8 @@ export function Footer({
                   className={styles.contactLink}
                   href={contact.whatsappUrl}
                   target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Message TQCF on WhatsApp at ${contact.whatsappDisplay}`}
+                  rel="noopener noreferrer"
+                  aria-label={`Message TQCF on WhatsApp at ${contact.whatsappDisplay} (opens in a new tab)`}
                 >
                   <SocialIcon platform="whatsapp" className={styles.contactIcon} />
                   <span>{contact.whatsappDisplay}</span>
@@ -128,7 +128,8 @@ export function Footer({
                   className={styles.contactLink}
                   href={contact.facebookUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label="TQCF on Facebook (opens in a new tab)"
                 >
                   <span>Facebook</span>
                   <span aria-hidden="true">↗</span>

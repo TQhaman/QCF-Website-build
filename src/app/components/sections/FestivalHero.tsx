@@ -18,7 +18,7 @@ export function FestivalHero() {
 
         <div className={styles.titleBlock}>
           <span className={styles.the}>THE</span>
-          <h1>
+          <h1 tabIndex={-1}>
             <span>QUIGNEY</span>
             <span>CULTURE</span>
             <span>FESTIVAL</span>
@@ -70,7 +70,7 @@ export function FestivalHero() {
               alt={hero.image.alt}
               fill
               sizes="(min-width: 86rem) 1376px, (min-width: 48rem) calc(100vw - 3rem), calc(100vw - 1.5rem)"
-              preload
+              loading="lazy"
               style={{ objectPosition: hero.image.objectPosition }}
             />
           </div>

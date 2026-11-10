@@ -1,4 +1,5 @@
 import { festivalConfig } from "@/app/data/festival";
+import { externalLinkAttributes } from "@/app/lib/links";
 import styles from "./GetInvolved.module.css";
 
 export function GetInvolved() {
@@ -22,9 +23,7 @@ export function GetInvolved() {
 
         <div className={styles.grid}>
           {getInvolved.paths.map((path) => {
-            const isExternal = path.href
-              ? /^https?:\/\//.test(path.href)
-              : false;
+            const external = path.href ? externalLinkAttributes(path.href, festivalConfig.siteUrl) : undefined;
 
             return (
               <article
@@ -49,16 +48,15 @@ export function GetInvolved() {
                     <a
                       className={styles.action}
                       href={path.href}
-                      target={isExternal ? "_blank" : undefined}
-                      rel={isExternal ? "noopener noreferrer" : undefined}
+                      {...external}
                       aria-label={
-                        isExternal
+                        external
                           ? `${path.ctaLabel} (opens in a new tab)`
                           : undefined
                       }
                     >
                       {path.ctaLabel}
-                      {isExternal ? <span aria-hidden="true">↗</span> : null}
+                      {external ? <span aria-hidden="true">↗</span> : null}
                     </a>
                   ) : (
                     <span className={styles.disabledAction}>

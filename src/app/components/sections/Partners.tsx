@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { festivalConfig } from "@/app/data/festival";
+import { externalLinkAttributes } from "@/app/lib/links";
 import styles from "./Partners.module.css";
 
 export function Partners({ compact = false }: { compact?: boolean }) {
@@ -25,6 +26,7 @@ export function Partners({ compact = false }: { compact?: boolean }) {
         {hasPartners ? (
           <ul className={styles.partnerGrid} aria-label="TQCF partners and supporters">
             {partners.items.map((partner) => {
+              const external = partner.href ? externalLinkAttributes(partner.href, festivalConfig.siteUrl) : undefined;
               const content = (
                 <>
                   {partner.category ? (
@@ -60,11 +62,11 @@ export function Partners({ compact = false }: { compact?: boolean }) {
                     <a
                       className={styles.partnerContent}
                       href={partner.href}
-                      target="_blank"
-                      rel="noreferrer"
+                      {...external}
+                      aria-label={external ? `${partner.name} (opens in a new tab)` : undefined}
                     >
                       {content}
-                      <span className={styles.external} aria-hidden="true">↗</span>
+                      {external ? <span className={styles.external} aria-hidden="true">↗</span> : null}
                     </a>
                   ) : (
                     <div className={styles.partnerContent}>{content}</div>
