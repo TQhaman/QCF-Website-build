@@ -34,8 +34,8 @@ export function StayUpdated({ compact = false }: { compact?: boolean }) {
                       className={styles.iconLink}
                       href={contact.instagramUrl}
                       target="_blank"
-                      rel="noreferrer"
-                      aria-label="TQCF on Instagram"
+                      rel="noopener noreferrer"
+                      aria-label="TQCF on Instagram (opens in a new tab)"
                     >
                       <SocialIcon platform="instagram" className={styles.icon} />
                       <span>Instagram</span>
@@ -47,8 +47,8 @@ export function StayUpdated({ compact = false }: { compact?: boolean }) {
                       className={styles.iconLink}
                       href={contact.tiktokUrl}
                       target="_blank"
-                      rel="noreferrer"
-                      aria-label="TQCF on TikTok"
+                      rel="noopener noreferrer"
+                      aria-label="TQCF on TikTok (opens in a new tab)"
                     >
                       <SocialIcon platform="tiktok" className={styles.icon} />
                       <span>TikTok</span>
@@ -60,8 +60,8 @@ export function StayUpdated({ compact = false }: { compact?: boolean }) {
                       className={styles.whatsappLink}
                       href={contact.whatsappUrl}
                       target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Message TQCF on WhatsApp at ${contact.whatsappDisplay}`}
+                      rel="noopener noreferrer"
+                      aria-label={`Message TQCF on WhatsApp at ${contact.whatsappDisplay} (opens in a new tab)`}
                     >
                       <SocialIcon platform="whatsapp" className={styles.icon} />
                       <span>{contact.whatsappDisplay}</span>

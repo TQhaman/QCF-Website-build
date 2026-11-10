@@ -24,7 +24,7 @@ export function SitePage({ page, children, tickets = false }: {
         <header className={styles.header}>
           <div className="shell">
             <p className={styles.eyebrow}>{content.eyebrow}</p>
-            <h1>{content.title}</h1>
+            <h1 tabIndex={-1}>{content.title}</h1>
             {"intro" in content ? <p className={styles.intro}>{content.intro}</p> : null}
             {page === "programme" ? (
               <div className={styles.facts}>

@@ -32,14 +32,6 @@ export function QCFPrecinct() {
 
         <div className={styles.mapBlock}>
           <figure className={styles.mapFigure}>
-            <Image
-              className={styles.mapImage}
-              src={precinct.mapImage.src}
-              alt={precinct.mapImage.alt}
-              width={precinct.mapImage.width}
-              height={precinct.mapImage.height}
-              sizes="(min-width: 64rem) 608px, (min-width: 48rem) calc(100vw - 370px), (min-width: 40rem) 608px, calc(100vw - 26px)"
-            />
             <figcaption className={styles.mapCaption}>
               <p>{precinct.mapCaption}</p>
               <a
@@ -53,6 +45,14 @@ export function QCFPrecinct() {
                 <span aria-hidden="true">↗</span>
               </a>
             </figcaption>
+            <Image
+              className={styles.mapImage}
+              src={precinct.mapImage.src}
+              alt={precinct.mapImage.alt}
+              width={precinct.mapImage.width}
+              height={precinct.mapImage.height}
+              sizes="(min-width: 64rem) 608px, (min-width: 48rem) calc(100vw - 370px), (min-width: 40rem) 608px, calc(100vw - 26px)"
+            />
           </figure>
 
           <aside className={styles.mapInfo}>

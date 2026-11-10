@@ -7,11 +7,20 @@ import { BackToTop } from "@/app/components/shared/BackToTop";
 import { archive2026 } from "@/app/data/archive2026";
 import { festivalConfig } from "@/app/data/festival";
 import { absoluteUrl } from "@/app/lib/site";
+import { externalLinkAttributes } from "@/app/lib/links";
 import type { ArchiveArtist, ArchiveMedia, ArchiveStory, ArchiveVendor } from "@/app/types/archive";
 import styles from "./Archive.module.css";
 
 const data = archive2026;
 const title = `${data.seo.title} | ${festivalConfig.name}`;
+
+function resourceLinkProps(href: string, label: string) {
+  const external = externalLinkAttributes(href, festivalConfig.siteUrl);
+  return {
+    ...external,
+    "aria-label": external ? `${label} (opens in a new tab)` : label,
+  };
+}
 
 export const metadata: Metadata = {
   title: data.seo.title,
@@ -98,7 +107,7 @@ function ArtistRecord({ artist }: { artist: ArchiveArtist }) {
         {artist.house87Connection ? <div><h3>{data.announcements.connectionLabel}</h3><p>{artist.house87Connection}</p></div> : null}
         {artist.quote ? <blockquote><p>{artist.quote}</p>{artist.quoteAttribution ? <cite>{artist.quoteAttribution}</cite> : null}</blockquote> : null}
         {artist.gallery?.length ? <div className={styles.recordGallery}>{artist.gallery.map((media) => <ArchiveFigure key={media.image.src} media={media} sizes="(min-width: 48rem) 200px, 45vw" />)}</div> : null}
-        {artist.videoUrl ? <a className={styles.artworkLink} href={artist.videoUrl} target="_blank" rel="noopener noreferrer">{data.announcements.videoLabel} <span aria-hidden="true">↗</span></a> : null}
+        {artist.videoUrl ? <a className={styles.artworkLink} href={artist.videoUrl} {...resourceLinkProps(artist.videoUrl, `${data.announcements.videoLabel}: ${artist.name}`)}>{data.announcements.videoLabel} <span aria-hidden="true">↗</span></a> : null}
         {artist.credit ? <p className={styles.credit}>{artist.credit}</p> : null}
       </div>
     </details>
@@ -115,7 +124,7 @@ function VendorRecord({ vendor }: { vendor: ArchiveVendor }) {
       {vendor.story ? <p>{vendor.story}</p> : null}
       {vendor.quote ? <blockquote><p>{vendor.quote}</p>{vendor.quoteAttribution ? <cite>{vendor.quoteAttribution}</cite> : null}</blockquote> : null}
       {vendor.gallery?.length ? <div className={styles.recordGallery}>{vendor.gallery.map((media) => <ArchiveFigure key={media.image.src} media={media} sizes="(min-width: 48rem) 200px, 45vw" />)}</div> : null}
-      {vendor.websiteOrSocial ? <a className={styles.artworkLink} href={vendor.websiteOrSocial} target="_blank" rel="noopener noreferrer">{vendor.name} <span aria-hidden="true">↗</span></a> : null}
+      {vendor.websiteOrSocial ? <a className={styles.artworkLink} href={vendor.websiteOrSocial} {...resourceLinkProps(vendor.websiteOrSocial, vendor.name)}>{vendor.name} <span aria-hidden="true">↗</span></a> : null}
       {vendor.credit ? <p className={styles.credit}>{vendor.credit}</p> : null}
     </article>
   );
@@ -134,7 +143,7 @@ export default function Archive2026Page() {
             <p className={styles.eyebrow}>{data.hero.eyebrow}</p>
             <div className={styles.heroGrid}>
               <div>
-                <h1 id="archive-title">{data.hero.title}</h1>
+                <h1 id="archive-title" tabIndex={-1}>{data.hero.title}</h1>
                 <p className={styles.subtitle}>{data.hero.subtitle}</p>
                 <div className={styles.heroFacts}>
                   <p>{data.dates}</p><p>{festivalConfig.event.location.primary}</p><p>{data.locality}</p>

@@ -1,9 +1,10 @@
 import { festivalConfig } from "@/app/data/festival";
+import { ProgrammeSchedule } from "./ProgrammeSchedule";
 import styles from "./ProgrammePreview.module.css";
 
-export function ProgrammePreview() {
-  const { programmePreview } = festivalConfig;
+const { programmePreview } = festivalConfig;
 
+export function ProgrammePreview() {
   return (
     <section
       className={styles.section}
@@ -27,82 +28,62 @@ export function ProgrammePreview() {
           </div>
         </header>
 
-        <div className={styles.schedule}>
-          {programmePreview.days.map((programmeDay, index) => (
-            <article
-              className={styles.day}
-              key={programmeDay.date}
-            >
-              <div className={styles.dayTop}>
-                <span className={styles.dayNumber}>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-                <span className={styles.shortDate}>
-                  {programmeDay.shortDate}
-                </span>
-              </div>
-
-              <div className={styles.dayBody}>
-                <div>
-                  <p className={styles.dayLabel}>
-                    Festival day
-                  </p>
-
-                  <h3>{programmeDay.day}</h3>
-
-                  <p className={styles.fullDate}>
-                    {programmeDay.date}
-                  </p>
-                </div>
-
-                <p className={styles.status}>
-                  {programmeDay.status}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className={styles.categories}>
-          <div className={styles.categoryIntro}>
-            <p className={styles.categoryEyebrow}>
-              Across TQCF
-            </p>
-
-            <h3>
-              What to expect across TQCF.
-            </h3>
-          </div>
-
-          <div className={styles.categoryList}>
-            {programmePreview.categories.map(
-              (category, index) => (
-                <div
-                  className={styles.category}
-                  key={category.name}
-                >
-                  <span>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <p>{category.name}</p>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-
-        <footer className={styles.footer}>
-          <p>
-            Artists, venues and performance times are still to come.
-          </p>
-
-          <span className={styles.comingSoon}>
-            {programmePreview.launchStatus}
-          </span>
-        </footer>
+        {programmePreview.entries.length > 0 ? (
+          <ProgrammeSchedule
+            days={programmePreview.days}
+            entries={programmePreview.entries}
+            siteUrl={festivalConfig.siteUrl}
+          />
+        ) : <UnreleasedProgramme />}
       </div>
     </section>
+  );
+}
+
+function UnreleasedProgramme() {
+  return (
+    <>
+      <div className={styles.releaseStatus}>
+        <span className={styles.comingSoon}>{programmePreview.launchStatus}</span>
+        <p>Artists, venues and performance times are still to come.</p>
+      </div>
+
+      <div className={styles.schedule}>
+        {programmePreview.days.map((programmeDay, index) => (
+          <article className={styles.day} key={programmeDay.date}>
+            <div className={styles.dayTop}>
+              <span className={styles.dayNumber}>{String(index + 1).padStart(2, "0")}</span>
+              <span className={styles.shortDate}>{programmeDay.shortDate}</span>
+            </div>
+
+            <div className={styles.dayBody}>
+              <div>
+                <p className={styles.dayLabel}>Festival day</p>
+                <h3>{programmeDay.day}</h3>
+                <p className={styles.fullDate}>{programmeDay.date}</p>
+              </div>
+
+              <p className={styles.status}>{programmeDay.status}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className={styles.categories}>
+        <div className={styles.categoryIntro}>
+          <p className={styles.categoryEyebrow}>Across TQCF</p>
+          <h3>What to expect across TQCF.</h3>
+        </div>
+
+        <div className={styles.categoryList}>
+          {programmePreview.categories.map((category, index) => (
+            <div className={styles.category} key={category.name}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <p>{category.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }

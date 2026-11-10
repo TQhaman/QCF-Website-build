@@ -1,61 +1,37 @@
-# Small Business Website Template
+# The Quigney Culture Festival
 
-A production-ready `Next.js` + `TypeScript` starter for reusable small business websites. The homepage is assembled from modular sections, business content lives in one config file, and the project ships with SEO foundations out of the box.
+A Next.js App Router, React and TypeScript site for festival discovery, programme, visitor information and the 2026 archive.
 
-## Commands
+| Route | Purpose |
+| --- | --- |
+| `/` | Festival introduction, editions, planning links and ticket handoff |
+| `/festival` | Festival story, experiences and organisers |
+| `/programme` | Pre-release information or the published schedule |
+| `/visit` | Precinct and practical visitor information |
+| `/get-involved` | Artist, trader and partnership pathways |
+| `/2026` | Historical archive |
 
-```bash
+## Development
+
+```sh
+npm ci
 npm run dev
-npm run lint
 npm run typecheck
+npm run lint
 npm run build
 ```
 
-## Fastest Customization Path
+Set `NEXT_PUBLIC_SITE_URL` to the approved public HTTPS origin **at build time**. Local builds default to `http://localhost:3000`. The build fetches the configured Google Fonts.
 
-Edit `src/app/config/site.ts`.
+## Publishing the programme
 
-That file controls:
+In `src/app/data/festival.ts`, add only approved records to `programmePreview.entries`. The pre-release view stays visible while the array is empty. Adding entries publishes a chronological schedule without editing the renderer.
 
-- Business name and legal name
-- Phone, email, address, and service area
-- Hero copy and CTA labels
-- Services, about copy, and testimonials
-- SEO keywords and social preview text
+- Use a unique `id`, `title`, `category`, configured `day` (exactly as written in `programmePreview.days`) and a 24-hour `startTime` in `HH:MM`.
+- Add `endTime`, `venue`, `description` or `ticketUrl` only when confirmed. Event-specific links are optional; the festival ticket link is not substituted.
+- Only days with entries are shown. Multiple populated days get in-page jump links. Unsupported days, invalid times, duplicate IDs and invalid ticket URLs fail validation during rendering/build.
+- Run the checks above and verify the schedule, links and mobile layout in a production preview.
 
-## Project Structure
+## Awaiting approval
 
-```text
-src/
-  app/
-    components/
-      layout/
-      sections/
-      shared/
-    config/
-      site.ts
-    lib/
-      site.ts
-    types/
-      site.ts
-    globals.css
-    layout.tsx
-    page.tsx
-    manifest.ts
-    opengraph-image.tsx
-    robots.ts
-    sitemap.ts
-```
-
-## What Is Included
-
-- Reusable section components: `Navbar`, `Hero`, `Services`, `About`, `Testimonials`, `Contact`, and `Footer`
-- Global styling system with design tokens, layout utilities, and mobile-first spacing
-- Config-driven content so the same codebase can be reused for multiple clients
-- SEO setup with metadata, JSON-LD, `robots.ts`, `sitemap.ts`, a web manifest, and a generated Open Graph image
-- Responsive layout patterns that look polished on mobile first and expand cleanly for larger screens
-
-## Notes
-
-- Replace the demo business information in `src/app/config/site.ts` before launch.
-- Update `siteUrl` in the config to match the production domain so the canonical URL, sitemap, and metadata stay correct.
+The site shows 26–27 February 2027; the linked FIXR listing reviewed in the audit advertises 27 February. Confirm day and ticket coverage with the organiser before changing dates or promoting purchases. The map remains illustrative. Operational details, application destinations and the public production origin require approval.

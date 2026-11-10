@@ -28,6 +28,7 @@ export function BackToTop() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
+    document.querySelector<HTMLElement>("#main-content h1")?.focus({ preventScroll: true });
     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
   };
 
